@@ -1,0 +1,6 @@
+#ifndef SCIOSENSE_AS60XX_LIBRARY_H
+#define SCIOSENSE_AS60XX_LIBRARY_H
+
+#include "as60xx.h"
+
+#endif //SCIOSENSE_AS60XX_LIBRARY_H

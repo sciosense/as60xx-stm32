@@ -1,0 +1,10 @@
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:56:24:uint32_t As60xx_CalculateDelayWindowRegisterValue(float)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:67:24:uint32_t As60xx_CalculateFirstHitLevelRegisterValue(float)	3
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:17:17:void AS60xx_Example_Setup(UART_HandleTypeDef*, SPI_HandleTypeDef*)	4
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:65:17:void AS60xx_Example_Loop()	2
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:106:6:void SetConfigurationAS60XX_Demo_1MHz_water_meter_FHL(AS60xx*)	1
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:285:15:Result SerialPrint(const char*)	6
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:313:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:313:1:void __static_initialization_and_destruction_1()	1
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:313:1:cpp)	1
+../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp:313:1:cpp)	1

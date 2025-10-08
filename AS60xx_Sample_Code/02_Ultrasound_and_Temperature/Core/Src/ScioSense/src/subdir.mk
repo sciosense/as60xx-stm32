@@ -5,12 +5,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Core/Src/ScioSense/src/as6031f1.cpp \
 ../Core/Src/ScioSense/src/as60xx.cpp 
 
 OBJS += \
+./Core/Src/ScioSense/src/as6031f1.o \
 ./Core/Src/ScioSense/src/as60xx.o 
 
 CPP_DEPS += \
+./Core/Src/ScioSense/src/as6031f1.d \
 ./Core/Src/ScioSense/src/as60xx.d 
 
 
@@ -21,7 +24,7 @@ Core/Src/ScioSense/src/%.o Core/Src/ScioSense/src/%.su Core/Src/ScioSense/src/%.
 clean: clean-Core-2f-Src-2f-ScioSense-2f-src
 
 clean-Core-2f-Src-2f-ScioSense-2f-src:
-	-$(RM) ./Core/Src/ScioSense/src/as60xx.cyclo ./Core/Src/ScioSense/src/as60xx.d ./Core/Src/ScioSense/src/as60xx.o ./Core/Src/ScioSense/src/as60xx.su
+	-$(RM) ./Core/Src/ScioSense/src/as6031f1.cyclo ./Core/Src/ScioSense/src/as6031f1.d ./Core/Src/ScioSense/src/as6031f1.o ./Core/Src/ScioSense/src/as6031f1.su ./Core/Src/ScioSense/src/as60xx.cyclo ./Core/Src/ScioSense/src/as60xx.d ./Core/Src/ScioSense/src/as60xx.o ./Core/Src/ScioSense/src/as60xx.su
 
 .PHONY: clean-Core-2f-Src-2f-ScioSense-2f-src
 

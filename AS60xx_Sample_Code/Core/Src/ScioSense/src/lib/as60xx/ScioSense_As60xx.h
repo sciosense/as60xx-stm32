@@ -2,10 +2,7 @@
 #define SCIOSENSE_AS60XX_C_H
 
 #include "ScioSense_As60xx_defines.h"
-//#include "ScioSense_As60xx_Macros.h"
-
-//#include <stdbool.h>
-//#include <inttypes.h>
+#include "ScioSense_As6031f1_defines.h"
 
 typedef struct ScioSense_As60xx_IO
 {
@@ -39,8 +36,42 @@ typedef enum
     ERR_NVM_FWCU_ERR    = AS60XX_E1_EF_NVM_FWCU_ERR_Pos,
     ERR_NVM_FWDU_ERR    = AS60XX_E1_EF_NVM_FWDU_ERR_Pos,
     ERR_NVM_FWA_ERR     = AS60XX_E1_EF_NVM_FWA_ERR_Pos,
-    ERR_CPU_ERR         = AS60XX_E1_EF_CPU_ERR_Pos,
+    ERR_CPU_ERR         = AS60XX_E1_EF_CPU_ERR_Pos
 } As60xx_ErrorFlag;
+
+typedef enum
+{
+    FW_ERR_HS_CALIB_FAIL        = AS6031F1_BNR_HS_CALIB_FAIL_Pos,
+    FW_ERR_AMP_DIFF_TOO_HIGH    = AS6031F1_BNR_AMP_DIFF_TOO_HIGH_Pos,
+    FW_ERR_AMP_VAL_TOO_LOW      = AS6031F1_BNR_AMP_VAL_TOO_LOW_Pos,
+    FW_ERR_PW_DIFF_NOT_OK       = AS6031F1_BNR_PW_DIFF_NOT_OK_Pos,
+    FW_ERR_SUMTOF_DEV           = AS6031F1_BNR_SUMTOF_DEV_Pos,
+    FW_ERR_FHL_NOT_OK           = AS6031F1_BNR_FHL_NOT_OK_Pos,
+    FW_ERR_MEAS_NOT_OK          = AS6031F1_BNR_MEAS_NOT_OK_Pos,
+    FW_ERR_FLOW_BT_2MAX         = AS6031F1_BNR_FLOW_BT_2MAX_Pos,
+    FW_ERR_FLOW_LT_NEGLIM       = AS6031F1_BNR_FLOW_LT_NEGLIM_Pos,
+    FW_ERR_VOL_ERR              = AS6031F1_BNR_VOL_ERR_Pos,
+    FW_ERR_PH_S_FW_VALID_WRG    = AS6031F1_BNR_PH_S_FW_VALID_WRG_Pos,
+    FW_ERR_PH_S_FW_JUMP_DET_ERR = AS6031F1_BNR_PH_S_FW_JUMP_DET_ERR_Pos,
+    FW_ERR_VEL_ERROR            = AS6031F1_BNR_VEL_ERROR_Pos,
+    FW_ERR_BUBBLE               = AS6031F1_BNR_BUBBLE_Pos,
+    FW_ERR_NO_WATER             = AS6031F1_BNR_NO_WATER_Pos,
+    FW_ERR_TDC_TMO_FW           = AS6031F1_BNR_TDC_TMO_FW_Pos,
+    FW_ERR_TOF_TMO_FW           = AS6031F1_BNR_TOF_TMO_FW_Pos,
+    FW_ERR_AM_TMO_FW            = AS6031F1_BNR_AM_TMO_FW_Pos,
+    FW_ERR_TM_OC_ERR_FW         = AS6031F1_BNR_TM_OC_ERR_FW_Pos,
+    FW_ERR_TM_SC_ERR_FW         = AS6031F1_BNR_TM_SC_ERR_FW_Pos,
+    FW_ERR_ZCC_ERR              = AS6031F1_BNR_ZCC_ERR_Pos,
+    FW_ERR_LBD_ERR              = AS6031F1_BNR_LBD_ERR_Pos,
+    FW_ERR_USM_SQC_TMO          = AS6031F1_BNR_USM_SQC_TMO_Pos,
+    FW_ERR_TM_SQC_TMO           = AS6031F1_BNR_TM_SQC_TMO_Pos,
+    FW_ERR_TSQ_TMO              = AS6031F1_BNR_TSQ_TMO_Pos,
+    FW_ERR_E2C_ACK_ERR          = AS6031F1_BNR_E2C_ACK_ERR_Pos,
+    FW_ERR_CS_FWD1_ERR          = AS6031F1_BNR_CS_FWD1_ERR_Pos,
+    FW_ERR_CS_FWD2_ERR          = AS6031F1_BNR_CS_FWD2_ERR_Pos,
+    FW_ERR_CS_FWU_ERR           = AS6031F1_BNR_CS_FWU_ERR_Pos,
+    FW_ERR_CS_FWA_ERR           = AS6031F1_BNR_CS_FWA_ERR_Pos
+} As6031F1_ErrorFlag;
 
 typedef enum _AS60XX_OpcodeTypeDef
 {
@@ -80,6 +111,17 @@ typedef enum _AS60XX_StateTypeDef
     AS60XX_STATE_ERROR          = 0x04U,    /*!< Device error state                                 */
     AS60XX_STATE_NOT_CONNECTED  = 0xFFU,    /*!< Device not connect                                 */
 } AS60XX_StateTypeDef;
+
+typedef enum _AS60XX_FwTransactionTypeDef
+{
+    AS60XX_FW_STORE_ALL         = 16,       /*!< Store Firmware Code & Firmware Data                */
+    AS60XX_FW_STORE_AND_LOCK    = 17,       /*!< Store & Lock Firmware Program Code & Firmware Data */
+    AS60XX_FW_ERASE_AND_UNLOCK  = 18,       /*!< Erase User Firmware Program Code & Firmware Data   */
+    AS60XX_FW_CODE_RECALL       = 19,       /*!< Recall Firmware Program Code                       */
+    AS60XX_FW_DATA_RECALL       = 20,       /*!< Recall Firmware Data                               */
+    AS60XX_FW_CODE_STORE        = 21,       /*!< Store Firmware Program Code                        */
+    AS60XX_FW_DATA_STORE        = 22,       /*!< Store Firmware Data (FWDU, user part only)         */
+} AS60XX_FwTransactionTypeDef;
 
 typedef struct {
     uint32_t WS_DIS;              /*!< Code to disable Watchdog */
@@ -315,6 +357,7 @@ typedef struct ScioSense_As60xx
     AS60XX_REGISTER_SIZE                FrontendDataBufferUltrasound[AS60XX_AMOUNT_FDB_REGISTERS];
     AS60XX_REGISTER_SIZE                FrontendDataBufferTemperature[AS60XX_AMOUNT_FDB_REGISTERS];
     AS60XX_REGISTER_SIZE                Status[AS60XX_AMOUNT_STATUS_REGISTERS];
+    AS60XX_REGISTER_SIZE                F1AlgorithmOutput[AS6031F1_AMOUNT_OUTPUT_REGISTERS];
 
     AS60XX_ParamTypeDef Param;          /*!< Configuration Parameter */
     AS60XX_StateTypeDef State;          /*!< Status of AS60XX */
@@ -328,13 +371,13 @@ static inline void                  As60xx_Set_State                            
 
 static inline Result                As60xx_Write_Opcode                         (ScioSense_As60xx* as60xx, uint8_t opcode);                             // Writes 8 bit opcode
 static inline Result                As60xx_Write_Extended_Opcode                (ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t extendedOpcode);     // Writes 8 bit opcode with its 8 bit extension
-static inline Result                As60xx_Write_8_Bit_Address_Register         (ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address, uint32_t dataToWrite);              	                // Writes 8 bit opcode, 8 bit address, and 4 bytes of data
-static inline Result                As60xx_Write_16_Bit_Address_Register        (ScioSense_As60xx* as60xx, uint8_t opcode, uint16_t address, uint32_t dataToWrite);             	                // Writes 8 bit opcode, 16 bit address, and 4 bytes of data
-static inline Result                As60xx_Write_N_Registers                    (ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address, uint32_t* dataToWrite, uint16_t len); 	                // Writes 8 bit opcode, 8 bit address, and a custom amount of data
+static inline Result                As60xx_Write_8_Bit_Address_Register         (ScioSense_As60xx* as60xx, uint8_t address, uint32_t dataToWrite);              	                // Writes 8 bit opcode, 8 bit address, and 4 bytes of data
+static inline Result                As60xx_Write_16_Bit_Address_Register        (ScioSense_As60xx* as60xx, uint16_t address, uint32_t dataToWrite);             	                // Writes 8 bit opcode, 16 bit address, and 4 bytes of data
+static inline Result                As60xx_Write_N_Registers                    (ScioSense_As60xx* as60xx, uint16_t address, uint32_t* dataToWrite, uint16_t len);                  // Writes 8 bit opcode, 8 bit address, and a custom amount of data
 static inline uint8_t               As60xx_Read_1_Byte                          (ScioSense_As60xx* as60xx, uint8_t opcode);                             // Writes 8 bit opcode, and then reads 1 byte and returns it as a number
 static inline uint32_t              As60xx_Read_1_Dword                         (ScioSense_As60xx* as60xx, uint8_t opcode);                             // Writes 8 bit opcode, and then reads 4 bytes and returns them as a number
-static inline uint32_t              As60xx_Read_Register_1_Dword                (ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address);            // Writes 8 bit opcode,  8 bit address, and then reads 4 bytes and returns them as a number
-static inline void                  As60xx_Read_Register_N_Dword                (ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address, uint32_t* outputData, uint16_t amountRegistersToRead);  // Writes 8 bit opcode,  8 bit address, and then reads N DWORDs (4 bytes)
+static inline uint32_t              As60xx_Read_Register_1_Dword                (ScioSense_As60xx* as60xx, uint16_t address);                           // Writes 8 bit opcode,  8 bit address, and then reads 4 bytes and returns them as a number
+static inline void                  As60xx_Read_Register_N_Dword                (ScioSense_As60xx* as60xx, uint16_t address, uint32_t* outputData, uint16_t amountRegistersToRead); // Writes 8 bit opcode,  8 bit address, and then reads N DWORDs (4 bytes)
 
 static inline Result                As60xx_Reset                                (ScioSense_As60xx* as60xx);                                             // Performs a software reset. Returns OK if the state indicates RESET afterwards
 static inline Result                As60xx_Init                                 (ScioSense_As60xx* as60xx);                                             // Initializes the device
@@ -345,8 +388,18 @@ static inline Result                As60xx_Stop_Measurements                    
 static inline uint32_t              As60xx_GetSupplyVoltageMv                   (ScioSense_As60xx* as60xx);                                             // Reads the supply voltage to the AS60XX, returns value in millivolts
 static inline float                 As60xx_GetHsClkFreqHz                       (ScioSense_As60xx* as60xx);                                             // Reads the high speed clock source frequency, returns value in Hz
 static inline As60xx_Timestamp      As60xx_GetTimestamp                         (ScioSense_As60xx* as60xx);                                             // Returns the timestamp that was read from the sensor
-static inline void                  As60xx_Write_Fw                             (ScioSense_As60xx* as60xx, uint8_t* FWC, int32_t FWC_Length);           // Writes the firmware into the device
 static inline AS60xx_Measure_Type   As60xx_Update                               (ScioSense_As60xx* as60xx);                                             // Checks the status to see if there are new measurements, and in case there are it reads the values
+
+static inline Result                As60xx_Disable_Watchdog                     (ScioSense_As60xx* as60xx);                                                                         // Disable watchdog timer
+static inline Result                As60xx_Execute_Fw_Transaction               (ScioSense_As60xx* as60xx, AS60XX_FwTransactionTypeDef fwTransactionAction);                        // Execute the specified action to the firmware
+static inline Result                As60xx_Fw_Handling_Phase_1                  (ScioSense_As60xx* as60xx);                                                                         // Reset and wait the necessary time
+static inline Result                As60xx_Fw_Handling_Phase_2                  (ScioSense_As60xx* as60xx);                                                                         // Sets device in a stable idle state before starting a FW update
+static inline Result                As60xx_Fw_Handling_Fw_Upload                (ScioSense_As60xx* as60xx, uint8_t* FWC, uint32_t FWC_Length, uint8_t* FWD, uint32_t FWD_Length);   // Uploads the firmware to the device
+static inline Result                As60xx_Fw_Handling_Write_No_Lock            (ScioSense_As60xx* as60xx, uint8_t* FWC, uint32_t FWC_Length, uint8_t* FWD, uint32_t FWD_Length);   // Uploads the firmware code and data to the device and instructs the device to write those values without locking
+static inline Result                As60xx_Fw_Handling_Write_Lock               (ScioSense_As60xx* as60xx, uint8_t* FWC, uint32_t FWC_Length, uint8_t* FWD, uint32_t FWD_Length);   // Uploads the firmware code and data to the device and instructs the device to write those values locking it
+static inline Result                As60xx_Fw_Handling_Erase                    (ScioSense_As60xx* as60xx);                                                                         // Erases the existing firmware
+static inline Result                As60xx_Fw_Handling_Phase_4                  (ScioSense_As60xx* as60xx);                                                                         // Checks if the firmware checksums are correct
+static inline Result                As60xx_Write_Fw                             (ScioSense_As60xx* as60xx, uint8_t* FWC, int32_t FWC_Length, uint8_t* FWD, int32_t FWD_Length);     // Writes the firmware into the device
 
 static inline uint32_t              As60xx_GetSumTofUp                          (ScioSense_As60xx* as60xx);                                             // Returns the sum of all upstream TOF values
 static inline uint32_t              As60xx_GetSumTofDown                        (ScioSense_As60xx* as60xx);                                             // Returns the sum of all downstream TOF values
@@ -369,6 +422,28 @@ static inline float                 As60xx_GetSpeedSoundFromTemperature         
 static inline uint8_t               As60xx_HasAnyError                          (ScioSense_As60xx* as60xx);                                             // Checks if any error flag is set
 static inline uint32_t              As60xx_GetRawErrorFlags                     (ScioSense_As60xx* as60xx);                                             // Returns the raw value of the 0xE1 register that contains the error flags
 static inline uint8_t               As60xx_HasErrorFlag                         (ScioSense_As60xx* as60xx, As60xx_ErrorFlag errorFlag);                 // Checks if the specified error flag is set
+
+static inline Result                As6031F1_Update                             (ScioSense_As60xx* as6031f1);                                           // Checks reads the output values of the AS6031F1 algorithm
+static inline int32_t               As6031F1_Parse_Flow_Volume_Int              (ScioSense_As60xx* as60xx);                                             // Read the signed integer part of total volume of water flow in cubic meters calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Flow_Volume_Frac             (ScioSense_As60xx* as60xx);                                             // Read unsigned factional part of total volume of water flow in cubic meters calculated by the AS6031F1 firmware
+static inline int32_t               As6031F1_Parse_Flow_Rate_Raw                (ScioSense_As60xx* as60xx);                                             // Read raw register content of the presently unfiltered calculated flow volume calculated by the AS6031F1 firmware
+static inline int32_t               As6031F1_Parse_Flow_Rate_Filtered_Raw       (ScioSense_As60xx* as60xx);                                             // Read raw register content of the presently filtered calculated flow volume calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Temperature_Raw              (ScioSense_As60xx* as60xx);                                             // Read raw register content of the temperature calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Sound_Vel_Raw                (ScioSense_As60xx* as60xx);                                             // Read raw register content of the speed of sound calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Flow_Speed_Raw               (ScioSense_As60xx* as60xx);                                             // Read raw register content of the flow speed calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Tof_Diff_Raw                 (ScioSense_As60xx* as60xx);                                             // Read raw register content of the Time of Flight difference calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Tof_Sum_Raw                  (ScioSense_As60xx* as60xx);                                             // Read raw register content of the Time of Flight sum calculated by the AS6031F1 firmware
+static inline uint32_t              As6031F1_Parse_Error_Flags                  (ScioSense_As60xx* as60xx);                                             // Read raw register content of the error flags
+static inline uint32_t              As6031F1_Parse_Value                        (ScioSense_As60xx* as60xx, uint8_t index);                              // Read raw register content at the specified index
+
+static inline float                 As6031F1_Parse_Flow_Volume_M3               (ScioSense_As60xx* as60xx);                                             // Read total volume of water flow in cubic meters calculated by the AS6031F1 firmware
+static inline float                 As6031F1_Parse_Flow_Rate_L_Per_Hr           (ScioSense_As60xx* as60xx);                                             // Read unfiltered flow rate in litres per hour calculated by the AS6031F1 firmware
+static inline float                 As6031F1_Parse_Flow_Rate_Filtered_L_Per_Hr  (ScioSense_As60xx* as60xx);                                             // Read filtered flow rate in litres per hour calculated by the AS6031F1 firmware
+static inline float                 As6031F1_Parse_Temperature_Deg_C            (ScioSense_As60xx* as60xx);                                             // Read temperature in degrees Celsius calculated by the AS6031F1 firmware
+static inline float                 As6031F1_Parse_Sound_Vel_M_Per_S            (ScioSense_As60xx* as60xx);                                             // Read speed of sound in the fluid in meters per second calculated by the AS6031F1 firmware
+static inline float                 As6031F1_Parse_Flow_Speed_M_Per_S           (ScioSense_As60xx* as60xx);                                             // Read flow speed in meters per second calculated by the AS6031F1 firmware
+
+static inline uint8_t               As6031F1_HasErrorFlag                       (ScioSense_As60xx* as60xx, As6031F1_ErrorFlag errorFlag);               // Checks if the specified firmware F1 error flag is set
 
 static inline uint8_t               As60xx_Get_Amount_Configuration_Registers   ();                                                                     // Return the amount of configuration registers to write
 static inline uint16_t              As60xx_Get_Configuration_Register_Address   (ScioSense_As60xx* as60xx, uint8_t idx);                                // Return the address of the configuration register corresponding to the index

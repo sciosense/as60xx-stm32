@@ -1,77 +1,86 @@
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:33:23:uint8_t As60xx_Get_Amount_Configuration_Registers()	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:38:24:uint16_t As60xx_Get_Configuration_Register_Address(ScioSense_As60xx*, uint8_t)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:47:24:uint32_t As60xx_Get_Configuration_Register_Setting(ScioSense_As60xx*, uint8_t)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:82:22:Result As60xx_Write_Opcode(ScioSense_As60xx*, uint8_t)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:90:22:Result As60xx_Write_Extended_Opcode(ScioSense_As60xx*, uint8_t, uint8_t)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:99:22:Result As60xx_Write_8_Bit_Address_Register(ScioSense_As60xx*, uint8_t, uint8_t, uint32_t)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:141:23:uint8_t As60xx_Read_1_Byte(ScioSense_As60xx*, uint8_t)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:179:24:uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx*, uint8_t, uint8_t)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:199:20:void As60xx_Read_Register_N_Dword(ScioSense_As60xx*, uint8_t, uint8_t, uint32_t*, uint16_t)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:207:22:Result As60xx_Reset(ScioSense_As60xx*)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:233:22:Result As60xx_Init(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:239:9:uint8_t As60xx_isConnected(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:244:22:Result As60xx_Write_Config(ScioSense_As60xx*)	4
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:283:22:Result As60xx_Start_Measurements(ScioSense_As60xx*)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:320:24:uint32_t As60xx_GetSupplyVoltageMv(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:331:21:float As60xx_GetHsClkFreqHz(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:342:32:As60xx_Timestamp As60xx_GetTimestamp(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:352:23:uint8_t As60xx_HasAnyError(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:357:24:uint32_t As60xx_GetRawErrorFlags(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:362:23:uint8_t As60xx_HasErrorFlag(ScioSense_As60xx*, As60xx_ErrorFlag)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:367:20:void As60xx_Write_Fw(ScioSense_As60xx*, uint8_t*, int32_t)	8
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:460:21:AS60xx_Measure_Type As60xx_Update(ScioSense_As60xx*)	3
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:486:24:uint32_t As60xx_GetSumTofUp(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:491:24:uint32_t As60xx_GetSumTofDown(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:496:24:uint32_t As60xx_GetAmountHitsForSumTof(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:501:24:uint32_t As60xx_CalculateTDCTimePs(ScioSense_As60xx*, uint32_t)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:516:20:void AS60xx_CalculateTemperatureResistance2Wire(ScioSense_As60xx*, float*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:532:20:void AS60xx_CalculateTemperature2Wire(ScioSense_As60xx*, float*)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:543:21:float AS60xx_CalculateInternalTemperature(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:551:24:uint32_t As60xx_AmplitudeToMv(uint32_t, uint32_t, uint32_t)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:560:24:uint32_t As60xx_GetAmplitudeUp(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:569:24:uint32_t As60xx_GetAmplitudeDown(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:578:21:float As60xx_PulseWidthRatioToFloat(uint32_t)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:585:21:float As60xx_GetPulseWidthRatioUp(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:590:21:float As60xx_GetPulseWidthRatioDown(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:595:20:void As60xx_GetTofValuesUp(ScioSense_As60xx*, uint32_t*)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:603:20:void As60xx_GetTofValuesDown(ScioSense_As60xx*, uint32_t*)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:646:20:void As60xx_Set_Configuration_Registers(ScioSense_As60xx*, uint32_t*)	2
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:655:20:void As60xx_Update_Parameters(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:824:20:void As60xx_Update_Configuration(ScioSense_As60xx*)	1
-../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:1011:20:void As6xx_Initialize_Configuration(ScioSense_As60xx*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:31:23:uint8_t As60xx_Get_Amount_Configuration_Registers()	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:36:24:uint16_t As60xx_Get_Configuration_Register_Address(ScioSense_As60xx*, uint8_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:45:24:uint32_t As60xx_Get_Configuration_Register_Setting(ScioSense_As60xx*, uint8_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:80:22:Result As60xx_Write_Opcode(ScioSense_As60xx*, uint8_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:88:22:Result As60xx_Write_Extended_Opcode(ScioSense_As60xx*, uint8_t, uint8_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:97:22:Result As60xx_Write_8_Bit_Address_Register(ScioSense_As60xx*, uint8_t, uint32_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:111:22:Result As60xx_Write_16_Bit_Address_Register(ScioSense_As60xx*, uint16_t, uint32_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:126:22:Result As60xx_Write_Nvram_Register(ScioSense_As60xx*, uint8_t, uint32_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:164:23:uint8_t As60xx_Read_1_Byte(ScioSense_As60xx*, uint8_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:202:24:uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx*, uint16_t)	3
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:230:20:void As60xx_Read_Register_N_Dword(ScioSense_As60xx*, uint16_t, uint32_t*, uint16_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:238:22:Result As60xx_Reset(ScioSense_As60xx*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:264:22:Result As60xx_Init(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:270:9:uint8_t As60xx_isConnected(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:275:22:Result As60xx_Write_Config(ScioSense_As60xx*)	4
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:314:22:Result As60xx_Start_Measurements(ScioSense_As60xx*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:351:24:uint32_t As60xx_GetSupplyVoltageMv(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:362:21:float As60xx_GetHsClkFreqHz(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:373:32:As60xx_Timestamp As60xx_GetTimestamp(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:383:23:uint8_t As60xx_HasAnyError(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:388:24:uint32_t As60xx_GetRawErrorFlags(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:393:23:uint8_t As60xx_HasErrorFlag(ScioSense_As60xx*, As60xx_ErrorFlag)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:398:22:Result As60xx_Disable_Watchdog(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:403:22:Result As60xx_Execute_Fw_Transaction(ScioSense_As60xx*, AS60XX_FwTransactionTypeDef)	11
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:455:22:Result As60xx_Fw_Handling_Phase_1(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:465:22:Result As60xx_Fw_Handling_Phase_2(ScioSense_As60xx*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:496:22:Result As60xx_Fw_Handling_Fw_Upload(ScioSense_As60xx*, uint8_t*, uint32_t, uint8_t*, uint32_t)	7
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:529:22:Result As60xx_Fw_Handling_Write_No_Lock(ScioSense_As60xx*, uint8_t*, uint32_t, uint8_t*, uint32_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:558:22:Result As60xx_Fw_Handling_Phase_4(ScioSense_As60xx*)	6
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:594:22:Result As60xx_Write_Fw(ScioSense_As60xx*, uint8_t*, int32_t, uint8_t*, int32_t)	4
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:624:21:AS60xx_Measure_Type As60xx_Update(ScioSense_As60xx*)	3
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:650:24:uint32_t As60xx_GetSumTofUp(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:655:24:uint32_t As60xx_GetSumTofDown(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:660:24:uint32_t As60xx_GetAmountHitsForSumTof(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:665:24:uint32_t As60xx_CalculateTDCTimePs(ScioSense_As60xx*, uint32_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:680:20:void AS60xx_CalculateTemperatureResistance2Wire(ScioSense_As60xx*, float*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:696:20:void AS60xx_CalculateTemperature2Wire(ScioSense_As60xx*, float*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:707:21:float AS60xx_CalculateInternalTemperature(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:715:24:uint32_t As60xx_AmplitudeToMv(uint32_t, uint32_t, uint32_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:724:24:uint32_t As60xx_GetAmplitudeUp(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:733:24:uint32_t As60xx_GetAmplitudeDown(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:742:21:float As60xx_PulseWidthRatioToFloat(uint32_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:749:21:float As60xx_GetPulseWidthRatioUp(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:754:21:float As60xx_GetPulseWidthRatioDown(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:759:20:void As60xx_GetTofValuesUp(ScioSense_As60xx*, uint32_t*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:767:20:void As60xx_GetTofValuesDown(ScioSense_As60xx*, uint32_t*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:910:20:void As60xx_Set_Configuration_Registers(ScioSense_As60xx*, uint32_t*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:919:20:void As60xx_Update_Parameters(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:1088:20:void As60xx_Update_Configuration(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:1275:20:void As6xx_Initialize_Configuration(ScioSense_As60xx*)	2
 ../Core/Src/ScioSense/src/lib/io/ScioSense_IOInterface_STM32.c:18:22:int8_t ScioSense_STM32_Spi_Write(void*, uint8_t*, uint16_t)	1
 ../Core/Src/ScioSense/src/lib/io/ScioSense_IOInterface_STM32.c:36:22:int8_t ScioSense_STM32_Spi_Read(void*, uint8_t*, uint16_t, uint8_t*, uint16_t)	1
 ../Core/Src/ScioSense/src/lib/io/ScioSense_IOInterface_STM32.c:57:20:void ScioSense_STM32_Wait(uint32_t)	1
-../Core/Src/ScioSense/src/as60xx.cpp:9:1:AS60xx::~AS60xx()	1
-../Core/Src/ScioSense/src/as60xx.cpp:9:1:virtual AS60xx::~AS60xx()	1
-../Core/Src/ScioSense/src/as60xx.cpp:11:1:AS60xx::AS60xx()	1
-../Core/Src/ScioSense/src/as60xx.cpp:16:6:virtual void AS60xx::begin(SPI_HandleTypeDef*, uint16_t, GPIO_TypeDef*)	1
-../Core/Src/ScioSense/src/as60xx.cpp:49:8:Result AS60xx::reset()	1
-../Core/Src/ScioSense/src/as60xx.cpp:54:8:Result AS60xx::writeConfig()	1
-../Core/Src/ScioSense/src/as60xx.cpp:59:8:Result AS60xx::startMeasurement()	1
-../Core/Src/ScioSense/src/as60xx.cpp:64:10:uint32_t AS60xx::getSupplyVoltageMv()	1
-../Core/Src/ScioSense/src/as60xx.cpp:69:7:float AS60xx::getHighSpeedClockFrequencyHz()	1
-../Core/Src/ScioSense/src/as60xx.cpp:74:18:As60xx_Timestamp AS60xx::getTimestamp()	1
-../Core/Src/ScioSense/src/as60xx.cpp:79:6:bool AS60xx::hasError()	1
-../Core/Src/ScioSense/src/as60xx.cpp:84:10:uint32_t AS60xx::getErrorRegister()	1
-../Core/Src/ScioSense/src/as60xx.cpp:89:6:bool AS60xx::hasErrorFlag(As60xx_ErrorFlag)	1
-../Core/Src/ScioSense/src/as60xx.cpp:94:13:const char* AS60xx::errorToString(As60xx_ErrorFlag)	1
-../Core/Src/ScioSense/src/as60xx.cpp:99:8:Result AS60xx::writeFW(uint8_t*, int32_t)	1
-../Core/Src/ScioSense/src/as60xx.cpp:106:6:bool AS60xx::init()	1
-../Core/Src/ScioSense/src/as60xx.cpp:113:6:virtual bool AS60xx::isConnected()	1
-../Core/Src/ScioSense/src/as60xx.cpp:118:21:AS60xx_Measure_Type AS60xx::update()	1
-../Core/Src/ScioSense/src/as60xx.cpp:123:10:uint32_t AS60xx::getSumTofUp()	1
-../Core/Src/ScioSense/src/as60xx.cpp:128:10:uint32_t AS60xx::getSumTofDown()	1
-../Core/Src/ScioSense/src/as60xx.cpp:133:10:uint32_t AS60xx::getAmountHitsForSumToF()	1
-../Core/Src/ScioSense/src/as60xx.cpp:138:7:float AS60xx::calculateTimeNs(uint32_t)	1
-../Core/Src/ScioSense/src/as60xx.cpp:143:10:uint32_t AS60xx::calculateTimePs(uint32_t)	1
-../Core/Src/ScioSense/src/as60xx.cpp:148:6:void AS60xx::getTemperatures2WireDegC(float*)	1
-../Core/Src/ScioSense/src/as60xx.cpp:153:7:float AS60xx::getInternalTemperatureDegC()	1
-../Core/Src/ScioSense/src/as60xx.cpp:158:10:uint32_t AS60xx::getAmplitudeUp()	1
-../Core/Src/ScioSense/src/as60xx.cpp:163:10:uint32_t AS60xx::getAmplitudeDown()	1
-../Core/Src/ScioSense/src/as60xx.cpp:168:7:float AS60xx::getPulseWidthRatioUp()	1
-../Core/Src/ScioSense/src/as60xx.cpp:173:7:float AS60xx::getPulseWidthRatioDown()	1
-../Core/Src/ScioSense/src/as60xx.cpp:178:6:void AS60xx::getTofValuesUp(uint32_t*)	1
-../Core/Src/ScioSense/src/as60xx.cpp:183:6:void AS60xx::getTofValuesDown(uint32_t*)	1
-../Core/Src/ScioSense/src/as60xx.cpp:188:6:void AS60xx::updateConfiguration()	1
-../Core/Src/ScioSense/src/as60xx.cpp:193:6:void AS60xx::setConfigurationRegisters(uint32_t*)	1
+../Core/Src/ScioSense/src/as60xx.cpp:25:1:AS60xx::~AS60xx()	1
+../Core/Src/ScioSense/src/as60xx.cpp:25:1:virtual AS60xx::~AS60xx()	1
+../Core/Src/ScioSense/src/as60xx.cpp:27:1:AS60xx::AS60xx()	1
+../Core/Src/ScioSense/src/as60xx.cpp:32:6:virtual void AS60xx::begin(SPI_HandleTypeDef*, uint16_t, GPIO_TypeDef*)	1
+../Core/Src/ScioSense/src/as60xx.cpp:45:8:Result AS60xx::reset()	1
+../Core/Src/ScioSense/src/as60xx.cpp:50:8:Result AS60xx::writeConfig()	1
+../Core/Src/ScioSense/src/as60xx.cpp:55:8:Result AS60xx::startMeasurement()	1
+../Core/Src/ScioSense/src/as60xx.cpp:60:10:uint32_t AS60xx::getSupplyVoltageMv()	1
+../Core/Src/ScioSense/src/as60xx.cpp:65:7:float AS60xx::getHighSpeedClockFrequencyHz()	1
+../Core/Src/ScioSense/src/as60xx.cpp:70:18:As60xx_Timestamp AS60xx::getTimestamp()	1
+../Core/Src/ScioSense/src/as60xx.cpp:75:6:bool AS60xx::hasError()	1
+../Core/Src/ScioSense/src/as60xx.cpp:80:10:uint32_t AS60xx::getErrorRegister()	1
+../Core/Src/ScioSense/src/as60xx.cpp:85:6:bool AS60xx::hasErrorFlag(As60xx_ErrorFlag)	1
+../Core/Src/ScioSense/src/as60xx.cpp:90:13:const char* AS60xx::errorToString(As60xx_ErrorFlag)	1
+../Core/Src/ScioSense/src/as60xx.cpp:95:8:Result AS60xx::writeFW(uint8_t*, int32_t, uint8_t*, int32_t)	1
+../Core/Src/ScioSense/src/as60xx.cpp:100:6:bool AS60xx::init()	1
+../Core/Src/ScioSense/src/as60xx.cpp:107:6:virtual bool AS60xx::isConnected()	1
+../Core/Src/ScioSense/src/as60xx.cpp:112:21:AS60xx_Measure_Type AS60xx::update()	1
+../Core/Src/ScioSense/src/as60xx.cpp:117:10:uint32_t AS60xx::getSumTofUp()	1
+../Core/Src/ScioSense/src/as60xx.cpp:122:10:uint32_t AS60xx::getSumTofDown()	1
+../Core/Src/ScioSense/src/as60xx.cpp:127:10:uint32_t AS60xx::getAmountHitsForSumToF()	1
+../Core/Src/ScioSense/src/as60xx.cpp:132:7:float AS60xx::calculateTimeNs(uint32_t)	1
+../Core/Src/ScioSense/src/as60xx.cpp:137:10:uint32_t AS60xx::calculateTimePs(uint32_t)	1
+../Core/Src/ScioSense/src/as60xx.cpp:142:6:void AS60xx::getTemperatures2WireDegC(float*)	1
+../Core/Src/ScioSense/src/as60xx.cpp:147:7:float AS60xx::getInternalTemperatureDegC()	1
+../Core/Src/ScioSense/src/as60xx.cpp:152:10:uint32_t AS60xx::getAmplitudeUp()	1
+../Core/Src/ScioSense/src/as60xx.cpp:157:10:uint32_t AS60xx::getAmplitudeDown()	1
+../Core/Src/ScioSense/src/as60xx.cpp:162:7:float AS60xx::getPulseWidthRatioUp()	1
+../Core/Src/ScioSense/src/as60xx.cpp:167:7:float AS60xx::getPulseWidthRatioDown()	1
+../Core/Src/ScioSense/src/as60xx.cpp:172:6:void AS60xx::getTofValuesUp(uint32_t*)	1
+../Core/Src/ScioSense/src/as60xx.cpp:177:6:void AS60xx::getTofValuesDown(uint32_t*)	1
+../Core/Src/ScioSense/src/as60xx.cpp:182:6:void AS60xx::updateConfiguration()	1
+../Core/Src/ScioSense/src/as60xx.cpp:187:6:void AS60xx::setConfigurationRegisters(uint32_t*)	1

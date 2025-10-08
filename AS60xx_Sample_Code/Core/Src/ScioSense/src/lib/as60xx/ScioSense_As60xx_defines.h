@@ -23,6 +23,12 @@
 #define AS60XX_AMOUNT_TOF_VALUES_REGISTERS          (10)                                            /* Amount of registers on the Frontend Data Buffer */
 #define AS60XX_AMOUNT_STATUS_REGISTERS              (15)                                            /* Amount of status & result registers */
 #define AS60XX_AMOUNT_ERROR_FLAGS                   (16)                                            /* Amount of error flags */
+#define AS6031F1_AMOUNT_OUTPUT_REGISTERS            (40)                                            /* Amount of output registers of the AS6031F1 firmware algorithms */
+#define AS6031F1_AMOUNT_ERROR_FLAGS                 (32)                                            /* Amount of error flags of the AS6031F1 firmware algorithms */
+
+#define AS60XX_FWC_START_INDEX                      (32)                                            /* Start address of FWC */
+#define AS60XX_FWD_START_INDEX                      (2)                                             /* Start address of FWD */
+#define AS60XX_FWD_END_INDEX                        (119)                                           /* End address of FWD */
 
 #define AS60XX_ZERO_CROSS_DETECTION_LSB_TO_MV       (0.88)                                          /* Conversion from the register value to mV for the zero cross detection level on registers 0x0DA and 0x0DB */
 #define AS60XX_MAX_ZERO_CROSS_DETECTION_VALUE_MV    (200.0)                                         /* Maximum value in mV that the registers 0x0DA and 0x0DB can represent */
@@ -30,6 +36,7 @@
 #define AS60XX_BOOTUP_COMM_RELEASE_TIME_MAX_MS      (94)                                            /* Maximum time before remote communication is released after power on */
 #define AS60XX_CHARGE_PUMP_UPLOADING                (20)                                            /* Time needed to increase the voltage on the charge pump to the desired level */
 #define AS60XX_SOFTWARE_RESET_TIME_MS               (3)                                             /* Mandatory time to wait after software reset in milliseconds */
+#define AS60XX_FW_CHECKSUM_CALCULATION_TIME_MS      (35)                                            /* Mandatory time to wait after starting a Firmware checksum calculation in milliseconds */
 #define AS60XX_FDB_US_PW_FRACTIONAL_LSB             (0.0078125)                                     /* Value of 1 LSB for the Pulse Width measurement fractional part */
 #define AS60XX_AMOUNT_POINTS_SPEED_SOUND_TABLE      (12)                                            /* Amount of points used in the speed of sound as function of temperature table */
 
@@ -161,7 +168,7 @@
 #define AS60XX_FDB_T4W2_M2AB_G1_ADDRESS             (0x9A)                                          /* Temperature port M2-AB Seq 2 */
 #define AS60XX_FDB_T4W2_M2AB_G2_ADDRESS             (0x9B)                                          /* Temperature port M2-AB Seq 2 */
 
-/*********  Bit definition for FDB array in case of TOF measurement  **********/
+/********  Byte definition for FDB array in case of TOF measurement  **********/
 #define AS60XX_FDB_US_TOF_SUM_OF_ALL_U_INDEX        (0)                                             /* Ultrasonic TOF Sum of All Value Up */
 #define AS60XX_FDB_US_PW_U_INDEX                    (1)                                             /* Ultrasonic Pulse Width Ratio Up */
 #define AS60XX_FDB_US_AM_U_INDEX                    (2)                                             /* Ultrasonic Amplitude Value Up */
@@ -191,7 +198,7 @@
 #define AS60XX_FDB_US_TOF_8_D_INDEX                 (26)                                             /* Ultrasonic TOF Down: Value 8 */
 #define AS60XX_FDB_US_TOF_9_D_INDEX                 (27)                                             /* Ultrasonic TOF Down: Value 9 */
 
-/******  Bit definition for FDB array in case of Temperature measurement  *******/
+/*****  Byte definition for FDB array in case of Temperature measurement  *******/
 #define AS60XX_FDB_TPM1_M1AB_RAB_G12_INDEX          (0)                                             /* Gain compensation Seq 1 */
 #define AS60XX_FDB_TPM1_RAB_G12_INDEX               (1)                                             /* Reference port REF-AB Seq 1 */
 #define AS60XX_FDB_TPM1_M1A_G12_INDEX               (2)                                             /* Temperature port M1-A Seq 1 */
@@ -209,7 +216,7 @@
 #define AS60XX_FDB_TPM2_MI_RM_G12_INDEX             (20)                                            /* Internal temperature compensation Seq 2 */
 #define AS60XX_FDB_TPM2_MI_M_G12_INDEX              (21)                                            /* Internal temperature measurement Seq 2 */
 
-/* Bit definition for FDB array in case of Four Wire Temperature measurement  */
+/* Byte definition for FDB array in case of Four Wire Temperature measurement  */
 #define AS60XX_FDB_T4W1_M1AB_RAB_G12_INDEX          (0)                                             /* Gain compensation Seq 1 */
 #define AS60XX_FDB_T4W1_RAB_G12_INDEX               (1)                                             /* Reference port REF-AB Seq 1 */
 #define AS60XX_FDB_T4W1_M1AB_G12_INDEX              (2)                                             /* Temperature port M1-AB Seq 1 */
@@ -239,7 +246,7 @@
 #define AS60XX_FDB_T4W2_M2AB_G1_INDEX               (26)                                            /* Temperature port M2-AB Seq 2 */
 #define AS60XX_FDB_T4W2_M2AB_G2_INDEX               (27)                                            /* Temperature port M2-AB Seq 2 */
 
-/*************  Bit definition for CR array in AS60xx struct  *****************/
+/************  Byte definition for CR array in AS60xx struct  *****************/
 #define AS60XX_CR_ARRAY_CR_WD_DIS_INDEX             (0)                                             /* Index of the configuration array in the AS60xx struct that corresponds to register 0xC0 */
 #define AS60XX_CR_ARRAY_CR_IFC_CTRL_INDEX           (1)                                             /* Index of the configuration array in the AS60xx struct that corresponds to register 0xC1 */
 #define AS60XX_CR_ARRAY_CR_GP_CTRL_INDEX            (2)                                             /* Index of the configuration array in the AS60xx struct that corresponds to register 0xC2 */
@@ -261,7 +268,7 @@
 #define AS60XX_CR_ARRAY_SHR_FHL_U_INDEX             (18)                                            /* Index of the configuration array in the AS60xx struct that corresponds to register 0xDA */
 #define AS60XX_CR_ARRAY_SHR_FHL_D_INDEX             (19)                                            /* Index of the configuration array in the AS60xx struct that corresponds to register 0xDB */
 
-/***********  Bit definition for Status array in AS60xx struct  ***************/
+/**********  Byte definition for Status array in AS60xx struct  ***************/
 #define AS60XX_STATUS_SRR_IRQ_FLAG_INDEX            (0)                                             /* Index of the status array in the AS60xx struct that corresponds to register 0xE0 */
 #define AS60XX_STATUS_SRR_ERR_FLAG_INDEX            (1)                                             /* Index of the status array in the AS60xx struct that corresponds to register 0xE1 */
 #define AS60XX_STATUS_SRR_FEP_STF_INDEX             (2)                                             /* Index of the status array in the AS60xx struct that corresponds to register 0xE2 */
@@ -1083,6 +1090,7 @@
 #define AS60XX_D3_FWDU_CS_ERR_Msk                   (0x1UL << AS60XX_D3_FWDU_CS_ERR_Pos)            /*!< 0x00002000 */
 #define AS60XX_D3_FWDU_CS_ERR                       (1)                                             /*!< FWDU checksum error */
 #define AS60XX_D3_FWA_CS_ERR_Pos                    (14U)
+#define AS60XX_D3_FWA_CS_ERR_Msk                    (0x1FUL << AS60XX_D3_FWA_CS_ERR_Pos)            /*!< 0x0007C000 */
 #define AS60XX_D3_FWA_CS_ERR_0                      (0x01)                                          /*!< FWA_CS_ERR[18:14]Different FWA checksum errors */
 #define AS60XX_D3_FWA_CS_ERR_1                      (0x02)                                          /*!< FWA_CS_ERR[18:14]Different FWA checksum errors */
 #define AS60XX_D3_FWA_CS_ERR_2                      (0x04)                                          /*!< FWA_CS_ERR[18:14]Different FWA checksum errors */

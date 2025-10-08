@@ -1,4 +1,5 @@
 "./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.o"
+"./Core/Src/ScioSense/src/as6031f1.o"
 "./Core/Src/ScioSense/src/as60xx.o"
 "./Core/Src/ScioSense/src/lib/io/ScioSense_IOInterface_STM32.o"
 "./Core/Src/main.o"

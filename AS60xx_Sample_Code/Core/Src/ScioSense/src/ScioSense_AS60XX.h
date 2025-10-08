@@ -2,5 +2,6 @@
 #define SCIOSENSE_AS60XX_LIBRARY_H
 
 #include "as60xx.h"
+#include "as6031f1.h"
 
 #endif //SCIOSENSE_AS60XX_LIBRARY_H

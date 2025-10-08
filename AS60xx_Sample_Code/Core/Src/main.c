@@ -28,6 +28,9 @@
 #ifdef EXAMPLE_ULTRASOUND_AND_TEMPERATURE
   #include "ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.h"
 #endif
+#ifdef EXAMPLE_AS6031F1
+  #include "ScioSense/03_AS6031F1_Example.h"
+#endif
 
 /* USER CODE END Includes */
 
@@ -103,18 +106,6 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   AS60xx_Example_Setup(&huart1, &hspi1);
-/*
-  switch (AS60XX_EXAMPLE)
-  {
-    case 1:
-      AS60xx_Example_Code_Ultrasound_and_Temperature_Setup(&huart1, &hspi1);
-      break;
-    default:
-      AS60xx_Example_Code_Basic_Ultrasound_Setup(&huart1, &hspi1);
-  }
- */
-  
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -125,16 +116,6 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
       AS60xx_Example_Loop(&huart1, &hspi1);
-/*
-    switch (AS60XX_EXAMPLE)
-    {
-      case 1:
-        AS60xx_Example_Code_Ultrasound_and_Temperature_Loop(&huart1, &hspi1);
-        break;
-      default:
-        AS60xx_Example_Code_Basic_Ultrasound_Loop(&huart1, &hspi1);
-    }
-*/
   }
   /* USER CODE END 3 */
 }
@@ -323,11 +304,17 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SSN_GPIO_Port, SSN_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : INTN_Pin GPIO2_Pin */
-  GPIO_InitStruct.Pin = INTN_Pin|GPIO2_Pin;
+  /*Configure GPIO pin : INTN_Pin */
+  GPIO_InitStruct.Pin = INTN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(INTN_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : GPIO2_Pin */
+  GPIO_InitStruct.Pin = GPIO2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIO2_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SSN_Pin */
   GPIO_InitStruct.Pin = SSN_Pin;
@@ -365,8 +352,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

@@ -1,9 +1,10 @@
-# STM32 project examples for ScioSense AS6031 and AS6040 ultrasound sensors
+# STM32 project examples for ScioSense AS6031, AS6031F1 and AS6040 ultrasound sensors
 The AS60xx sensor family from [ScioSense](https://www.sciosense.com/) offers ultrasonic flow converters for the next generation of ultrasonic water, gas, and heat meters. The sensors come in the size QFN48 package with digital SPI interface. This enables new use cases in single-chip solution provided ready flow information, system design compatible with mechanical meters, high flexibility in choice for external μC handling communication and further data management, precision down to low flow rates and leakage detection.
 
 ## Links
 * Latest datasheet and application notes are on [ScioSense site](https://www.sciosense.com/ultrasonic-flow-converters/)
 * Buy the AS6031 on [Mouser](https://www2.mouser.com/ProductDetail/ScioSense/AS6031-BQFM?qs=DPoM0jnrROWSi1b8OH79RQ%3D%3D) or [Digikey](https://www.digikey.com/en/products/detail/sciosense/as6031-bqfm/17282629)
+* Buy the AS6031F1 on [Mouser](https://www.mouser.com/ProductDetail/ScioSense/AS6031F1-BQFM?qs=Rp5uXu7WBW%2FW%2FA74%2Fu76VQ%3D%3D) or [Digikey](https://www.digikey.com/en/products/detail/sciosense/AS6031F1-BQFM/17282627)
 * Buy the AS6040 on [Mouser](https://www2.mouser.com/ProductDetail/ScioSense/AS6040-BQFM?qs=DPoM0jnrROWLsLNoAXnDuQ%3D%3D) or [Digikey](https://www.digikey.com/en/products/detail/sciosense/AS6040-BQFM/17282632)
 * Buy the AS6031 ST evaluation kit on [Mouser](https://www2.mouser.com/ProductDetail/ScioSense/AS6031_ST_NS-V1.0?qs=DRkmTr78QAQPNfU21SQXMg%3D%3D)
 * Buy the AS6040 ST evaluation kit on [Mouser](https:///www2.mouser.com/ProductDetail/ScioSense/AS6040_ST_NS-V1.0?qs=DRkmTr78QATH6T6ez%2F%252BIaw%3D%3D)
@@ -52,6 +53,8 @@ The project has two examples:
   - Reports average Time of Flight (ToF), received amplitude, and pulse width ratio 
 - 02_AS60xx_Example_Ultrasound_and_Temperature
   - Reports average ToF, 2-wire temperature measurements, and sensor internal temperature. Also indicates if some specific errors were detected
+- 03_AS6031F1
+  - Measures the calculated accumulated flow, instant flow, and temperature from the AS6031F1. No configuration is written into the device
 
 There is one Build configuration for each example.
 
@@ -143,4 +146,60 @@ Timestamp[hh:mm:ss]:0:00:08 AvgTofSumUp[ns]:68331.83    AvgTofSumDn[ns]:68293.48
 Timestamp[hh:mm:ss]:0:00:08 AvgTofSumUp[ns]:68331.83    AvgTofSumDn[ns]:68293.48    TofDiff[ns]:38.34   TempH[degC]:52.775  TempC[degC]:22.206  TempInt[degC]:18.127
 Timestamp[hh:mm:ss]:0:00:08 AvgTofSumUp[ns]:68332.42    AvgTofSumDn[ns]:68294.38    TofDiff[ns]:38.04   TempH[degC]:52.775  TempC[degC]:22.206  TempInt[degC]:18.127
 Timestamp[hh:mm:ss]:0:00:08 AvgTofSumUp[ns]:68314.57    AvgTofSumDn[ns]:68269.83    TofDiff[ns]:44.74   TempH[degC]:52.775  TempC[degC]:22.206  TempInt[degC]:18.127
+```
+
+### *03_AS6031F1*
+This example measures the output values of the AS6031F1 algorithm, without changing the algorithm parameters or configuration. The accumulated flow, filtered flow rate, and water temperature calculated from the ultrasound speed are reported. If an error was detected (low signal or air bubbles), it will be printed after the data.
+
+The flow was started right after the system was powered up.
+```
+Starting AS6031F1 03_AS6031F1_Example demo on STM32...
+AS6031F1 initialized properly
+AccumulatedVolume[m3]:0.000000  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000000  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000000  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000003  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000008  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000016  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000025  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000037  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000049  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000062  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000076  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000090  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000105  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.29
+AccumulatedVolume[m3]:0.000121  FlowRate[l_per_hr]:0.000        Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000137  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000153  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000169  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000185  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000202  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.32
+AccumulatedVolume[m3]:0.000218  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.33
+AccumulatedVolume[m3]:0.000235  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.33
+AccumulatedVolume[m3]:0.000251  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.34
+AccumulatedVolume[m3]:0.000268  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.35
+AccumulatedVolume[m3]:0.000284  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.35
+AccumulatedVolume[m3]:0.000301  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.35
+AccumulatedVolume[m3]:0.000318  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.35
+AccumulatedVolume[m3]:0.000335  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.35
+AccumulatedVolume[m3]:0.000352  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.34
+AccumulatedVolume[m3]:0.000369  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.34
+AccumulatedVolume[m3]:0.000386  FlowRate[l_per_hr]:246.379      Temperature[degC]:14.33
+AccumulatedVolume[m3]:0.000403  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.33
+AccumulatedVolume[m3]:0.000420  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.32
+AccumulatedVolume[m3]:0.000437  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000454  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000471  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000489  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000506  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000523  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000541  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.30
+AccumulatedVolume[m3]:0.000558  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000575  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000592  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000609  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.31
+AccumulatedVolume[m3]:0.000626  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.32
+AccumulatedVolume[m3]:0.000643  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.32
+AccumulatedVolume[m3]:0.000660  FlowRate[l_per_hr]:260.888      Temperature[degC]:14.33
+AccumulatedVolume[m3]:0.000677  FlowRate[l_per_hr]:276.375      Temperature[degC]:14.33
 ```

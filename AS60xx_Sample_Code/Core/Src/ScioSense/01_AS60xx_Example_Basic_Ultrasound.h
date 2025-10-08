@@ -23,9 +23,7 @@ extern "C" {
 #endif
 
 void AS60xx_Example_Setup(UART_HandleTypeDef *uart, SPI_HandleTypeDef *spi);
-//void AS60xx_Example_Code_Basic_Ultrasound_Setup(UART_HandleTypeDef *uart, SPI_HandleTypeDef *spi);
 void AS60xx_Example_Loop();
-//void AS60xx_Example_Code_Basic_Ultrasound_Loop();
 
 #ifdef __cplusplus
 }

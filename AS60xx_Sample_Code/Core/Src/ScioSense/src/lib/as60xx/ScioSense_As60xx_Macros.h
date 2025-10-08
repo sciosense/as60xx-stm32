@@ -295,6 +295,22 @@
 * @}
 */
 
+/** @defgroup AS60XX_DE register
+* @{
+*/
+#define AS60XX_DE_SYS_RST_SET(__Val__)              (((__Val__) << AS60XX_DE_SYS_RST_Pos)               & AS60XX_DE_SYS_RST_Msk)            /*!< Default = 0x0 */
+#define AS60XX_DE_SYS_INIT_SET(__Val__)             (((__Val__) << AS60XX_DE_SYS_INIT_Pos)              & AS60XX_DE_SYS_INIT_Msk)           /*!< Default = 0x0 */
+#define AS60XX_DE_FW_STORE_ALL_SET(__Val__)         (((__Val__) << AS60XX_DE_FW_STORE_ALL_Pos)          & AS60XX_DE_FW_STORE_ALL_Msk)       /*!< Default = 0x0 */
+#define AS60XX_DE_FW_STORE_LOCK_SET(__Val__)        (((__Val__) << AS60XX_DE_FW_STORE_LOCK_Pos)         & AS60XX_DE_FW_STORE_LOCK_Msk)      /*!< Default = 0x0 */
+#define AS60XX_DE_FW_ERASE_SET(__Val__)             (((__Val__) << AS60XX_DE_FW_ERASE_Pos)              & AS60XX_DE_FW_ERASE_Msk)           /*!< Default = 0x0 */
+#define AS60XX_DE_FWC_RECALL_SET(__Val__)           (((__Val__) << AS60XX_DE_FWC_RECALL_Pos)            & AS60XX_DE_FWC_RECALL_Msk)         /*!< Default = 0x0 */
+#define AS60XX_DE_FWD_RECALL_SET(__Val__)           (((__Val__) << AS60XX_DE_FWD_RECALL_Pos)            & AS60XX_DE_FWD_RECALL_Msk)         /*!< Default = 0x0 */
+#define AS60XX_DE_FWC_STORE_SET(__Val__)            (((__Val__) << AS60XX_DE_FWC_STORE_Pos)             & AS60XX_DE_FWC_STORE_Msk)          /*!< Default = 0x0 */
+#define AS60XX_DE_FWD_STORE_SET(__Val__)            (((__Val__) << AS60XX_DE_FWD_STORE_Pos)             & AS60XX_DE_FWD_STORE_Msk)          /*!< Default = 0x0 */
+/**
+* @}
+*/
+
 /**
 * @}
 */

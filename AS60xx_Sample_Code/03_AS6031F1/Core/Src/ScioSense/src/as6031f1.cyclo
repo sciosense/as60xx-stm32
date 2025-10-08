@@ -1,0 +1,26 @@
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:97:22:Result As60xx_Write_8_Bit_Address_Register(ScioSense_As60xx*, uint8_t, uint32_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:202:24:uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx*, uint16_t)	3
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:230:20:void As60xx_Read_Register_N_Dword(ScioSense_As60xx*, uint16_t, uint32_t*, uint16_t)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:775:22:Result As6031F1_Update(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:782:23:int32_t As6031F1_Parse_Flow_Volume_Int(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:787:24:uint32_t As6031F1_Parse_Flow_Volume_Frac(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:792:21:float As6031F1_Parse_Flow_Volume_M3(ScioSense_As60xx*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:819:23:int32_t As6031F1_Parse_Flow_Rate_Filtered_Raw(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:824:21:float As6031F1_Parse_Flow_Rate_Filtered_L_Per_Hr(ScioSense_As60xx*)	2
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:834:24:uint32_t As6031F1_Parse_Temperature_Raw(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:839:21:float As6031F1_Parse_Temperature_Deg_C(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:874:24:uint32_t As6031F1_Parse_Error_Flags(ScioSense_As60xx*)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:879:24:uint32_t As6031F1_Parse_Value(ScioSense_As60xx*, uint8_t)	1
+../Core/Src/ScioSense/src/lib/as60xx/ScioSense_As60xx.inl.h:885:23:uint8_t As6031F1_HasErrorFlag(ScioSense_As60xx*, As6031F1_ErrorFlag)	1
+../Core/Src/ScioSense/src/as6031f1.cpp:39:8:Result AS6031f1::updateF1()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:44:10:uint32_t AS6031f1::getF1VolumeIntegerPartRaw()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:49:10:uint32_t AS6031f1::getF1VolumeFractionalPartRaw()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:54:10:uint32_t AS6031f1::getF1InstantFlowRaw()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:59:10:uint32_t AS6031f1::getF1TemperatureRaw()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:64:10:uint32_t AS6031f1::getF1RamIndex(uint8_t)	1
+../Core/Src/ScioSense/src/as6031f1.cpp:69:10:uint32_t AS6031f1::getF1ErrorFlags()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:74:7:float AS6031f1::getF1VolumeM3()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:79:7:float AS6031f1::getF1InstantFlowLPerHr()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:84:7:float AS6031f1::getF1TemperatureDegC()	1
+../Core/Src/ScioSense/src/as6031f1.cpp:89:6:bool AS6031f1::hasF1ErrorFlag(As6031F1_ErrorFlag)	1
+../Core/Src/ScioSense/src/as6031f1.cpp:95:13:const char* AS6031f1::errorF1ToString(As6031F1_ErrorFlag)	1

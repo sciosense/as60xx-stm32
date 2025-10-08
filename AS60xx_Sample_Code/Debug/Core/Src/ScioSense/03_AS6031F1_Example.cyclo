@@ -1,0 +1,10 @@
+../Core/Src/ScioSense/src/as6031f1.h:8:7:AS6031f1::AS6031f1()	1
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:13:17:void AS60xx_Example_Setup(UART_HandleTypeDef*, SPI_HandleTypeDef*)	2
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:35:17:void AS60xx_Example_Loop()	4
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:75:15:Result SerialPrint(const char*)	5
+../Core/Src/ScioSense/src/as6031f1.h:8:7:AS6031f1::~AS6031f1()	1
+../Core/Src/ScioSense/src/as6031f1.h:8:7:virtual AS6031f1::~AS6031f1()	1
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:98:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:98:1:void __static_initialization_and_destruction_1()	1
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:98:1:cpp)	1
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp:98:1:cpp)	1

@@ -1,6 +1,3 @@
-#ifndef AS60XX_EXAMPLE_ULTRASOUND_AND_TEMPERATURE_CPP
-#define AS60XX_EXAMPLE_ULTRASOUND_AND_TEMPERATURE_CPP
-
 #include "02_AS60xx_Example_Ultrasound_and_Temperature.h"
 #include "src/ScioSense_AS60XX.h"
 #include <cstdio>
@@ -128,7 +125,7 @@ extern "C" void AS60xx_Example_Loop()
                 SerialPrint("\n");
             }
 
-            for( uint8_t errorIdx=0; errorIdx<amountErrorsToCheck; errorIdx++ )
+            for( uint8_t errorIdx = 0; errorIdx < amountErrorsToCheck; errorIdx++ )
             {
                 if( as60xx.hasErrorFlag(errorsToCheck[errorIdx]) )
                 {
@@ -167,5 +164,3 @@ static Result SerialPrint(const char str[])
   }
   return result;
 }
-
-#endif // AS60XX_EXAMPLE_ULTRASOUND_AND_TEMPERATURE_CPP

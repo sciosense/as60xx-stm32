@@ -6,15 +6,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cpp \
-../Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.cpp 
+../Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.cpp \
+../Core/Src/ScioSense/03_AS6031F1_Example.cpp 
 
 OBJS += \
 ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.o \
-./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.o 
+./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.o \
+./Core/Src/ScioSense/03_AS6031F1_Example.o 
 
 CPP_DEPS += \
 ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.d \
-./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.d 
+./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.d \
+./Core/Src/ScioSense/03_AS6031F1_Example.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +27,7 @@ Core/Src/ScioSense/%.o Core/Src/ScioSense/%.su Core/Src/ScioSense/%.cyclo: ../Co
 clean: clean-Core-2f-Src-2f-ScioSense
 
 clean-Core-2f-Src-2f-ScioSense:
-	-$(RM) ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cyclo ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.d ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.o ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.su ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.cyclo ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.d ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.o ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.su
+	-$(RM) ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.cyclo ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.d ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.o ./Core/Src/ScioSense/01_AS60xx_Example_Basic_Ultrasound.su ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.cyclo ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.d ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.o ./Core/Src/ScioSense/02_AS60xx_Example_Ultrasound_and_Temperature.su ./Core/Src/ScioSense/03_AS6031F1_Example.cyclo ./Core/Src/ScioSense/03_AS6031F1_Example.d ./Core/Src/ScioSense/03_AS6031F1_Example.o ./Core/Src/ScioSense/03_AS6031F1_Example.su
 
 .PHONY: clean-Core-2f-Src-2f-ScioSense
 

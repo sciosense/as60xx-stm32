@@ -1,8 +1,6 @@
-#ifndef SCIOSENSE_AS60XX_C
-#define SCIOSENSE_AS60XX_C
+#ifndef SCIOSENSE_AS60XX_INL_H
+#define SCIOSENSE_AS60XX_INL_H
 
-#include "ScioSense_As60xx.h"
-#include "ScioSense_As60xx_defines.h"
 #include "ScioSense_As60xx_Macros.h"
 
 #define read(dataToWrite, lenToWrite, dataToRead, lenToRead)    as60xx->io.read(as60xx->io.config, (uint8_t*)(dataToWrite), (lenToWrite), (uint8_t*)(dataToRead), (lenToRead))
@@ -96,8 +94,9 @@ static inline Result As60xx_Write_Extended_Opcode(ScioSense_As60xx* as60xx, uint
     return (Result)write(valuesToWrite, 2);
 }
 
-static inline Result As60xx_Write_8_Bit_Address_Register(ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address, uint32_t dataToWrite)
+static inline Result As60xx_Write_8_Bit_Address_Register(ScioSense_As60xx* as60xx, uint8_t address, uint32_t dataToWrite)
 {
+    uint8_t opcode = RC_RAA_WR;
     uint8_t valuesToWrite[6];
     valuesToWrite[0] = opcode;
     valuesToWrite[1] = address;
@@ -109,8 +108,9 @@ static inline Result As60xx_Write_8_Bit_Address_Register(ScioSense_As60xx* as60x
     return (Result)write(valuesToWrite, 6);
 }
 
-static inline Result As60xx_Write_16_Bit_Address_Register(ScioSense_As60xx* as60xx, uint8_t opcode, uint16_t address, uint32_t dataToWrite)
+static inline Result As60xx_Write_16_Bit_Address_Register(ScioSense_As60xx* as60xx, uint16_t address, uint32_t dataToWrite)
 {
+    uint8_t opcode = RC_RAA_WR;
     uint8_t valuesToWrite[7];
     valuesToWrite[0] = opcode;
     valuesToWrite[1] = (uint8_t)(address>>8);
@@ -123,11 +123,34 @@ static inline Result As60xx_Write_16_Bit_Address_Register(ScioSense_As60xx* as60
     return (Result)write(valuesToWrite, 7);
 }
 
-static inline Result As60xx_Write_N_Registers(ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address, uint32_t* dataToWrite, uint16_t len)
+static inline Result As60xx_Write_Nvram_Register(ScioSense_As60xx* as60xx, uint8_t address, uint32_t dataToWrite)
 {
+    uint8_t opcode = RC_RAA_WR_NVRAM;
+    uint8_t valuesToWrite[6];
+    valuesToWrite[0] = opcode;
+    valuesToWrite[1] = (uint8_t)(address);
+    valuesToWrite[3] = (uint8_t)(dataToWrite>>24);
+    valuesToWrite[4] = (uint8_t)(dataToWrite>>16);
+    valuesToWrite[5] = (uint8_t)(dataToWrite>>8);
+    valuesToWrite[6] = (uint8_t)(dataToWrite);
+
+    return (Result)write(valuesToWrite, 7);
+}
+
+static inline Result As60xx_Write_N_Registers(ScioSense_As60xx* as60xx, uint16_t address, uint32_t* dataToWrite, uint16_t len)
+{
+    uint8_t opcode = RC_RAA_WR;
+    if( address >= 0x100 )
+    {
+        // The request is to read from the NVRAM
+        address = address & 0x00FF;
+        opcode  = RC_RAA_WR_NVRAM;
+    }
+
     uint8_t valuesToWrite[2];
     valuesToWrite[0] = opcode;
-    valuesToWrite[1] = address;
+    valuesToWrite[1] = (uint8_t)address;
+
     Result result = (Result)write(valuesToWrite, 2);
 
     if( result == RESULT_OK )
@@ -176,13 +199,21 @@ static inline uint32_t As60xx_Read_1_Dword(ScioSense_As60xx* as60xx, uint8_t opc
     return readValue;
 }
 
-static inline uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address)
+static inline uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx* as60xx, uint16_t address)
 {
     uint8_t dataToWrite[2];
     uint8_t dataRead[4];
 
+    uint8_t opcode = RC_RAA_RD;
+    if( address >= 0x100 )
+    {
+        // The request is to read from the NVRAM
+        opcode  = RC_RAA_RD_NVRAM;
+        address = address & 0x00FF;
+    }
+
     dataToWrite[0] = opcode;
-    dataToWrite[1] = address;
+    dataToWrite[1] = (uint8_t)address;
 
     Result result = (Result)read(dataToWrite, 2, dataRead, 4);
 
@@ -196,11 +227,11 @@ static inline uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx* as60xx, ui
     return readValue;
 }
 
-static inline void As60xx_Read_Register_N_Dword(ScioSense_As60xx* as60xx, uint8_t opcode, uint8_t address, uint32_t* outputData, uint16_t amountRegistersToRead)
+static inline void As60xx_Read_Register_N_Dword(ScioSense_As60xx* as60xx, uint16_t address, uint32_t* outputData, uint16_t amountRegistersToRead)
 {
     for( uint16_t i=0; i<amountRegistersToRead; i++ )
     {
-        outputData[i] = As60xx_Read_Register_1_Dword(as60xx, opcode, address+i);
+        outputData[i] = As60xx_Read_Register_1_Dword(as60xx, address+i);
     }
 }
 
@@ -214,7 +245,7 @@ static inline Result As60xx_Reset(ScioSense_As60xx* as60xx)
     As60xx_Write_Opcode(as60xx, RC_SYS_RST);
     wait(25);
 
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_EXC_ADDRESS, AS60XX_DD_IF_CLR_CLEAR | AS60XX_DD_EF_CLR_CLEAR );
+    As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_EXC_ADDRESS, AS60XX_DD_IF_CLR_CLEAR | AS60XX_DD_EF_CLR_CLEAR );
     wait(25);
 
     As60xx_Write_Opcode(as60xx, RC_BM_RLS);
@@ -254,13 +285,13 @@ static inline Result As60xx_Write_Config(ScioSense_As60xx* as60xx)
     uint8_t registersToWrite = As60xx_Get_Amount_Configuration_Registers();
     for ( uint8_t idx=0; idx<registersToWrite; idx++ )
     {
-	As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, As60xx_Get_Configuration_Register_Address(as60xx, idx), As60xx_Get_Configuration_Register_Setting(as60xx, idx));
+	As60xx_Write_8_Bit_Address_Register(as60xx, As60xx_Get_Configuration_Register_Address(as60xx, idx), As60xx_Get_Configuration_Register_Setting(as60xx, idx));
     }
 
     uint8_t configurationCorrect = 1;
     for ( uint8_t idx=1; idx<registersToWrite; idx++ )
     {
-        configurationCorrect &= ( As60xx_Get_Configuration_Register_Setting(as60xx, idx) == As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, As60xx_Get_Configuration_Register_Address(as60xx, idx)) );
+        configurationCorrect &= ( As60xx_Get_Configuration_Register_Setting(as60xx, idx) == As60xx_Read_Register_1_Dword(as60xx, As60xx_Get_Configuration_Register_Address(as60xx, idx)) );
     }
 
     As60xx_Write_Opcode(as60xx, RC_IF_CLR);
@@ -302,51 +333,51 @@ static inline Result As60xx_Start_Measurements(ScioSense_As60xx* as60xx)
 
 static inline Result As60xx_Stop_Measurements(ScioSense_As60xx* as60xx)
 {
-  Result result = RESULT_IO_ERROR;
-  As60xx_Write_Opcode(as60xx, RC_MCT_OFF);
-  As60xx_Write_Opcode(as60xx, RC_IF_CLR);
-  As60xx_Write_Opcode(as60xx, RC_SYS_INIT);
-  wait(AS60XX_SOFTWARE_RESET_TIME_MS);
+    Result result = RESULT_IO_ERROR;
+    As60xx_Write_Opcode(as60xx, RC_MCT_OFF);
+    As60xx_Write_Opcode(as60xx, RC_IF_CLR);
+    As60xx_Write_Opcode(as60xx, RC_SYS_INIT);
+    wait(AS60XX_SOFTWARE_RESET_TIME_MS);
 
-  As60xx_Write_Opcode(as60xx, RC_RF_CLR);
-  uint8_t sysStatus = As60xx_Read_1_Byte(as60xx, RC_RD_STATUS);
-  if( sysStatus & AS60XX_SYS_STATUS_MCT_STATE_Msk )
-  {
-    result = RESULT_OK;
-  }
-  return result;
+    As60xx_Write_Opcode(as60xx, RC_RF_CLR);
+    uint8_t sysStatus = As60xx_Read_1_Byte(as60xx, RC_RD_STATUS);
+    if( sysStatus & AS60XX_SYS_STATUS_MCT_STATE_Msk )
+    {
+        result = RESULT_OK;
+    }
+    return result;
 }
 
 static inline uint32_t As60xx_GetSupplyVoltageMv(ScioSense_As60xx* as60xx)
 {
-  As60xx_Write_Extended_Opcode(as60xx, RC_MT_REQ, AS60XX_EC_MT_REQ_VCC_VOLTAGE_MEASUREMENT);
+    As60xx_Write_Extended_Opcode(as60xx, RC_MT_REQ, AS60XX_EC_MT_REQ_VCC_VOLTAGE_MEASUREMENT);
   
-  wait(110);     // Wait for the measurement to complete
+    wait(110);     // Wait for the measurement to complete
   
-  uint32_t measurement = As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_VCC_VAL_ADDRESS);
+    uint32_t measurement = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_VCC_VAL_ADDRESS);
   
-  return (2150 + measurement * 25);
+    return (2150 + measurement * 25);
 }
 
 static inline float As60xx_GetHsClkFreqHz(ScioSense_As60xx* as60xx)
 {
-  As60xx_Write_Extended_Opcode(as60xx, RC_MT_REQ, AS60XX_EC_MT_REQ_HIGH_SPEED_CLOCK_CAL);
+    As60xx_Write_Extended_Opcode(as60xx, RC_MT_REQ, AS60XX_EC_MT_REQ_HIGH_SPEED_CLOCK_CAL);
   
-  wait(110);     // Wait for the measurement to complete
+    wait(110);     // Wait for the measurement to complete
   
-  float highSpeedClockCalibration = (float)As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_HCC_VAL_ADDRESS);
+    float highSpeedClockCalibration = (float)As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_HCC_VAL_ADDRESS);
   
-  return (highSpeedClockCalibration / 8.0);
+    return (highSpeedClockCalibration / 8.0);
 }
 
 static inline As60xx_Timestamp As60xx_GetTimestamp(ScioSense_As60xx* as60xx)
 {
-  As60xx_Timestamp timestamp;
-  timestamp.hours   =           (as60xx->Status[AS60XX_STATUS_SRR_TS_HOUR_INDEX]     & AS60XX_E6_TS_HOUR_Msk)   >> AS60XX_E6_TS_HOUR_Pos;
-  timestamp.minutes = (uint8_t)((as60xx->Status[AS60XX_STATUS_SRR_TS_MIN_SEC_INDEX]  & AS60XX_E7_TS_MIN_Msk)    >> AS60XX_E7_TS_MIN_Pos);
-  timestamp.seconds = (uint8_t)((as60xx->Status[AS60XX_STATUS_SRR_TS_MIN_SEC_INDEX]  & AS60XX_E7_TS_SEC_Msk)    >> AS60XX_E6_TS_HOUR_Pos);
+    As60xx_Timestamp timestamp;
+    timestamp.hours   =           (as60xx->Status[AS60XX_STATUS_SRR_TS_HOUR_INDEX]     & AS60XX_E6_TS_HOUR_Msk)   >> AS60XX_E6_TS_HOUR_Pos;
+    timestamp.minutes = (uint8_t)((as60xx->Status[AS60XX_STATUS_SRR_TS_MIN_SEC_INDEX]  & AS60XX_E7_TS_MIN_Msk)    >> AS60XX_E7_TS_MIN_Pos);
+    timestamp.seconds = (uint8_t)((as60xx->Status[AS60XX_STATUS_SRR_TS_MIN_SEC_INDEX]  & AS60XX_E7_TS_SEC_Msk)    >> AS60XX_E6_TS_HOUR_Pos);
   
-  return timestamp;
+    return timestamp;
 }
 
 static inline uint8_t As60xx_HasAnyError(ScioSense_As60xx* as60xx)
@@ -364,120 +395,253 @@ static inline uint8_t As60xx_HasErrorFlag(ScioSense_As60xx* as60xx, As60xx_Error
     return (as60xx->Status[AS60XX_STATUS_SRR_ERR_FLAG_INDEX]  >> errorFlag ) & 1;
 }
 
-static inline void As60xx_Write_Fw(ScioSense_As60xx* as60xx, uint8_t* FWC, int32_t FWC_Length)
+static inline Result As60xx_Disable_Watchdog(ScioSense_As60xx* as60xx)
+{
+    return As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_CR_WD_DIS_ADDRESS, AS60XX_C0_WS_DIS);
+}
+
+static inline Result As60xx_Execute_Fw_Transaction(ScioSense_As60xx* as60xx, AS60XX_FwTransactionTypeDef fwTransactionAction)
+{
+    Result result = RESULT_OK;
+
+    uint32_t fwActionToTake = 0;
+    switch( fwTransactionAction )
+    {
+        case AS60XX_FW_STORE_ALL:
+            fwActionToTake = AS60XX_DE_FW_STORE_ALL_SET(AS60XX_DE_FW_STORE_ALL_REQUEST);
+            break;
+        case AS60XX_FW_STORE_AND_LOCK:
+            fwActionToTake = AS60XX_DE_FW_STORE_LOCK_SET(AS60XX_DE_FW_STORE_LOCK_REQUEST);
+            break;
+        case AS60XX_FW_ERASE_AND_UNLOCK:
+            fwActionToTake = AS60XX_DE_FW_ERASE_SET(AS60XX_DE_FW_ERASE_REQUEST);
+            break;
+        case AS60XX_FW_CODE_RECALL:
+            fwActionToTake = AS60XX_DE_FWC_RECALL_SET(AS60XX_DE_FWC_RECALL_REQUEST);
+            break;
+        case AS60XX_FW_DATA_RECALL:
+            fwActionToTake = AS60XX_DE_FWD_RECALL_SET(AS60XX_DE_FWD_RECALL_REQUEST);
+            break;
+        case AS60XX_FW_CODE_STORE:
+            fwActionToTake = AS60XX_DE_FWC_STORE_SET(AS60XX_DE_FWC_STORE_REQUEST);
+            break;
+        case AS60XX_FW_DATA_STORE:
+            fwActionToTake = AS60XX_DE_FWD_STORE_SET(AS60XX_DE_FWD_STORE_REQUEST);
+            break;
+        default:
+            result = RESULT_INVALID;
+    }
+
+    if( result == RESULT_OK )
+    {
+        result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_RC_RLS_ADDRESS, 0x50F5B8CA);       // Perform Recall of Firmware Data
+        result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_RC_ADDRESS, fwActionToTake);       // Execute FW Transaction
+        wait(1);
+        uint32_t interruptFlags = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_IRQ_FLAG_ADDRESS);        // Check that FW transaction has been finished
+        if( !(interruptFlags & AS60XX_E0_FW_TRANS_FNS_Msk) )
+        {
+            wait(10);
+            interruptFlags = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_IRQ_FLAG_ADDRESS);             // Check that FW transaction has been finished
+            if( !(interruptFlags & AS60XX_E0_FW_TRANS_FNS_Msk) )
+            {
+                result = RESULT_IO_ERROR;
+            }
+        }
+    }
+
+    return result;
+}
+
+static inline Result As60xx_Fw_Handling_Phase_1(ScioSense_As60xx* as60xx)
+{
+    // Phase 1: Wait time (dependent on start option)
+    Result result = RESULT_IO_ERROR;
+    result =    As60xx_Write_Opcode(as60xx, RC_BM_REQ);                                            // Request Bus Master
+    result |=   As60xx_Write_Opcode(as60xx, RC_SYS_RST);                                           // Execute System Reset
+    wait(AS60XX_SOFTWARE_RESET_TIME_MS);
+    return result;
+}
+
+static inline Result As60xx_Fw_Handling_Phase_2(ScioSense_As60xx* as60xx)
+{
+    // Phase 2: Preparation (common for all procedures)
+    Result result = RESULT_IO_ERROR;
+    result |= As60xx_Write_Opcode(as60xx, RC_BM_REQ);                                                   // Request Bus Master
+    result |= As60xx_Disable_Watchdog(as60xx);
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_CR_TRIM2_ADDRESS,      0x40100000);    // Set RESTART_EN
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_CR_MRG_TS_ADDRESS,     0x00001000);    // Disable BG,Charge Pump & Post Processing settings and set Measure Cycle Time to max. value
+    result |= As60xx_Write_Opcode(as60xx, RC_SV_INIT);                                                  // Execute Supervisor Init
+    wait(1);
+    result |= As60xx_Write_Extended_Opcode(as60xx, RC_MT_REQ, 0x00);                                    // Request Dummy Measurement Task
+    wait(1);
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_EXC_ADDRESS,       0x00000007);    // Clear Interrupt, Error & FEP Status Flag
+    result |= As60xx_Write_Opcode(as60xx, RC_RF_CLR);                                                   // Execute Reset Flag Clear in SYS_STATUS
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_CR_IEH_ADDRESS,        0x000AF000);    // Enable important interrupt & error flags in CR_IEH
+    result |= As60xx_Write_Opcode(as60xx, RC_BM_RLS);                                                   // Release Bus Master
+
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_RC_RLS_ADDRESS,    0x50F5B8CA);    // Perform Recall of Firmware Data
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_RC_ADDRESS,        0x00100000);    // Perform Recall of Firmware Code
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_RC_RLS_ADDRESS,    0x50F5B8CA);    // Perform Recall of Firmware Data
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_RC_ADDRESS,        0x00080000);    // Perform Recall of Firmware Code
+    
+    uint32_t srrIrqFlag = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_IRQ_FLAG_ADDRESS);            // Read interrupts flag
+    if( !(srrIrqFlag & AS60XX_E0_FW_TRANS_FNS_Pos) )
+    {
+        result |= RESULT_INVALID;                                                                       // Check that FW transaction has been finished
+    }
+
+    return result;
+}
+
+static inline Result As60xx_Fw_Handling_Fw_Upload(ScioSense_As60xx* as60xx, uint8_t* FWC, uint32_t FWC_Length, uint8_t* FWD, uint32_t FWD_Length)
+{
+    Result result = RESULT_OK;
+    uint32_t fwRange = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_FWU_RNG_ADDRESS);            // Get range of FW user code
+    if( FWC_Length > fwRange )
+    {
+        FWC_Length = fwRange;
+    }
+    // Write FWC
+    for (uint32_t i = AS60XX_FWC_START_INDEX; i < fwRange; i++)
+    {
+        if( result == RESULT_OK )
+        {
+            result |= As60xx_Write_16_Bit_Address_Register(as60xx, i, FWC[i]);                      // Writing FWC, bytewise with two byte address
+        }
+    }
+
+    if( FWD_Length > AS60XX_FWD_END_INDEX )
+    {
+        FWD_Length = AS60XX_FWD_END_INDEX;
+    }
+    // Write FWD
+    for (uint32_t i = AS60XX_FWD_START_INDEX; i < FWD_Length; i++)
+    {
+        if( result == RESULT_OK )
+        {
+            result |= As60xx_Write_Nvram_Register(as60xx, i, FWD[i]);                               // Writing FWD, bytewise with one byte address
+        }
+    }
+
+    return result;
+}
+
+static inline Result As60xx_Fw_Handling_Write_No_Lock(ScioSense_As60xx* as60xx, uint8_t* FWC, uint32_t FWC_Length, uint8_t* FWD, uint32_t FWD_Length)
+{
+    Result result = As60xx_Fw_Handling_Fw_Upload(as60xx, FWC, FWC_Length, FWD, FWD_Length);
+
+    if( result == RESULT_OK )
+    {
+        result |= As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_STORE_ALL);                       // Store FW code and FW data without lock
+    }
+
+    return result;
+}
+
+static inline Result As60xx_Fw_Handling_Write_Lock(ScioSense_As60xx* as60xx, uint8_t* FWC, uint32_t FWC_Length, uint8_t* FWD, uint32_t FWD_Length)
+{
+    Result result = As60xx_Fw_Handling_Fw_Upload(as60xx, FWC, FWC_Length, FWD, FWD_Length);
+
+    if( result == RESULT_OK )
+    {
+        result |= As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_STORE_AND_LOCK);                  // Store FW code and FW data and lock
+    }
+
+    return result;
+}
+
+static inline Result As60xx_Fw_Handling_Erase(ScioSense_As60xx* as60xx)
+{
+    return As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_ERASE_AND_UNLOCK);              // Erase and unlock the firmware
+}
+
+static inline Result As60xx_Fw_Handling_Phase_4(ScioSense_As60xx* as60xx)
+{
+    Result result = RESULT_OK;
+
+    result |= As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_CODE_RECALL);                         // Perform Recall of Firmware Code
+    result |= As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_DATA_RECALL);                         // Perform Recall of Firmware Data
+
+    result |= As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_GPO_ADDRESS, 0x0007F000);      // Initialize checksum error flags setting the FW error checks in SHR_GPO
+    result |= As60xx_Write_Opcode(as60xx, RC_IF_CLR);                                               // Clear interrupt flags
+    
+    result |= As60xx_Write_Opcode(as60xx, RC_FW_CHKSUM);                                            // Start the checking of error flags
+    wait(AS60XX_FW_CHECKSUM_CALCULATION_TIME_MS);                                                   // Wait for checksum calculation to complete
+
+    uint32_t interruptFlags = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_IRQ_FLAG_ADDRESS);    // Check that checksum generation has been finished
+    if( !(interruptFlags & AS60XX_E0_CHKSUM_FNS_Msk) )
+    {
+        wait(AS60XX_FW_CHECKSUM_CALCULATION_TIME_MS);
+        interruptFlags = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SRR_IRQ_FLAG_ADDRESS);         // Check again that the checksum generation has been finished
+        if( !(interruptFlags & AS60XX_E0_CHKSUM_FNS_Msk) )
+        {
+            result = RESULT_IO_ERROR;
+        }
+    }
+
+    uint32_t retentionCheckRegister = As60xx_Read_Register_1_Dword(as60xx, AS60XX_SHR_GPO_ADDRESS);
+    uint32_t fwCodeChecksumError    = retentionCheckRegister & AS60XX_D3_FWCU_CS_ERR_Msk;
+    uint32_t fwDataChecksumError    = retentionCheckRegister & AS60XX_D3_FWDU_CS_ERR_Msk;
+    uint32_t fwOtherChecksumError   = retentionCheckRegister & AS60XX_D3_FWA_CS_ERR_Msk;
+    if( fwCodeChecksumError || fwDataChecksumError || fwOtherChecksumError )
+    {
+        result = RESULT_CHECKSUM_ERROR;
+    }
+    
+    return result;
+}
+
+static inline Result As60xx_Write_Fw(ScioSense_As60xx* as60xx, uint8_t* FWC, int32_t FWC_Length, uint8_t* FWD, int32_t FWD_Length)
 {
     // FW Handling Procedures
     // Datasheet Appendix, section 15.7
-    // Phase 1: Wait time (dependent on start option)
-    // Phase 2: Preparation (common for all procedures)
-    // Phase 3: FW Update (different for procedures [A], [B], [C], [D] )
-    // Phase 4: FW Retention Check (common for all procedures)
 
     // Phase1: Initial Wait Time
-    As60xx_Write_Opcode(as60xx, RC_BM_REQ);
-    As60xx_Write_Opcode(as60xx, RC_SYS_RST);
-    wait(AS60XX_SOFTWARE_RESET_TIME_MS);
+    Result result = As60xx_Fw_Handling_Phase_1(as60xx);
 
     // Phase 2: Preparation
-    As60xx_Write_Opcode(as60xx, RC_BM_REQ);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xC0, 0x48DBA399);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xCD, 0x40100000);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xC6, 0x00001000);
-    As60xx_Write_Opcode(as60xx, RC_SV_INIT);
-    wait(1);
-    As60xx_Write_Extended_Opcode(as60xx, RC_MT_REQ, 0x00);
-    wait(1);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xDD, 0x00000007);
-    As60xx_Write_Opcode(as60xx, RC_RF_CLR);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xC4, 0x000AF000);
-    As60xx_Write_Opcode(as60xx, RC_BM_RLS);
-
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xDF, 0x50F5B8CA);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xDE, 0x00100000);
-    while( ( As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS) & AS60XX_E0_TSQ_FNS ) == 0 ) {};
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, 0xDE, 0x00080000);
-    while( ( As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS) & AS60XX_E0_TSQ_FNS ) == 0 ) {};
-
-    // Phase 3: FW Update
-    As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_FWU_RNG_ADDRESS);
-
-    // Write FWC
-    for (int32_t i = 20; i < FWC_Length; i++)
+    if( result == RESULT_OK )
     {
-	    As60xx_Write_8_Bit_Address_Register(as60xx, RC_FWC_WR, i, FWC[i]);  // Writing FWC, bytewise with two byte address
+        result = As60xx_Fw_Handling_Phase_2(as60xx);
     }
 
-    // Write FWD
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x00, 0x0000AB6A);    // Writing Firmware Code User, Checksum
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x01, 0x00000556);    // Writing Firmware Data User, Checksum
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x02, 0x00010000);    // Writing FWD_SIMPLE_SCALE (fd16)
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x03, 0x00000000);    // Writing FWD_ZERO_OFFSET
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x04, 0x051EB852);    // Writing FWD_MAX_TOF_DIFF
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x05, 0xFAE147AE);    // Writing FWD_NEG_TOF_DIFF_LIMIT
-
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x5B, 0x0000000A);    // Writing FWD_R_PULSE_PER_LITER
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x5C, 0x000003E8);    // Writing FWD_R_PULSE_MAX_FLOW
-
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x67, 0x00000000);    // Writing FWD_USM_RLS_DLY_INIT
-
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR_NVRAM, 0x6B, 0xABCD7654);    // Writing Boot-Loader Release Code
-
-    // Update Config 0x6C ... 0x77 in NVRAM
-    // without CR_TRIMx and without SHR_...
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x6C, 0x48DBA399); // CR_WD_DIS Watchdog Disable
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x6D, 0x00800101); // CR_IFC_CTRL Interfaces Control
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x6E, 0x00100044); // CR_GP_CTRL General Purpose Control
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x6F, 0x20000003); // CR_USM_OPT USM Options
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x70, 0x001002A7); // CR_IEH Interrupt & Error Handling
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x71, 0x2046EE08); // CR_CPM Clock & Power Management
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x72, 0x0101A080); // CR_MRG_TS Measure Rate Generator & Task Sequencer
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x73, 0x00140000); // CR_TPM Temperature Measurement
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x74, 0x207807A4); // CR_USM_PRC USM Processing
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x75, 0x60150202); // CR_USM_FRC USM Fire & Receive Control
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x76, 0x00002A0E); // CR_USM_TOF Time Of Flight Rate init value
-    //As60xx_Write_8_Bit_Address_Register(RC_RAA_WR_NVRAM, 0x77, 0x23209E71); // CR_USM_AM Amplitude and FHL
-
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_RC_RLS_ADDRESS, 0x50F5B8CA);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_RC_ADDRESS, 0x00010000);
-    while( ( As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS) & AS60XX_E0_TSQ_FNS ) == 0 ) {};
+    // Phase 3: FW Update
+    if( result == RESULT_OK )
+    {
+        result = As60xx_Fw_Handling_Write_No_Lock(as60xx, FWC, FWC_Length, FWD, FWD_Length);
+    }
 
     // Phase 4: FW Retention Check
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_RC_RLS_ADDRESS, 0x50F5B8CA);
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_RC_ADDRESS, 0x00100000);
-    while( ( As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS) & AS60XX_E0_TSQ_FNS ) == 0 ) {};
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_RC_ADDRESS, 0x00080000);
-    while( ( As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS) & AS60XX_E0_TSQ_FNS ) == 0 ) {};
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_GPO_ADDRESS, 0x0007F000);
-    wait(35);  // After initialization checksum error flags, delay of at least 34ms are needed _MH
-    As60xx_Write_Opcode(as60xx, RC_FW_CHKSUM);
-    while( ( As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS) & AS60XX_E0_TSQ_FNS ) == 0 ) {};
-    As60xx_Read_Register_1_Dword(as60xx, RC_RAA_RD, AS60XX_SHR_GPO_ADDRESS);
+    if( result == RESULT_OK )
+    {
+        result = As60xx_Fw_Handling_Phase_4(as60xx);
+        As60xx_Reset(as60xx);
+    }
 
-    // END
-    As60xx_Write_Opcode(as60xx, RC_SYS_RST);
+    return result;
 }
 
 AS60xx_Measure_Type As60xx_Update(ScioSense_As60xx* as60xx)
 {
     uint8_t newData = AS60XX_NO_MEASUREMENT;
 
-    As60xx_Read_Register_N_Dword(as60xx, RC_RAA_RD, AS60XX_SRR_IRQ_FLAG_ADDRESS, as60xx->Status, AS60XX_AMOUNT_STATUS_REGISTERS);
+    As60xx_Read_Register_N_Dword(as60xx, AS60XX_SRR_IRQ_FLAG_ADDRESS, as60xx->Status, AS60XX_AMOUNT_STATUS_REGISTERS);
     
     if( 1 )	// !(as60xx->Status[AS60XX_STATUS_SRR_ERR_FLAG_INDEX])
     {
         if( as60xx->Status[AS60XX_STATUS_SRR_FEP_STF_INDEX] & AS60XX_E2_TM_UPD_Msk )
         {
-            As60xx_Read_Register_N_Dword(as60xx, RC_RAA_RD, AS60XX_FDB_ADDRESS, as60xx->FrontendDataBufferTemperature, AS60XX_AMOUNT_FDB_REGISTERS);
+            As60xx_Read_Register_N_Dword(as60xx, AS60XX_FDB_ADDRESS, as60xx->FrontendDataBufferTemperature, AS60XX_AMOUNT_FDB_REGISTERS);
             newData = AS60XX_TEMPERATURE_MEASUREMENT;
         }
         else if( as60xx->Status[AS60XX_STATUS_SRR_FEP_STF_INDEX] & (AS60XX_E2_US_U_UPD_Msk | AS60XX_E2_US_D_UPD_Msk | AS60XX_E2_US_TOF_UPD_Msk) )
         {
-            As60xx_Read_Register_N_Dword(as60xx, RC_RAA_RD, AS60XX_FDB_ADDRESS, as60xx->FrontendDataBufferUltrasound, AS60XX_AMOUNT_FDB_REGISTERS);
+            As60xx_Read_Register_N_Dword(as60xx, AS60XX_FDB_ADDRESS, as60xx->FrontendDataBufferUltrasound, AS60XX_AMOUNT_FDB_REGISTERS);
             newData = AS60XX_TOF_MEASUREMENT;
         }    
     }
 
-    As60xx_Write_8_Bit_Address_Register(as60xx, RC_RAA_WR, AS60XX_SHR_EXC_ADDRESS, AS60XX_DD_FES_CLR_CLEAR);
+    As60xx_Write_8_Bit_Address_Register(as60xx, AS60XX_SHR_EXC_ADDRESS, AS60XX_DD_FES_CLR_CLEAR);
     As60xx_Write_Opcode(as60xx, RC_IF_CLR);
 
     return newData;
@@ -606,6 +770,121 @@ static inline void As60xx_GetTofValuesDown(ScioSense_As60xx* as60xx, uint32_t* t
     {
         tofValues[idx] = as60xx->FrontendDataBufferUltrasound[AS60XX_FDB_US_TOF_0_D_INDEX + idx];
     }
+}
+
+static inline Result As6031F1_Update(ScioSense_As60xx* as6031f1)
+{
+    As60xx_Read_Register_N_Dword(as6031f1, AS6031F1_RAM_RAM_R_FLOW_VOLUME_INT, as6031f1->F1AlgorithmOutput, AS6031F1_AMOUNT_OUTPUT_REGISTERS);
+    Result result = As60xx_Write_8_Bit_Address_Register(as6031f1, AS60XX_SHR_EXC_ADDRESS, AS60XX_DD_IF_CLR_CLEAR | AS60XX_DD_EF_CLR_CLEAR | AS60XX_DD_FES_CLR_CLEAR );
+    return result;
+}
+
+static inline int32_t As6031F1_Parse_Flow_Volume_Int(ScioSense_As60xx* as60xx)
+{
+    return (int32_t)(as60xx->F1AlgorithmOutput[AS6031F1_VOLUME_INT_INDEX]);
+}
+
+static inline uint32_t As6031F1_Parse_Flow_Volume_Frac(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_VOLUME_FRAC_INDEX];
+}
+
+static inline float As6031F1_Parse_Flow_Volume_M3(ScioSense_As60xx* as60xx)
+{
+    float flowIntegerPartM3 = (float)As6031F1_Parse_Flow_Volume_Int(as60xx);
+    float flowFracPartM3 = (float)As6031F1_Parse_Flow_Volume_Frac(as60xx);
+    float flowVolumeM3 = flowIntegerPartM3 + flowFracPartM3 / AS6031F1_FD32_DIVIDER_FLOAT;
+    if( flowVolumeM3 < 0 )
+    {
+        flowVolumeM3 = 0;
+    }
+    return flowVolumeM3;
+}
+
+static inline int32_t As6031F1_Parse_Flow_Rate_Raw(ScioSense_As60xx* as60xx)
+{
+    return (int32_t)(as60xx->F1AlgorithmOutput[AS6031F1_UNFILTERED_FLOW_LPH_INDEX]);
+}
+
+static inline float As6031F1_Parse_Flow_Rate_L_Per_Hr(ScioSense_As60xx* as60xx)
+{
+    float flowRateLPerH = ((float)As6031F1_Parse_Flow_Rate_Raw(as60xx)) / AS6031F1_FD16_DIVIDER_FLOAT;
+    if( flowRateLPerH < 0 )
+    {
+        flowRateLPerH = 0;
+    }
+    return flowRateLPerH;
+}
+
+static inline int32_t As6031F1_Parse_Flow_Rate_Filtered_Raw(ScioSense_As60xx* as60xx)
+{
+    return (int32_t)(as60xx->F1AlgorithmOutput[AS6031F1_FILTERED_FLOW_LPH_INDEX]);
+}
+
+static inline float As6031F1_Parse_Flow_Rate_Filtered_L_Per_Hr(ScioSense_As60xx* as60xx)
+{
+    float flowRateLPerH = ((float)As6031F1_Parse_Flow_Rate_Filtered_Raw(as60xx)) / AS6031F1_FD16_DIVIDER_FLOAT;
+    if( flowRateLPerH < 0 )
+    {
+        flowRateLPerH = 0;
+    }
+    return flowRateLPerH;
+}
+
+static inline uint32_t As6031F1_Parse_Temperature_Raw(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_TEMPERATURE_INDEX];
+}
+
+static inline float As6031F1_Parse_Temperature_Deg_C(ScioSense_As60xx* as60xx)
+{
+    return ( ((float)As6031F1_Parse_Temperature_Raw(as60xx)) / AS6031F1_FD16_DIVIDER_FLOAT );
+}
+
+static inline uint32_t As6031F1_Parse_Sound_Vel_Raw(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_SOUND_VEL_INDEX];
+}
+
+static inline float As6031F1_Parse_Sound_Vel_M_Per_S(ScioSense_As60xx* as60xx)
+{
+    return ( ((float)As6031F1_Parse_Sound_Vel_Raw(as60xx)) / AS6031F1_FD8_DIVIDER_FLOAT );
+}
+
+static inline uint32_t As6031F1_Parse_Flow_Speed_Raw(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_FLOW_SPEED_INDEX];
+}
+
+static inline float As6031F1_Parse_Flow_Speed_M_Per_S(ScioSense_As60xx* as60xx)
+{
+    return ( ((float)As6031F1_Parse_Flow_Speed_Raw(as60xx)) / AS6031F1_FD16_DIVIDER_FLOAT );
+}
+
+static inline uint32_t As6031F1_Parse_Tof_Diff_Raw(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_TOF_DIFF_INDEX];
+}
+
+static inline uint32_t As6031F1_Parse_Tof_Sum_Raw(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_TOF_SUM_INDEX];
+}
+
+static inline uint32_t As6031F1_Parse_Error_Flags(ScioSense_As60xx* as60xx)
+{
+    return as60xx->F1AlgorithmOutput[AS6031F1_ERROR_FLAGS_INDEX];
+}
+
+static inline uint32_t As6031F1_Parse_Value(ScioSense_As60xx* as60xx, uint8_t index)
+{
+    index = index % AS6031F1_AMOUNT_OUTPUT_REGISTERS;
+    return as60xx->F1AlgorithmOutput[index];
+}
+
+static inline uint8_t As6031F1_HasErrorFlag(ScioSense_As60xx* as60xx, As6031F1_ErrorFlag errorFlag)
+{
+    return (as60xx->F1AlgorithmOutput[AS6031F1_ERROR_FLAGS_INDEX]  >> errorFlag ) & 1;
 }
 
 static inline float As60xx_CalculateFluidSpeed(uint32_t tofUs_ps, uint32_t tofDn_ps, float speedSound_mpers, float distance_m)
@@ -1188,4 +1467,4 @@ static inline void As6xx_Initialize_Configuration(ScioSense_As60xx* as60xx)
 #undef write
 #undef wait
 
-#endif // SCIOSENSE_AS60XX_C
+#endif // SCIOSENSE_AS60XX_INL_H

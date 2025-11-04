@@ -552,7 +552,7 @@ static inline Result As60xx_Fw_Handling_Write_Lock(ScioSense_As60xx* as60xx, uin
 
 static inline Result As60xx_Fw_Handling_Erase(ScioSense_As60xx* as60xx)
 {
-    return As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_ERASE_AND_UNLOCK);              // Erase and unlock the firmware
+    return As60xx_Execute_Fw_Transaction(as60xx, AS60XX_FW_ERASE_AND_UNLOCK);                       // Erase and unlock the firmware
 }
 
 static inline Result As60xx_Fw_Handling_Phase_4(ScioSense_As60xx* as60xx)
@@ -1368,7 +1368,7 @@ static inline void As6xx_Initialize_Configuration(ScioSense_As60xx* as60xx)
   as60xx->Param.CR5.LBD_TH              = 0;                            /*!< Low battery detection threshold */
   as60xx->Param.CR5.TSV_UPD_MODE        = 0;                            /*!< Time stamp update mode */
   as60xx->Param.CR5.BF_SEL              = 0;                            /*!< Base Frequency Select */
-  as60xx->Param.CR5.CHP_HV_SEL          = 1;         			/*!< Selection of charge pump voltage */
+  as60xx->Param.CR5.CHP_HV_SEL          = 1;         			        /*!< Selection of charge pump voltage */
   as60xx->Param.CR5.NOT_USED_28         = AS60XX_C5_NOT_USED_28;        /*!< Mandatory setting: b0 */
   as60xx->Param.CR5.TI_PATH_SEL         = 0;                            /*!< Transducer Fire Buffer Impedance */
   as60xx->Param.CR5.NOT_USED_31         = AS60XX_C5_NOT_USED_31;        /*!< Mandatory setting: b0 */

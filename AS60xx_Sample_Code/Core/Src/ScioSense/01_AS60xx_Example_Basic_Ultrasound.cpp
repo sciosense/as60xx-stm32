@@ -212,7 +212,7 @@ void SetConfigurationAS60XX_Demo_1MHz_water_meter_FHL(AS60xx* as60xx)
     as60xx->Param.CR9.FBG_MODE             = AS60XX_C9_FBG_MODE_LOW_PHASE_INSERTION;
     as60xx->Param.CR9.FBG_PHASE_INS        = AS60XX_C9_FBG_PHASE_INS_1;
     as60xx->Param.CR9.FBG_BURST_PRE        = 22;
-    as60xx->Param.CR9.FBG_BURST_POST       = 0;                              // THIS IS NOT ALLOWED!! Should be 1 to 63!!
+    as60xx->Param.CR9.FBG_BURST_POST       = 0;
     as60xx->Param.CR9.NOT_USED_28          = 0;
     as60xx->Param.CR9.NOT_USED_29          = AS60XX_C9_NOT_USED_29;
     as60xx->Param.CR9.TOF_HIT_MODE         = AS60XX_C9_TOF_HIT_MODE_GP30;
@@ -223,7 +223,7 @@ void SetConfigurationAS60XX_Demo_1MHz_water_meter_FHL(AS60xx* as60xx)
     as60xx->Param.CR10.TOF_HIT_START       = 8;
     as60xx->Param.CR10.TOF_HIT_IGN         = AS60XX_CA_TOF_HIT_IGN_0_HITS;
     as60xx->Param.CR10.TOF_HIT_SUM_NO      = 10;
-    as60xx->Param.CR10.TOF_HIT_END         = 127;                            // Because CR9.TOF_HIT_MODE was set to GP30, has to be put to 127
+    as60xx->Param.CR10.TOF_HIT_END         = 127;
     as60xx->Param.CR10.NOT_USED_21_20      = 0;
     as60xx->Param.CR10.TOF_EDGE_MODE       = AS60XX_CA_TOF_EDGE_MODE_POS_EDGE;
     as60xx->Param.CR10.TOF_RATE_INIT       = 1;
@@ -239,7 +239,7 @@ void SetConfigurationAS60XX_Demo_1MHz_water_meter_FHL(AS60xx* as60xx)
     as60xx->Param.CR11.PGA_TRIM            = AS60XX_CB_PGA_TRIM_2_V_PER_V;
     as60xx->Param.CR11.PGA_EN_MODE         = 0;
     as60xx->Param.CR11.PGA_MODE            = AS60XX_CB_PGA_MODE_ENABLED;
-    as60xx->Param.CR11.NOT_USED_22         = 0;                              // AS6030 says it should be 0, AS6040 says it should be 1
+    as60xx->Param.CR11.NOT_USED_22         = 0;
     as60xx->Param.CR11.AM_PD_START_MODE    = AS60XX_CB_AM_PD_START_MODE_US_RELEASE;
     as60xx->Param.CR11.ZCD_FHL_INIT        = 35;
 

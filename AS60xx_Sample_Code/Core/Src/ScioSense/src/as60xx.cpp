@@ -36,10 +36,10 @@ void AS60xx::begin(SPI_HandleTypeDef* spi, uint16_t cs_pin, GPIO_TypeDef* port)
     spiConfig.cs_pin        = cs_pin;
     spiConfig.port          = port;
 
-    io.read    = ScioSense_STM32_Spi_Read;
-    io.write   = ScioSense_STM32_Spi_Write;
-    io.wait    = ScioSense_STM32_Wait;
-    io.config  = &spiConfig;
+    io.transfer = ScioSense_STM32_Spi_Transfer;
+    io.write    = ScioSense_STM32_Spi_Write_Data;
+    io.wait     = ScioSense_STM32_Wait;
+    io.config   = &spiConfig;
 }
 
 Result AS60xx::reset()

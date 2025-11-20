@@ -179,24 +179,24 @@
 #define AS60XX_FDB_US_AMC_VL_INDEX                  (7)                                             /* Ultrasonic Amplitude Calibrate Value Low */
 #define AS60XX_FDB_US_TOF_0_U_INDEX                 (8)                                             /* Ultrasonic TOF Up: Value 0 */
 #define AS60XX_FDB_US_TOF_1_U_INDEX                 (9)                                             /* Ultrasonic TOF Up: Value 1 */
-#define AS60XX_FDB_US_TOF_2_U_INDEX                 (10)                                             /* Ultrasonic TOF Up: Value 2 */
-#define AS60XX_FDB_US_TOF_3_U_INDEX                 (11)                                             /* Ultrasonic TOF Up: Value 3 */
-#define AS60XX_FDB_US_TOF_4_U_INDEX                 (12)                                             /* Ultrasonic TOF Up: Value 4 */
-#define AS60XX_FDB_US_TOF_5_U_INDEX                 (13)                                             /* Ultrasonic TOF Up: Value 5 */
-#define AS60XX_FDB_US_TOF_6_U_INDEX                 (14)                                             /* Ultrasonic TOF Up: Value 6 */
-#define AS60XX_FDB_US_TOF_7_U_INDEX                 (15)                                             /* Ultrasonic TOF Up: Value 7 */
-#define AS60XX_FDB_US_TOF_8_U_INDEX                 (16)                                             /* Ultrasonic TOF Up: Value 8 */
-#define AS60XX_FDB_US_TOF_9_U_INDEX                 (17)                                             /* Ultrasonic TOF Up: Value 9 */
-#define AS60XX_FDB_US_TOF_0_D_INDEX                 (18)                                             /* Ultrasonic TOF Down: Value 0 */
-#define AS60XX_FDB_US_TOF_1_D_INDEX                 (19)                                             /* Ultrasonic TOF Down: Value 1 */
-#define AS60XX_FDB_US_TOF_2_D_INDEX                 (20)                                             /* Ultrasonic TOF Down: Value 2 */
-#define AS60XX_FDB_US_TOF_3_D_INDEX                 (21)                                             /* Ultrasonic TOF Down: Value 3 */
-#define AS60XX_FDB_US_TOF_4_D_INDEX                 (22)                                             /* Ultrasonic TOF Down: Value 4 */
-#define AS60XX_FDB_US_TOF_5_D_INDEX                 (23)                                             /* Ultrasonic TOF Down: Value 5 */
-#define AS60XX_FDB_US_TOF_6_D_INDEX                 (24)                                             /* Ultrasonic TOF Down: Value 6 */
-#define AS60XX_FDB_US_TOF_7_D_INDEX                 (25)                                             /* Ultrasonic TOF Down: Value 7 */
-#define AS60XX_FDB_US_TOF_8_D_INDEX                 (26)                                             /* Ultrasonic TOF Down: Value 8 */
-#define AS60XX_FDB_US_TOF_9_D_INDEX                 (27)                                             /* Ultrasonic TOF Down: Value 9 */
+#define AS60XX_FDB_US_TOF_2_U_INDEX                 (10)                                            /* Ultrasonic TOF Up: Value 2 */
+#define AS60XX_FDB_US_TOF_3_U_INDEX                 (11)                                            /* Ultrasonic TOF Up: Value 3 */
+#define AS60XX_FDB_US_TOF_4_U_INDEX                 (12)                                            /* Ultrasonic TOF Up: Value 4 */
+#define AS60XX_FDB_US_TOF_5_U_INDEX                 (13)                                            /* Ultrasonic TOF Up: Value 5 */
+#define AS60XX_FDB_US_TOF_6_U_INDEX                 (14)                                            /* Ultrasonic TOF Up: Value 6 */
+#define AS60XX_FDB_US_TOF_7_U_INDEX                 (15)                                            /* Ultrasonic TOF Up: Value 7 */
+#define AS60XX_FDB_US_TOF_8_U_INDEX                 (16)                                            /* Ultrasonic TOF Up: Value 8 */
+#define AS60XX_FDB_US_TOF_9_U_INDEX                 (17)                                            /* Ultrasonic TOF Up: Value 9 */
+#define AS60XX_FDB_US_TOF_0_D_INDEX                 (18)                                            /* Ultrasonic TOF Down: Value 0 */
+#define AS60XX_FDB_US_TOF_1_D_INDEX                 (19)                                            /* Ultrasonic TOF Down: Value 1 */
+#define AS60XX_FDB_US_TOF_2_D_INDEX                 (20)                                            /* Ultrasonic TOF Down: Value 2 */
+#define AS60XX_FDB_US_TOF_3_D_INDEX                 (21)                                            /* Ultrasonic TOF Down: Value 3 */
+#define AS60XX_FDB_US_TOF_4_D_INDEX                 (22)                                            /* Ultrasonic TOF Down: Value 4 */
+#define AS60XX_FDB_US_TOF_5_D_INDEX                 (23)                                            /* Ultrasonic TOF Down: Value 5 */
+#define AS60XX_FDB_US_TOF_6_D_INDEX                 (24)                                            /* Ultrasonic TOF Down: Value 6 */
+#define AS60XX_FDB_US_TOF_7_D_INDEX                 (25)                                            /* Ultrasonic TOF Down: Value 7 */
+#define AS60XX_FDB_US_TOF_8_D_INDEX                 (26)                                            /* Ultrasonic TOF Down: Value 8 */
+#define AS60XX_FDB_US_TOF_9_D_INDEX                 (27)                                            /* Ultrasonic TOF Down: Value 9 */
 
 /*****  Byte definition for FDB array in case of Temperature measurement  *******/
 #define AS60XX_FDB_TPM1_M1AB_RAB_G12_INDEX          (0)                                             /* Gain compensation Seq 1 */
@@ -302,19 +302,19 @@
 #define AS60XX_C1_PI_TPW_7                          (0x80)                                          /*!< PI_TPW[7:0]Pulse Interface, Pulse Width */
 #define AS60XX_C1_PI_EN_Pos                         (8U)
 #define AS60XX_C1_PI_EN_Msk                         (0x1UL << AS60XX_C1_PI_EN_Pos)                  /*!< 0x00000100 */
-#define AS60XX_C1_PI_EN_DISABLE                     (0)                                             /*!< Pulse Interface Disable */
-#define AS60XX_C1_PI_EN_ENABLE                      (1)                                             /*!< Pulse Interface Enable */
+#define AS60XX_C1_PI_EN_DISABLE                     (0L)                                            /*!< Pulse Interface Disable */
+#define AS60XX_C1_PI_EN_ENABLE                      (1L)                                            /*!< Pulse Interface Enable */
 #define AS60XX_C1_PI_OUT_MODE_Pos                   (9U)
 #define AS60XX_C1_PI_OUT_MODE_Msk                   (0x1UL << AS60XX_C1_PI_OUT_MODE_Pos)            /*!< 0x00000200 */
-#define AS60XX_C1_PI_OUT_MODE_ONE_LINE              (0)                                             /*!< Pulse Interface Output Mode pulses on one line*/
-#define AS60XX_C1_PI_OUT_MODE_DIFF_LINES            (1)                                             /*!< Pulse Interface Output Mode pulses on different lines*/
+#define AS60XX_C1_PI_OUT_MODE_ONE_LINE              (0L)                                            /*!< Pulse Interface Output Mode pulses on one line*/
+#define AS60XX_C1_PI_OUT_MODE_DIFF_LINES            (1L)                                            /*!< Pulse Interface Output Mode pulses on different lines*/
 #define AS60XX_C1_PI_UPD_MODE_Pos                   (10U)
 #define AS60XX_C1_PI_UPD_MODE_Msk                   (0x1UL << AS60XX_C1_PI_UPD_MODE_Pos)            /*!< 0x00000400 */
-#define AS60XX_C1_PI_UPD_MODE_DISABLED              (0)                                             /*!< Pulse Interface Update Mode, automatic updated disabled */
-#define AS60XX_C1_PI_UPD_MODE_ENABLED               (1)                                             /*!< Pulse Interface Update Mode, automatic update */
+#define AS60XX_C1_PI_UPD_MODE_DISABLED              (0L)                                            /*!< Pulse Interface Update Mode, automatic updated disabled */
+#define AS60XX_C1_PI_UPD_MODE_ENABLED               (1L)                                            /*!< Pulse Interface Update Mode, automatic update */
 #define AS60XX_C1_NOT_USED_11_Pos                   (11U)
 #define AS60XX_C1_NOT_USED_11_Msk                   (0x1UL << AS60XX_C1_NOT_USED_11_Pos)            /*!< 0x00000800 */
-#define AS60XX_C1_NOT_USED_11                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C1_NOT_USED_11                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C1_I2C_MODE_Pos                      (12U)
 #define AS60XX_C1_I2C_MODE_Msk                      (0x03UL << AS60XX_C1_I2C_MODE_Pos)              /*!< 0x00003000 */
 #define AS60XX_C1_I2C_MODE_DISABLED                 (0)
@@ -332,92 +332,92 @@
 #define AS60XX_C1_I2C_ADR_6                         (0x40)
 #define AS60XX_C1_NOT_USED_21_Pos                   (21U)
 #define AS60XX_C1_NOT_USED_21_Msk                   (0x1UL << AS60XX_C1_NOT_USED_21_Pos)            /*!< 0x00200000 */
-#define AS60XX_C1_NOT_USED_21                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C1_NOT_USED_21                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C1_SPI_INPORT_CFG_Pos                (22U)
 #define AS60XX_C1_SPI_INPORT_CFG_Msk                (0x03UL << AS60XX_C1_SPI_INPORT_CFG_Pos)        /*!< 0x00C00000 */
-#define AS60XX_C1_SPI_INPORT_CFG_HIGH_Z             (0)                                             /*!< SPI_INPORT_CFG[23:22] Configuration of SPI input ports as High Z */
-#define AS60XX_C1_SPI_INPORT_CFG_PULL_UP            (1)                                             /*!< SPI_INPORT_CFG[23:22] Configuration of SPI input ports as Pull up */
-#define AS60XX_C1_SPI_INPORT_CFG_PULL_DN            (2)                                             /*!< SPI_INPORT_CFG[23:22] Configuration of SPI input ports as Pull down */
+#define AS60XX_C1_SPI_INPORT_CFG_HIGH_Z             (0L)                                            /*!< SPI_INPORT_CFG[23:22] Configuration of SPI input ports as High Z */
+#define AS60XX_C1_SPI_INPORT_CFG_PULL_UP            (1L)                                            /*!< SPI_INPORT_CFG[23:22] Configuration of SPI input ports as Pull up */
+#define AS60XX_C1_SPI_INPORT_CFG_PULL_DN            (2L)                                            /*!< SPI_INPORT_CFG[23:22] Configuration of SPI input ports as Pull down */
 #define AS60XX_C1_NOT_USED_31_24_Pos                (24U)
 #define AS60XX_C1_NOT_USED_31_24_Msk                (0xFFUL << AS60XX_C1_NOT_USED_31_24_Pos)        /*!< 0xFF000000 */
-#define AS60XX_C1_NOT_USED_31_24                    (0)                                             /*!< NOT_USED_31_24[31:24]Not used */
+#define AS60XX_C1_NOT_USED_31_24                    (0L)                                            /*!< NOT_USED_31_24[31:24]Not used */
 
 /******************  Bit definition for AS60XX_C2 register  *******************/
 #define AS60XX_C2_GP0_DIR_Pos                       (0U)
 #define AS60XX_C2_GP0_DIR_Msk                       (0x03UL << AS60XX_C2_GP0_DIR_Pos)               /*!< 0x00000003 */
-#define AS60XX_C2_GP0_DIR_OUTPUT                    (0)                                             /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */      
-#define AS60XX_C2_GP0_DIR_INPUT_PULL_UP             (1)                                             /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */
-#define AS60XX_C2_GP0_DIR_INPUT_PULL_DN             (2)                                             /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */
-#define AS60XX_C2_GP0_DIR_INPUT_HIGH_Z              (3)                                             /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */
+#define AS60XX_C2_GP0_DIR_OUTPUT                    (0L)                                            /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */      
+#define AS60XX_C2_GP0_DIR_INPUT_PULL_UP             (1L)                                            /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */
+#define AS60XX_C2_GP0_DIR_INPUT_PULL_DN             (2L)                                            /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */
+#define AS60XX_C2_GP0_DIR_INPUT_HIGH_Z              (3L)                                            /*!< GP0_DIR[1:0]Direction of General Purpose Port 0 */
 #define AS60XX_C2_GP0_SEL_Pos                       (2U)
 #define AS60XX_C2_GP0_SEL_Msk                       (0x03UL << AS60XX_C2_GP0_SEL_Pos)               /*!< 0x0000000C */
-#define AS60XX_C2_GP0_SEL_GENERAL_PURPOSE_OUT       (0)                                             /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
-#define AS60XX_C2_GP0_SEL_PULSE                     (1)                                             /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
-#define AS60XX_C2_GP0_SEL_LOW_SPEED_CLK             (2)                                             /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
-#define AS60XX_C2_GP0_SEL_US_FIRE_BURST             (3)                                             /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
+#define AS60XX_C2_GP0_SEL_GENERAL_PURPOSE_OUT       (0L)                                            /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
+#define AS60XX_C2_GP0_SEL_PULSE                     (1L)                                            /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
+#define AS60XX_C2_GP0_SEL_LOW_SPEED_CLK             (2L)                                            /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
+#define AS60XX_C2_GP0_SEL_US_FIRE_BURST             (3L)                                            /*!< GP0_SEL[3:2]Output Select of General Purpose Port 0 */
 #define AS60XX_C2_GP1_DIR_Pos                       (4U)
 #define AS60XX_C2_GP1_DIR_Msk                       (0x03UL << AS60XX_C2_GP1_DIR_Pos)               /*!< 0x00000030 */
-#define AS60XX_C2_GP1_DIR_OUTPUT                    (0)                                             /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
-#define AS60XX_C2_GP1_DIR_INPUT_PULL_UP             (1)                                             /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
-#define AS60XX_C2_GP1_DIR_INPUT_PULL_DN             (2)                                             /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
-#define AS60XX_C2_GP1_DIR_INPUT_HIGH_Z              (3)                                             /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
+#define AS60XX_C2_GP1_DIR_OUTPUT                    (0L)                                            /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
+#define AS60XX_C2_GP1_DIR_INPUT_PULL_UP             (1L)                                            /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
+#define AS60XX_C2_GP1_DIR_INPUT_PULL_DN             (2L)                                            /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
+#define AS60XX_C2_GP1_DIR_INPUT_HIGH_Z              (3L)                                            /*!< GP1_DIR[5:4]Direction of General Purpose Port 1 */
 #define AS60XX_C2_GP1_SEL_Pos                       (6U)
 #define AS60XX_C2_GP1_SEL_Msk                       (0x03UL << AS60XX_C2_GP1_SEL_Pos)               /*!< 0x000000C0 */
-#define AS60XX_C2_GP1_SEL_GENERAL_PURPOSE_OUT       (0)                                             /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
-#define AS60XX_C2_GP1_SEL_PULSE                     (1)                                             /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
-#define AS60XX_C2_GP1_SEL_LOW_SPEED_CLK             (2)                                             /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
-#define AS60XX_C2_GP1_SEL_US_FIRE_BURST             (3)                                             /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
+#define AS60XX_C2_GP1_SEL_GENERAL_PURPOSE_OUT       (0L)                                            /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
+#define AS60XX_C2_GP1_SEL_PULSE                     (1L)                                            /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
+#define AS60XX_C2_GP1_SEL_LOW_SPEED_CLK             (2L)                                            /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
+#define AS60XX_C2_GP1_SEL_US_FIRE_BURST             (3L)                                            /*!< GP1_SEL[7:6]Output Select of General Purpose Port 1 */
 #define AS60XX_C2_GP2_DIR_Pos                       (8U)
 #define AS60XX_C2_GP2_DIR_Msk                       (0x03UL << AS60XX_C2_GP2_DIR_Pos)               /*!< 0x00000300 */
-#define AS60XX_C2_GP2_DIR_OUTPUT                    (0)                                             /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */      
-#define AS60XX_C2_GP2_DIR_INPUT_PULL_UP             (1)                                             /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */
-#define AS60XX_C2_GP2_DIR_INPUT_PULL_DN             (2)                                             /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */
-#define AS60XX_C2_GP2_DIR_INPUT_HIGH_Z              (3)                                             /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */
+#define AS60XX_C2_GP2_DIR_OUTPUT                    (0L)                                            /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */      
+#define AS60XX_C2_GP2_DIR_INPUT_PULL_UP             (1L)                                            /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */
+#define AS60XX_C2_GP2_DIR_INPUT_PULL_DN             (2L)                                            /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */
+#define AS60XX_C2_GP2_DIR_INPUT_HIGH_Z              (3L)                                            /*!< GP2_DIR[9:8]Direction of General Purpose Port 2 */
 #define AS60XX_C2_GP2_SEL_Pos                       (10U)
 #define AS60XX_C2_GP2_SEL_Msk                       (0x03UL << AS60XX_C2_GP2_SEL_Pos)               /*!< 0x00000C00 */
-#define AS60XX_C2_GP2_SEL_GENERAL_PURPOSE_OUT       (0)                                             /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
-#define AS60XX_C2_GP2_SEL_PULSE                     (1)                                             /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
-#define AS60XX_C2_GP2_SEL_LOW_SPEED_CLK             (2)                                             /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
-#define AS60XX_C2_GP2_SEL_US_FIRE_BURST             (3)                                             /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
+#define AS60XX_C2_GP2_SEL_GENERAL_PURPOSE_OUT       (0L)                                            /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
+#define AS60XX_C2_GP2_SEL_PULSE                     (1L)                                            /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
+#define AS60XX_C2_GP2_SEL_LOW_SPEED_CLK             (2L)                                            /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
+#define AS60XX_C2_GP2_SEL_US_FIRE_BURST             (3L)                                            /*!< GP2_SEL[11:10]Output Select of General Purpose Port 2 */
 #define AS60XX_C2_GP3_DIR_Pos                       (12U)
 #define AS60XX_C2_GP3_DIR_Msk                       (0x03UL << AS60XX_C2_GP3_DIR_Pos)               /*!< 0x00003000 */
-#define AS60XX_C2_GP3_DIR_OUTPUT                    (0)                                             /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */      
-#define AS60XX_C2_GP3_DIR_INPUT_PULL_UP             (1)                                             /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */ 
-#define AS60XX_C2_GP3_DIR_INPUT_PULL_DN             (2)                                             /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */ 
-#define AS60XX_C2_GP3_DIR_INPUT_HIGH_Z              (3)                                             /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */ 
+#define AS60XX_C2_GP3_DIR_OUTPUT                    (0L)                                            /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */      
+#define AS60XX_C2_GP3_DIR_INPUT_PULL_UP             (1L)                                            /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */ 
+#define AS60XX_C2_GP3_DIR_INPUT_PULL_DN             (2L)                                            /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */ 
+#define AS60XX_C2_GP3_DIR_INPUT_HIGH_Z              (3L)                                            /*!< GP3_DIR[13:12]Direction of General Purpose Port 3 */ 
 #define AS60XX_C2_GP3_SEL_Pos                       (14U)
 #define AS60XX_C2_GP3_SEL_Msk                       (0x03UL << AS60XX_C2_GP3_SEL_Pos)               /*!< 0x0000C000 */
-#define AS60XX_C2_GP3_SEL_GENERAL_PURPOSE_OUT       (0)                                             /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
-#define AS60XX_C2_GP3_SEL_PULSE                     (1)                                             /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
-#define AS60XX_C2_GP3_SEL_LOW_SPEED_CLK             (2)                                             /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
-#define AS60XX_C2_GP3_SEL_US_FIRE_BURST             (3)                                             /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
+#define AS60XX_C2_GP3_SEL_GENERAL_PURPOSE_OUT       (0L)                                            /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
+#define AS60XX_C2_GP3_SEL_PULSE                     (1L)                                            /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
+#define AS60XX_C2_GP3_SEL_LOW_SPEED_CLK             (2L)                                            /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
+#define AS60XX_C2_GP3_SEL_US_FIRE_BURST             (3L)                                            /*!< GP3_SEL[15:14]Output Select of General Purpose Port 3 */
 #define AS60XX_C2_GP4_DIR_Pos                       (16U)
 #define AS60XX_C2_GP4_DIR_Msk                       (0x03UL << AS60XX_C2_GP4_DIR_Pos)               /*!< 0x00030000 */
-#define AS60XX_C2_GP4_DIR_OUTPUT                    (0)                                             /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */      
-#define AS60XX_C2_GP4_DIR_INPUT_PULL_UP             (1)                                             /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */
-#define AS60XX_C2_GP4_DIR_INPUT_PULL_DN             (2)                                             /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */
-#define AS60XX_C2_GP4_DIR_INPUT_HIGH_Z              (3)                                             /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */
+#define AS60XX_C2_GP4_DIR_OUTPUT                    (0L)                                            /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */      
+#define AS60XX_C2_GP4_DIR_INPUT_PULL_UP             (1L)                                            /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */
+#define AS60XX_C2_GP4_DIR_INPUT_PULL_DN             (2L)                                            /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */
+#define AS60XX_C2_GP4_DIR_INPUT_HIGH_Z              (3L)                                            /*!< GP4_DIR[17:16]Direction of General Purpose Port 4 */
 #define AS60XX_C2_GP4_SEL_Pos                       (18U)
 #define AS60XX_C2_GP4_SEL_Msk                       (0x03UL << AS60XX_C2_GP4_SEL_Pos)               /*!< 0x000C0000 */
-#define AS60XX_C2_GP4_SEL_GENERAL_PURPOSE_OUT       (0)                                             /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
-#define AS60XX_C2_GP4_SEL_PULSE                     (1)                                             /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
-#define AS60XX_C2_GP4_SEL_LOW_SPEED_CLK             (2)                                             /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
-#define AS60XX_C2_GP4_SEL_US_FIRE_BURST             (3)                                             /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
+#define AS60XX_C2_GP4_SEL_GENERAL_PURPOSE_OUT       (0L)                                            /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
+#define AS60XX_C2_GP4_SEL_PULSE                     (1L)                                            /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
+#define AS60XX_C2_GP4_SEL_LOW_SPEED_CLK             (2L)                                            /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
+#define AS60XX_C2_GP4_SEL_US_FIRE_BURST             (3L)                                            /*!< GP4_SEL[19:18]Output Select of General Purpose Port 4 */
 #define AS60XX_C2_GP5_DIR_Pos                       (20U)
 #define AS60XX_C2_GP5_DIR_Msk                       (0x03UL << AS60XX_C2_GP5_DIR_Pos)               /*!< 0x00300000 */
-#define AS60XX_C2_GP5_DIR_OUTPUT                    (0)                                             /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */      
-#define AS60XX_C2_GP5_DIR_INPUT_PULL_UP             (1)                                             /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */ 
-#define AS60XX_C2_GP5_DIR_INPUT_PULL_DN             (2)                                             /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */ 
-#define AS60XX_C2_GP5_DIR_INPUT_HIGH_Z              (3)                                             /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */ 
+#define AS60XX_C2_GP5_DIR_OUTPUT                    (0L)                                            /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */      
+#define AS60XX_C2_GP5_DIR_INPUT_PULL_UP             (1L)                                            /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */ 
+#define AS60XX_C2_GP5_DIR_INPUT_PULL_DN             (2L)                                            /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */ 
+#define AS60XX_C2_GP5_DIR_INPUT_HIGH_Z              (3L)                                            /*!< GP5_DIR[21:20]Direction of General Purpose Port 5 */ 
 #define AS60XX_C2_GP5_SEL_Pos                       (22U)
 #define AS60XX_C2_GP5_SEL_Msk                       (0x03UL << AS60XX_C2_GP5_SEL_Pos)               /*!< 0x00C00000 */
-#define AS60XX_C2_GP5_SEL_GENERAL_PURPOSE_OUT       (0)                                             /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
-#define AS60XX_C2_GP5_SEL_PULSE                     (1)                                             /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
-#define AS60XX_C2_GP5_SEL_LOW_SPEED_CLK             (2)                                             /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
-#define AS60XX_C2_GP5_SEL_US_FIRE_BURST             (3)                                             /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
+#define AS60XX_C2_GP5_SEL_GENERAL_PURPOSE_OUT       (0L)                                            /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
+#define AS60XX_C2_GP5_SEL_PULSE                     (1L)                                            /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
+#define AS60XX_C2_GP5_SEL_LOW_SPEED_CLK             (2L)                                            /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
+#define AS60XX_C2_GP5_SEL_US_FIRE_BURST             (3L)                                            /*!< GP5_SEL[23:22]Output Select of General Purpose Port 5 */
 #define AS60XX_C2_NOT_USED_31_24_Pos                (24U)
 #define AS60XX_C2_NOT_USED_31_24_Msk                (0xFFUL << AS60XX_C2_NOT_USED_31_24_Pos)        /*!< 0xFF000000 */
-#define AS60XX_C2_NOT_USED_31_24                    (0)                                             /*!< NOT_USED_31_24[31:24]Not used */
+#define AS60XX_C2_NOT_USED_31_24                    (0L)                                            /*!< NOT_USED_31_24[31:24]Not used */
 
 /******************  Bit definition for AS60XX_C3 register  *******************/
 #define AS60XX_C3_USM_OPT_Pos                       (0U)
@@ -429,155 +429,155 @@
 #define AS60XX_C3_USM_OPT_4                         (0x10)                                          /*!< USM_OPT[4:0]Mandatory setting: b00001 */
 #define AS60XX_C3_NOT_USED_31_5_Pos                 (5U)
 #define AS60XX_C3_NOT_USED_31_5_Msk                 (0x07FFFFFFUL << AS60XX_C3_NOT_USED_31_5_Pos)   /*!< 0xFFFFFFE0 */
-#define AS60XX_C3_NOT_USED_31_5                     (0)                                             /*!< NOT_USED_31_5[31:5]Not used */
+#define AS60XX_C3_NOT_USED_31_5                     (0L)                                            /*!< NOT_USED_31_5[31:5]Not used */
 
 /******************  Bit definition for AS60XX_C4 register  *******************/
 #define AS60XX_C4_EF_EN_TDC_TMO_Pos                 (0U)
 #define AS60XX_C4_EF_EN_TDC_TMO_Msk                 (0x1UL << AS60XX_C4_EF_EN_TDC_TMO_Pos)          /*!< 0x00000001 */
-#define AS60XX_C4_EF_EN_TDC_TMO                     (1)                                             /*!< Error Flag Enable, TDC Timeout */
+#define AS60XX_C4_EF_EN_TDC_TMO                     (1L)                                            /*!< Error Flag Enable, TDC Timeout */
 #define AS60XX_C4_EF_EN_TOF_TMO_Pos                 (1U)
 #define AS60XX_C4_EF_EN_TOF_TMO_Msk                 (0x1UL << AS60XX_C4_EF_EN_TOF_TMO_Pos)          /*!< 0x00000002 */
-#define AS60XX_C4_EF_EN_TOF_TMO                     (1)                                             /*!< Error Flag Enable, TOF Timeout */
+#define AS60XX_C4_EF_EN_TOF_TMO                     (1L)                                            /*!< Error Flag Enable, TOF Timeout */
 #define AS60XX_C4_EF_EN_AM_TMO_Pos                  (2U)
 #define AS60XX_C4_EF_EN_AM_TMO_Msk                  (0x1UL << AS60XX_C4_EF_EN_AM_TMO_Pos)           /*!< 0x00000004 */
-#define AS60XX_C4_EF_EN_AM_TMO                      (1)                                             /*!< Error Flag Enable, Amplitude Measurement Timeout */
+#define AS60XX_C4_EF_EN_AM_TMO                      (1L)                                            /*!< Error Flag Enable, Amplitude Measurement Timeout */
 #define AS60XX_C4_EF_EN_TM_OC_Pos                   (3U)
 #define AS60XX_C4_EF_EN_TM_OC_Msk                   (0x1UL << AS60XX_C4_EF_EN_TM_OC_Pos)            /*!< 0x00000008 */
-#define AS60XX_C4_EF_EN_TM_OC                       (1)                                             /*!< Error Flag Enable, Temperature Measurement Open Circuit */
+#define AS60XX_C4_EF_EN_TM_OC                       (1L)                                            /*!< Error Flag Enable, Temperature Measurement Open Circuit */
 #define AS60XX_C4_EF_EN_TM_SC_Pos                   (4U)
 #define AS60XX_C4_EF_EN_TM_SC_Msk                   (0x1UL << AS60XX_C4_EF_EN_TM_SC_Pos)            /*!< 0x00000010 */
-#define AS60XX_C4_EF_EN_TM_SC                       (1)                                             /*!< Error Flag Enable, Temperature Measurement Short Circuit */
+#define AS60XX_C4_EF_EN_TM_SC                       (1L)                                            /*!< Error Flag Enable, Temperature Measurement Short Circuit */
 #define AS60XX_C4_EF_EN_ZCC_ERR_Pos                 (5U)
 #define AS60XX_C4_EF_EN_ZCC_ERR_Msk                 (0x1UL << AS60XX_C4_EF_EN_ZCC_ERR_Pos)          /*!< 0x00000020 */
-#define AS60XX_C4_EF_EN_ZCC_ERR                     (1)                                             /*!< Error Flag Enable, Zero Cross Calibration Error */
+#define AS60XX_C4_EF_EN_ZCC_ERR                     (1L)                                            /*!< Error Flag Enable, Zero Cross Calibration Error */
 #define AS60XX_C4_EF_EN_LBD_ERR_Pos                 (6U)
 #define AS60XX_C4_EF_EN_LBD_ERR_Msk                 (0x1UL << AS60XX_C4_EF_EN_LBD_ERR_Pos)          /*!< 0x00000040 */
-#define AS60XX_C4_EF_EN_LBD_ERR                     (1)                                             /*!< Error Flag Enable, Low Battery Detect Error */
+#define AS60XX_C4_EF_EN_LBD_ERR                     (1L)                                            /*!< Error Flag Enable, Low Battery Detect Error */
 #define AS60XX_C4_EF_EN_USM_SQC_TMO_Pos             (7U)
 #define AS60XX_C4_EF_EN_USM_SQC_TMO_Msk             (0x1UL << AS60XX_C4_EF_EN_USM_SQC_TMO_Pos)      /*!< 0x00000080 */
-#define AS60XX_C4_EF_EN_USM_SQC_TMO                 (1)                                             /*!< Error Flag Enable, Ultrasonic Sequence Timeout */
+#define AS60XX_C4_EF_EN_USM_SQC_TMO                 (1L)                                            /*!< Error Flag Enable, Ultrasonic Sequence Timeout */
 #define AS60XX_C4_EF_EN_TM_SQC_TMO_Pos              (8U)
 #define AS60XX_C4_EF_EN_TM_SQC_TMO_Msk              (0x1UL << AS60XX_C4_EF_EN_TM_SQC_TMO_Pos)       /*!< 0x00000100 */
-#define AS60XX_C4_EF_EN_TM_SQC_TMO                  (1)                                             /*!< Error Flag Enable, Temperature Sequence Timeout */
+#define AS60XX_C4_EF_EN_TM_SQC_TMO                  (1L)                                            /*!< Error Flag Enable, Temperature Sequence Timeout */
 #define AS60XX_C4_EF_EN_TSQ_TMO_Pos                 (9U)
 #define AS60XX_C4_EF_EN_TSQ_TMO_Msk                 (0x1UL << AS60XX_C4_EF_EN_TSQ_TMO_Pos)          /*!< 0x00000200 */
-#define AS60XX_C4_EF_EN_TSQ_TMO                     (1)                                             /*!< Error Flag Enable, Task Sequencer Timeout */
+#define AS60XX_C4_EF_EN_TSQ_TMO                     (1L)                                            /*!< Error Flag Enable, Task Sequencer Timeout */
 #define AS60XX_C4_EF_EN_I2C_ACK_ERR_Pos             (10U)
 #define AS60XX_C4_EF_EN_I2C_ACK_ERR_Msk             (0x1UL << AS60XX_C4_EF_EN_I2C_ACK_ERR_Pos)      /*!< 0x00000400 */
-#define AS60XX_C4_EF_EN_I2C_ACK_ERR                 (1)                                             /*!< Error Flag Enable, EEPROM Acknowledge Error */
+#define AS60XX_C4_EF_EN_I2C_ACK_ERR                 (1L)                                            /*!< Error Flag Enable, EEPROM Acknowledge Error */
 #define AS60XX_C4_EF_EN_CHP_ERR_Pos                 (11U)
 #define AS60XX_C4_EF_EN_CHP_ERR_Msk                 (0x1UL << AS60XX_C4_EF_EN_CHP_ERR_Pos)          /*!< 0x00000800 */
-#define AS60XX_C4_EF_EN_CHP_ERR                     (1)                                             /*!< Error Flag Enable, Charge Pump Error */
+#define AS60XX_C4_EF_EN_CHP_ERR                     (1L)                                            /*!< Error Flag Enable, Charge Pump Error */
 #define AS60XX_C4_EF_EN_NVM_FWCU_ERR_Pos            (12U)
 #define AS60XX_C4_EF_EN_NVM_FWCU_ERR_Msk            (0x1UL << AS60XX_C4_EF_EN_NVM_FWCU_ERR_Pos)     /*!< 0x00001000 */
-#define AS60XX_C4_EF_EN_NVM_FWCU_ERR                (1)                                             /*!< Error Flag Enable, NVM FWCU Error */
+#define AS60XX_C4_EF_EN_NVM_FWCU_ERR                (1L)                                            /*!< Error Flag Enable, NVM FWCU Error */
 #define AS60XX_C4_EF_EN_NVM_FWDU_ERR_Pos            (13U)
 #define AS60XX_C4_EF_EN_NVM_FWDU_ERR_Msk            (0x1UL << AS60XX_C4_EF_EN_NVM_FWDU_ERR_Pos)     /*!< 0x00002000 */
-#define AS60XX_C4_EF_EN_NVM_FWDU_ERR                (1)                                             /*!< Error Flag Enable, NVM FWDU Error */
+#define AS60XX_C4_EF_EN_NVM_FWDU_ERR                (1L)                                            /*!< Error Flag Enable, NVM FWDU Error */
 #define AS60XX_C4_EF_EN_NVM_FWA_ERR_Pos             (14U)
 #define AS60XX_C4_EF_EN_NVM_FWA_ERR_Msk             (0x1UL << AS60XX_C4_EF_EN_NVM_FWA_ERR_Pos)      /*!< 0x00004000 */
-#define AS60XX_C4_EF_EN_NVM_FWA_ERR                 (1)                                             /*!< Error Flag Enable, NVM Applied Firmware Error */
+#define AS60XX_C4_EF_EN_NVM_FWA_ERR                 (1L)                                            /*!< Error Flag Enable, NVM Applied Firmware Error */
 #define AS60XX_C4_EF_EN_CPU_ERR_Pos                 (15U)
 #define AS60XX_C4_EF_EN_CPU_ERR_Msk                 (0x1UL << AS60XX_C4_EF_EN_CPU_ERR_Pos)          /*!< 0x00008000 */
-#define AS60XX_C4_EF_EN_CPU_ERR                     (1)                                             /*!< Error Flag Enable, CPU Error */
+#define AS60XX_C4_EF_EN_CPU_ERR                     (1L)                                            /*!< Error Flag Enable, CPU Error */
 #define AS60XX_C4_IRQ_EN_TSQ_FNS_Pos                (16U)
 #define AS60XX_C4_IRQ_EN_TSQ_FNS_Msk                (0x1UL << AS60XX_C4_IRQ_EN_TSQ_FNS_Pos)         /*!< 0x00010000 */
-#define AS60XX_C4_IRQ_EN_TSQ_FNS                    (1)                                             /*!< Interrupt Request Enable, Task Sequencer finished */
+#define AS60XX_C4_IRQ_EN_TSQ_FNS                    (1L)                                            /*!< Interrupt Request Enable, Task Sequencer finished */
 #define AS60XX_C4_IRQ_EN_TRANS_FNS_Pos              (17U)
 #define AS60XX_C4_IRQ_EN_TRANS_FNS_Msk              (0x1UL << AS60XX_C4_IRQ_EN_TRANS_FNS_Pos)       /*!< 0x00020000 */
-#define AS60XX_C4_IRQ_EN_TRANS_FNS                  (1)                                             /*!< Interrupt Request Enable, FW Transaction finished */
+#define AS60XX_C4_IRQ_EN_TRANS_FNS                  (1L)                                            /*!< Interrupt Request Enable, FW Transaction finished */
 #define AS60XX_C4_IRQ_EN_BLD_FNS_Pos                (18U)
 #define AS60XX_C4_IRQ_EN_BLD_FNS_Msk                (0x1UL << AS60XX_C4_IRQ_EN_BLD_FNS_Pos)         /*!< 0x00040000 */
-#define AS60XX_C4_IRQ_EN_BLD_FNS                    (1)                                             /*!< Interrupt Request Enable, Bootload finished */
+#define AS60XX_C4_IRQ_EN_BLD_FNS                    (1L)                                            /*!< Interrupt Request Enable, Bootload finished */
 #define AS60XX_C4_IRQ_EN_CHKSUM_FNS_Pos             (19U)
 #define AS60XX_C4_IRQ_EN_CHKSUM_FNS_Msk             (0x1UL << AS60XX_C4_IRQ_EN_CHKSUM_FNS_Pos)      /*!< 0x00080000 */
-#define AS60XX_C4_IRQ_EN_CHKSUM_FNS                 (1)                                             /*!< Interrupt Request Enable, Checksum generation finished */
+#define AS60XX_C4_IRQ_EN_CHKSUM_FNS                 (1L)                                            /*!< Interrupt Request Enable, Checksum generation finished */
 #define AS60XX_C4_IRQ_EN_FW_S_Pos                   (20U)
 #define AS60XX_C4_IRQ_EN_FW_S_Msk                   (0x1UL << AS60XX_C4_IRQ_EN_FW_S_Pos)            /*!< 0x00100000 */
-#define AS60XX_C4_IRQ_EN_FW_S                       (1)                                             /*!< Interrupt Request Enable, Firmware, synchronized with task sequencer */
+#define AS60XX_C4_IRQ_EN_FW_S                       (1L)                                            /*!< Interrupt Request Enable, Firmware, synchronized with task sequencer */
 #define AS60XX_C4_IRQ_EN_TSQ_TO_Pos                 (21U)
 #define AS60XX_C4_IRQ_EN_TSQ_TO_Msk                 (0x1UL << AS60XX_C4_IRQ_EN_TSQ_TO_Pos)          /*!< 0x00200000 */
-#define AS60XX_C4_IRQ_EN_TSQ_TO                     (1)                                             /*!< Interrupt Request Enable, Firmware */
+#define AS60XX_C4_IRQ_EN_TSQ_TO                     (1L)                                            /*!< Interrupt Request Enable, Firmware */
 #define AS60XX_C4_NOT_USED_22_Pos                   (22U)
 #define AS60XX_C4_NOT_USED_22_Msk                   (0x1UL << AS60XX_C4_NOT_USED_22_Pos)            /*!< 0x00400000 */
-#define AS60XX_C4_NOT_USED_22                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C4_NOT_USED_22                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C4_IRQ_EN_ERR_FLAG_Pos               (23U)
 #define AS60XX_C4_IRQ_EN_ERR_FLAG_Msk               (0x1UL << AS60XX_C4_IRQ_EN_ERR_FLAG_Pos)        /*!< 0x00800000 */
-#define AS60XX_C4_IRQ_EN_ERR_FLAG                   (1)                                             /*!< Interrupt Request Enable, Error Flag */
+#define AS60XX_C4_IRQ_EN_ERR_FLAG                   (1L)                                            /*!< Interrupt Request Enable, Error Flag */
 #define AS60XX_C4_NOT_USED_26_24_Pos                (24U)
 #define AS60XX_C4_NOT_USED_26_24_Msk                (0x07UL << AS60XX_C4_NOT_USED_26_24_Pos)        /*!< 0x07000000 */
-#define AS60XX_C4_NOT_USED_26_24                    (0)                                             /*!< NOT_USED_26_24[26:24]Mandatory setting: b000 */
+#define AS60XX_C4_NOT_USED_26_24                    (0L)                                            /*!< NOT_USED_26_24[26:24]Mandatory setting: b000 */
 #define AS60XX_C4_CPU_REQ_EN_GPH_Pos                (27U)
 #define AS60XX_C4_CPU_REQ_EN_GPH_Msk                (0x1UL << AS60XX_C4_CPU_REQ_EN_GPH_Pos)         /*!< 0x08000000 */
-#define AS60XX_C4_CPU_REQ_EN_GPH                    (1)                                             /*!< CPU Request Enable, General Purpose Handling */
+#define AS60XX_C4_CPU_REQ_EN_GPH                    (1L)                                            /*!< CPU Request Enable, General Purpose Handling */
 #define AS60XX_C4_TS_GPT_RATE_Pos                   (28U)
 #define AS60XX_C4_TS_GPT_RATE_Msk                   (0xFUL << AS60XX_C4_TS_GPT_RATE_Pos)            /*!< 0xF0000000 */
-#define AS60XX_C4_TS_GPT_RATE_DISABLED              (0)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_1_SEC                 (1)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_2_SEC                 (2)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_5_SEC                 (3)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_10_SEC                (4)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_30_SEC                (5)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_1_MIN                 (6)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_2_MIN                 (7)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_5_MIN                 (8)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_10_MIN                (9)                                             /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_30_MIN                (10)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_1_HR                  (11)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_2_HR                  (12)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_6_HR                  (13)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_24_HR                 (14)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
-#define AS60XX_C4_TS_GPT_RATE_48_HR                 (15)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_DISABLED              (0L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_1_SEC                 (1L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_2_SEC                 (2L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_5_SEC                 (3L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_10_SEC                (4L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_30_SEC                (5L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_1_MIN                 (6L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_2_MIN                 (7L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_5_MIN                 (8L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_10_MIN                (9L)                                            /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_30_MIN                (10L)                                           /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_1_HR                  (11L)                                           /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_2_HR                  (12L)                                           /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_6_HR                  (13L)                                           /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_24_HR                 (14L)                                           /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
+#define AS60XX_C4_TS_GPT_RATE_48_HR                 (15L)                                           /*!< TS_GPT_RATE[31:28]General Purpose Timer Rate */
 
 /******************  Bit definition for AS60XX_C5 register  *******************/
 #define AS60XX_C5_HSC_DIV_MODE_Pos                  (0U)
 #define AS60XX_C5_HSC_DIV_MODE_Msk                  (0x1UL << AS60XX_C5_HSC_DIV_MODE_Pos)           /*!< 0x00000001 */
-#define AS60XX_C5_HSC_DIV_MODE_4MHZ                 (0)                                             /*!< High Speed CLock Divider mode recommended for HS_CLK = 4 MHz */
-#define AS60XX_C5_HSC_DIV_MODE_8MHZ                 (1)                                             /*!< High Speed CLock Divider mode recommended for HS_CLK = 8 MHz */
+#define AS60XX_C5_HSC_DIV_MODE_4MHZ                 (0L)                                            /*!< High Speed CLock Divider mode recommended for HS_CLK = 4 MHz */
+#define AS60XX_C5_HSC_DIV_MODE_8MHZ                 (1L)                                            /*!< High Speed CLock Divider mode recommended for HS_CLK = 8 MHz */
 #define AS60XX_C5_NOT_USED_1_Pos                    (1U)
 #define AS60XX_C5_NOT_USED_1_Msk                    (0x1UL << AS60XX_C5_NOT_USED_1_Pos)             /*!< 0x00000002 */
-#define AS60XX_C5_NOT_USED_1                        (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C5_NOT_USED_1                        (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C5_HSC_CLK_ST_Pos                    (2U)
 #define AS60XX_C5_HSC_CLK_ST_Msk                    (0x07UL << AS60XX_C5_HSC_CLK_ST_Pos)            /*!< 0x0000001C */
-#define AS60XX_C5_HSC_CLK_ST_74_USEC                (0)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_104_USEC               (1)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_135_USEC               (2)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_196_USEC               (3)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_257_USEC               (4)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_379_USEC               (5)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_502_USEC               (6)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
-#define AS60XX_C5_HSC_CLK_ST_5000_USEC              (7)                                             /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_74_USEC                (0L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_104_USEC               (1L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_135_USEC               (2L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_196_USEC               (3L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_257_USEC               (4L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_379_USEC               (5L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_502_USEC               (6L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
+#define AS60XX_C5_HSC_CLK_ST_5000_USEC              (7L)                                            /*!< HSC_CLK_ST[4:2]High-Speed Clock Settling Time */
 #define AS60XX_C5_NOT_USED_7_5_Pos                  (5U)
 #define AS60XX_C5_NOT_USED_7_5_Msk                  (0x07UL << AS60XX_C5_NOT_USED_7_5_Pos)          /*!< 0x000000E0 */
-#define AS60XX_C5_NOT_USED_7_5                      (1)                                             /*!< NOT_USED_7_5[7:5]Recommended setting: b001 */
+#define AS60XX_C5_NOT_USED_7_5                      (1L)                                            /*!< NOT_USED_7_5[7:5]Recommended setting: b001 */
 #define AS60XX_C5_HSC_DIV_Pos                       (8U)
 #define AS60XX_C5_HSC_DIV_Msk                       (0x1UL << AS60XX_C5_HSC_DIV_Pos)                /*!< 0x00000100 */
-#define AS60XX_C5_HSC_DIV_4MHZ                      (0)                                             /*!< High-Speed Clock Divider recommended for HS_CLK = 4 MHz */
-#define AS60XX_C5_HSC_DIV_8MHZ                      (1)                                             /*!< High-Speed Clock Divider recommended for HS_CLK = 8 MHz  */
+#define AS60XX_C5_HSC_DIV_4MHZ                      (0L)                                            /*!< High-Speed Clock Divider recommended for HS_CLK = 4 MHz */
+#define AS60XX_C5_HSC_DIV_8MHZ                      (1L)                                            /*!< High-Speed Clock Divider recommended for HS_CLK = 8 MHz  */
 #define AS60XX_C5_HSC_RATE_Pos                      (9U)
 #define AS60XX_C5_HSC_RATE_Msk                      (0x07UL << AS60XX_C5_HSC_RATE_Pos)              /*!< 0x00000E00 */
-#define AS60XX_C5_HSC_RATE_DISABLED                 (0)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_1                  (1)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_2                  (2)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_5                  (3)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_10                 (4)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_20                 (5)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_50                 (6)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
-#define AS60XX_C5_HSC_RATE_EVERY_100                (7)                                             /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_DISABLED                 (0L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_1                  (1L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_2                  (2L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_5                  (3L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_10                 (4L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_20                 (5L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_50                 (6L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
+#define AS60XX_C5_HSC_RATE_EVERY_100                (7L)                                            /*!< HSC_RATE[11:9]High-Speed Clock Calibration Rate */
 #define AS60XX_C5_HSC_MODE_CPU_Pos                  (12U)
 #define AS60XX_C5_HSC_MODE_CPU_Msk                  (0x1UL << AS60XX_C5_HSC_MODE_CPU_Pos)           /*!< 0x00001000 */
-#define AS60XX_C5_HSC_MODE_CPU_4MHZ                 (0)                                             /*!< High-Speed Clock Mode CPU */
-#define AS60XX_C5_HSC_MODE_CPU_1MHZ                 (1)                                             /*!< High-Speed Clock Mode CPU */
+#define AS60XX_C5_HSC_MODE_CPU_4MHZ                 (0L)                                            /*!< High-Speed Clock Mode CPU */
+#define AS60XX_C5_HSC_MODE_CPU_1MHZ                 (1L)                                            /*!< High-Speed Clock Mode CPU */
 #define AS60XX_C5_VM_RATE_Pos                       (13U)
 #define AS60XX_C5_VM_RATE_Msk                       (0x07UL << AS60XX_C5_VM_RATE_Pos)               /*!< 0x0000E000 */
-#define AS60XX_C5_VM_RATE_DISABLED                  (0)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_1                   (1)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_2                   (2)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_5                   (3)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_10                  (4)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_20                  (5)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_50                  (6)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
-#define AS60XX_C5_VM_RATE_EVERY_100                 (7)                                             /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_DISABLED                  (0L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_1                   (1L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_2                   (2L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_5                   (3L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_10                  (4L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_20                  (5L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_50                  (6L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
+#define AS60XX_C5_VM_RATE_EVERY_100                 (7L)                                            /*!< VM_RATE[15:13]VCC Voltage measurement rate */
 #define AS60XX_C5_LBD_TH_Pos                        (16U)
 #define AS60XX_C5_LBD_TH_Msk                        (0x3FUL << AS60XX_C5_LBD_TH_Pos)                /*!< 0x003F0000 */
 #define AS60XX_C5_LBD_TH_0                          (0x01)                                          /*!< LBD_TH[21:16]Low battery detection threshold, 2.15V + LBT_TH * 0.025V */
@@ -588,32 +588,32 @@
 #define AS60XX_C5_LBD_TH_5                          (0x20)                                          /*!< LBD_TH[21:16]Low battery detection threshold, 2.15V + LBT_TH * 0.025V */
 #define AS60XX_C5_TSV_UPD_MODE_Pos                  (22U)
 #define AS60XX_C5_TSV_UPD_MODE_Msk                  (0x1UL << AS60XX_C5_TSV_UPD_MODE_Pos)           /*!< 0x00400000 */
-#define AS60XX_C5_TSV_UPD_MODE_MANUAL               (0)                                             /*!< Time stamp update mode by TSV_UPD in SHR_EXC*/
-#define AS60XX_C5_TSV_UPD_MODE_AUTOMATIC            (1)                                             /*!< Time stamp update mode automatic every measure cycle trigger*/
+#define AS60XX_C5_TSV_UPD_MODE_MANUAL               (0L)                                            /*!< Time stamp update mode by TSV_UPD in SHR_EXC*/
+#define AS60XX_C5_TSV_UPD_MODE_AUTOMATIC            (1L)                                            /*!< Time stamp update mode automatic every measure cycle trigger*/
 #define AS60XX_C5_BF_SEL_Pos                        (23U)
 #define AS60XX_C5_BF_SEL_Msk                        (0x1UL << AS60XX_C5_BF_SEL_Pos)                 /*!< 0x00800000 */
-#define AS60XX_C5_BF_SEL_50_HZ                      (0)                                             /*!< Base Frequency Select */
-#define AS60XX_C5_BF_SEL_60_HZ                      (1)                                             /*!< Base Frequency Select */
+#define AS60XX_C5_BF_SEL_50_HZ                      (0L)                                            /*!< Base Frequency Select */
+#define AS60XX_C5_BF_SEL_60_HZ                      (1L)                                            /*!< Base Frequency Select */
 #define AS60XX_C5_CHP_HV_SEL_Pos                    (24U)
 #define AS60XX_C5_CHP_HV_SEL_Msk                    (0xFUL << AS60XX_C5_CHP_HV_SEL_Pos)             /*!< 0x0F000000 */
-#define AS60XX_C5_CHP_HV_SEL                        (0)                                             /*!< Selection of charge pump voltage */
+#define AS60XX_C5_CHP_HV_SEL                        (0L)                                            /*!< Selection of charge pump voltage */
 #define AS60XX_C5_NOT_USED_28_Pos                   (28U)
 #define AS60XX_C5_NOT_USED_28_Msk                   (0x1UL << AS60XX_C5_NOT_USED_28_Pos)            /*!< 0x10000000 */
-#define AS60XX_C5_NOT_USED_28                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C5_NOT_USED_28                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C5_TI_PATH_SEL_Pos                   (29U)
 #define AS60XX_C5_TI_PATH_SEL_Msk                   (0x03UL << AS60XX_C5_TI_PATH_SEL_Pos)           /*!< 0x60000000 */
-#define AS60XX_C5_TI_PATH_SEL_BUFFER_DISABLED       (0)                                             /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
-#define AS60XX_C5_TI_PATH_SEL_550_OHM_BUFFER        (1)                                             /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
-#define AS60XX_C5_TI_PATH_SEL_350_OHM_BUFFER        (2)                                             /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
-#define AS60XX_C5_TI_PATH_SEL_214_OHM_BUFFER        (3)                                             /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
+#define AS60XX_C5_TI_PATH_SEL_BUFFER_DISABLED       (0L)                                            /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
+#define AS60XX_C5_TI_PATH_SEL_550_OHM_BUFFER        (1L)                                            /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
+#define AS60XX_C5_TI_PATH_SEL_350_OHM_BUFFER        (2L)                                            /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
+#define AS60XX_C5_TI_PATH_SEL_214_OHM_BUFFER        (3L)                                            /*!< TI_PATH_SEL[30:29]Transducer Fire Buffer Impedance */
 #define AS60XX_C5_NOT_USED_31_Pos                   (31U)
 #define AS60XX_C5_NOT_USED_31_Msk                   (0x1UL << AS60XX_C5_NOT_USED_31_Pos)            /*!< 0x80000000 */
-#define AS60XX_C5_NOT_USED_31                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C5_NOT_USED_31                       (0L)                                            /*!< Mandatory setting: b0 */
 
 /******************  Bit definition for AS60XX_C6 register  *******************/
 #define AS60XX_C6_MR_CT_Pos                         (0U)
 #define AS60XX_C6_MR_CT_Msk                         (0x1FFFUL << AS60XX_C6_MR_CT_Pos)               /*!< 0x00001FFF */
-#define AS60XX_C6_MR_CT_DISABLED                    (0)                                             /*!< MR_CT[12:0]Measure rate cycle time */
+#define AS60XX_C6_MR_CT_DISABLED                    (0L)                                            /*!< MR_CT[12:0]Measure rate cycle time */
 #define AS60XX_C6_MR_CT_0                           (0x0001)                                        /*!< MR_CT[12:0]Measure rate cycle time */
 #define AS60XX_C6_MR_CT_1                           (0x0002)                                        /*!< MR_CT[12:0]Measure rate cycle time */
 #define AS60XX_C6_MR_CT_2                           (0x0004)                                        /*!< MR_CT[12:0]Measure rate cycle time */
@@ -629,28 +629,28 @@
 #define AS60XX_C6_MR_CT_12                          (0x1000)                                        /*!< MR_CT[12:0]Measure rate cycle time */
 #define AS60XX_C6_TS_MCM_Pos                        (13U)
 #define AS60XX_C6_TS_MCM_Msk                        (0x1UL << AS60XX_C6_TS_MCM_Pos)                 /*!< 0x00002000 */
-#define AS60XX_C6_TS_MCM_SAME_PHASE                 (0)                                             /*!< Task Sequencer Measure Cycle Mode same phase for USM and TM*/
-#define AS60XX_C6_TS_MCM_DIFF_PHASE                 (1)                                             /*!< Task Sequencer Measure Cycle Mode different phases for USM and TM*/
+#define AS60XX_C6_TS_MCM_SAME_PHASE                 (0L)                                            /*!< Task Sequencer Measure Cycle Mode same phase for USM and TM*/
+#define AS60XX_C6_TS_MCM_DIFF_PHASE                 (1L)                                            /*!< Task Sequencer Measure Cycle Mode different phases for USM and TM*/
 #define AS60XX_C6_TS_PP_T_EN_Pos                    (14U)
 #define AS60XX_C6_TS_PP_T_EN_Msk                    (0x1UL << AS60XX_C6_TS_PP_T_EN_Pos)             /*!< 0x00004000 */
-#define AS60XX_C6_TS_PP_T_EN                        (1)                                             /*!< Enables final post processing T */
+#define AS60XX_C6_TS_PP_T_EN                        (1L)                                            /*!< Enables final post processing T */
 #define AS60XX_C6_TS_PP_F_EN_Pos                    (15U)
 #define AS60XX_C6_TS_PP_F_EN_Msk                    (0x1UL << AS60XX_C6_TS_PP_F_EN_Pos)             /*!< 0x00008000 */
-#define AS60XX_C6_TS_PP_F_EN                        (1)                                             /*!< Enables post processing F */
+#define AS60XX_C6_TS_PP_F_EN                        (1L)                                            /*!< Enables post processing F */
 #define AS60XX_C6_TS_PP_MODE_Pos                    (16U)
 #define AS60XX_C6_TS_PP_MODE_Msk                    (0x1UL << AS60XX_C6_TS_PP_MODE_Pos)             /*!< 0x00010000 */
-#define AS60XX_C6_TS_PP_MODE_EVERY_TASK             (0)                                             /*!< Post processing mode requested with every task sequencer trigger */
-#define AS60XX_C6_TS_PP_MODE_ON_MEASUREMENT         (1)                                             /*!< Post processing mode only requested if a measurement task is requested */
+#define AS60XX_C6_TS_PP_MODE_EVERY_TASK             (0L)                                            /*!< Post processing mode requested with every task sequencer trigger */
+#define AS60XX_C6_TS_PP_MODE_ON_MEASUREMENT         (1L)                                            /*!< Post processing mode only requested if a measurement task is requested */
 #define AS60XX_C6_TS_CST_RATE_Pos                   (17U)
 #define AS60XX_C6_TS_CST_RATE_Msk                   (0x07UL << AS60XX_C6_TS_CST_RATE_Pos)           /*!< 0x000E0000 */
-#define AS60XX_C6_TS_CST_RATE_DISABLED              (0)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_1_HR                  (1)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_2_HR                  (2)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_6_HR                  (3)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_24_HR                 (4)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_48_HR                 (5)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_96_HR                 (6)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
-#define AS60XX_C6_TS_CST_RATE_168_HR                (7)                                             /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_DISABLED              (0L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_1_HR                  (1L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_2_HR                  (2L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_6_HR                  (3L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_24_HR                 (4L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_48_HR                 (5L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_96_HR                 (6L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
+#define AS60XX_C6_TS_CST_RATE_168_HR                (7L)                                            /*!< TS_CST_RATE[19:17]Firmware Check(sum) Timer Rate */
 #define AS60XX_C6_TS_NVR_RATE_Pos                   (20U)
 #define AS60XX_C6_TS_NVR_RATE_Msk                   (0xFUL << AS60XX_C6_TS_NVR_RATE_Pos)            /*!< 0x00F00000 */
 #define AS60XX_C6_TS_NVR_RATE_DISABLED              (0)
@@ -660,23 +660,23 @@
 #define AS60XX_C6_TS_NVR_RATE_3                     (0x8)
 #define AS60XX_C6_NOT_USED_25_24_Pos                (24U)
 #define AS60XX_C6_NOT_USED_25_24_Msk                (0x03UL << AS60XX_C6_NOT_USED_25_24_Pos)        /*!< 0x03000000 */
-#define AS60XX_C6_NOT_USED_25_24                    (1)                                             /*!< NOT_USED_25_24[25:24]. Mandatory setting 0b01 */
+#define AS60XX_C6_NOT_USED_25_24                    (1L)                                            /*!< NOT_USED_25_24[25:24]. Mandatory setting 0b01 */
 #define AS60XX_C6_TS_CHP_MODE_Pos                   (26U)
 #define AS60XX_C6_TS_CHP_MODE_Msk                   (0x1FUL << AS60XX_C6_TS_CHP_MODE_Pos)           /*!< 0x0C000000 */
-#define AS60XX_C6_TS_CHP_MODE_DISABLED              (0)                                             /*!< Charge Pump Mode, Charge Pump disabled */
-#define AS60XX_C6_TS_CHP_MODE_ENABLED               (2)                                             /*!< Charge Pump Mode, Charge Pump enabled */
+#define AS60XX_C6_TS_CHP_MODE_DISABLED              (0L)                                            /*!< Charge Pump Mode, Charge Pump disabled */
+#define AS60XX_C6_TS_CHP_MODE_ENABLED               (2L)                                            /*!< Charge Pump Mode, Charge Pump enabled */
 #define AS60XX_C6_TS_CHP_WT_Pos                     (28U)
 #define AS60XX_C6_TS_CHP_WT_Msk                     (0x1FUL << AS60XX_C6_TS_CHP_WT_Pos)             /*!< 0x30000000 */
-#define AS60XX_C6_TS_CHP_WT_520_USEC                (0)                                             /*!< Charge Pump Wait Time, 0.52 ms */
-#define AS60XX_C6_TS_CHP_WT_1000_USEC               (1)                                             /*!< Charge Pump Wait Time, 1 ms (recommended) */
-#define AS60XX_C6_TS_CHP_WT_2500_USEC               (2)                                             /*!< Charge Pump Wait Time, 2.5 ms */
+#define AS60XX_C6_TS_CHP_WT_520_USEC                (0L)                                            /*!< Charge Pump Wait Time, 0.52 ms */
+#define AS60XX_C6_TS_CHP_WT_1000_USEC               (1L)                                            /*!< Charge Pump Wait Time, 1 ms (recommended) */
+#define AS60XX_C6_TS_CHP_WT_2500_USEC               (2L)                                            /*!< Charge Pump Wait Time, 2.5 ms */
 #define AS60XX_C6_NOT_USED_30_Pos                   (30U)
 #define AS60XX_C6_NOT_USED_30_Msk                   (0x1FUL << AS60XX_C6_NOT_USED_30_Pos)           /*!< 0x40000000 */
-#define AS60XX_C6_NOT_USED_30                       (0)                                             /*!< NOT_USED_30. Mandatory setting 0b0 */
+#define AS60XX_C6_NOT_USED_30                       (0L)                                            /*!< NOT_USED_30. Mandatory setting 0b0 */
 #define AS60XX_C6_TS_CST_MODE_Pos                   (31U)
 #define AS60XX_C6_TS_CST_MODE_Msk                   (0x1UL << AS60XX_C6_TS_CST_MODE_Pos)            /*!< 0x80000000 */
-#define AS60XX_C6_TS_CST_MODE_ALWAYS                (0)                                             /*!< Checksum Handling Mode, performed as soon as timer request occurs */
-#define AS60XX_C6_TS_CST_MODE_IF_FREE               (1)                                             /*!< Checksum Handling Mode, only performed if no TPM or USM task is requested */
+#define AS60XX_C6_TS_CST_MODE_ALWAYS                (0L)                                            /*!< Checksum Handling Mode, performed as soon as timer request occurs */
+#define AS60XX_C6_TS_CST_MODE_IF_FREE               (1L)                                            /*!< Checksum Handling Mode, only performed if no TPM or USM task is requested */
 
 /******************  Bit definition for AS60XX_C7 register  *******************/
 #define AS60XX_C7_TM_RATE_Pos                       (0U)
@@ -694,59 +694,59 @@
 #define AS60XX_C7_TM_RATE_9                         (0x200)
 #define AS60XX_C7_TPM_PAUSE_Pos                     (10U)
 #define AS60XX_C7_TPM_PAUSE_Msk                     (0x07UL << AS60XX_C7_TPM_PAUSE_Pos)             /*!< 0x00001C00 */
-#define AS60XX_C7_TPM_PAUSE_DISABLED                (0)                                             /*!< TPM_PAUSE[12:10]Pause time between 2 temperature measurements */
+#define AS60XX_C7_TPM_PAUSE_DISABLED                (0L)                                            /*!< TPM_PAUSE[12:10]Pause time between 2 temperature measurements */
 #define AS60XX_C7_TPM_PAUSE_0                       (0x1)                                           /*!< TPM_PAUSE[12:10]Pause time between 2 temperature measurements */
 #define AS60XX_C7_TPM_PAUSE_1                       (0x2)                                           /*!< TPM_PAUSE[12:10]Pause time between 2 temperature measurements */                                           /*!< TPM_PAUSE[12:10]Pause time between 2 temperature measurements */
 #define AS60XX_C7_TPM_PAUSE_2                       (0x4)                                           /*!< TPM_PAUSE[12:10]Pause time between 2 temperature measurements */
 #define AS60XX_C7_TM_MODE_Pos                       (13U)
 #define AS60XX_C7_TM_MODE_Msk                       (0x07UL << AS60XX_C7_TM_MODE_Pos)               /*!< 0x0000E000 */
-#define AS60XX_C7_TM_MODE_OFF                       (0)                                             /*!< TM_MODE[15:13]Temperature Measurement Mode */
+#define AS60XX_C7_TM_MODE_OFF                       (0L)                                            /*!< TM_MODE[15:13]Temperature Measurement Mode */
 #define AS60XX_C7_TM_MODE_0                         (0x1)                                           /*!< TM_MODE[15:13]Temperature Measurement Mode */
 #define AS60XX_C7_TM_MODE_1                         (0x2)                                           /*!< TM_MODE[15:13]Temperature Measurement Mode */
 #define AS60XX_C7_TM_MODE_2                         (0x4)                                           /*!< TM_MODE[15:13]Temperature Measurement Mode */
 #define AS60XX_C7_NOT_USED_16_Pos                   (16U)
 #define AS60XX_C7_NOT_USED_16_Msk                   (0x1UL << AS60XX_C7_NOT_USED_16_Pos)            /*!< 0x00010000 */
-#define AS60XX_C7_NOT_USED_16                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C7_NOT_USED_16                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C7_TPM_PORT_MODE_Pos                 (17U)
 #define AS60XX_C7_TPM_PORT_MODE_Msk                 (0x1UL << AS60XX_C7_TPM_PORT_MODE_Pos)          /*!< 0x00020000 */
-#define AS60XX_C7_TPM_PORT_MODE_UNUSED_TO_GND       (0)                                             /*!< Temperature Measurement Port Mode, inactive ports pulled to GND */
+#define AS60XX_C7_TPM_PORT_MODE_UNUSED_TO_GND       (0L)                                            /*!< Temperature Measurement Port Mode, inactive ports pulled to GND */
 #define AS60XX_C7_TPM_PORT_MODE_UNUSED_TO_HIGHZ     (0x00000001 << AS60XX_C7_TM_MODE_Pos)           /*!< Temperature Measurement Port Mode, inactive ports pulled to High Z */
 #define AS60XX_C7_TM_PORT_ORDER_Pos                 (18U)
 #define AS60XX_C7_TM_PORT_ORDER_Msk                 (0x03UL << AS60XX_C7_TM_PORT_ORDER_Pos)         /*!< 0x000C0000 */
-#define AS60XX_C7_TM_PORT_ORDER_1ST_MEASUREMENT     (1)                                             /*!< TM_PORT_ORDER[19:18]Temperature Measurement Port Order, 1st measurement: default order */
-#define AS60XX_C7_TM_PORT_ORDER_2ND_MEASUREMENT     (2)                                             /*!< TM_PORT_ORDER[19:18]Temperature Measurement Port Order, 2nd measurement */
+#define AS60XX_C7_TM_PORT_ORDER_1ST_MEASUREMENT     (1L)                                            /*!< TM_PORT_ORDER[19:18]Temperature Measurement Port Order, 1st measurement: default order */
+#define AS60XX_C7_TM_PORT_ORDER_2ND_MEASUREMENT     (2L)                                            /*!< TM_PORT_ORDER[19:18]Temperature Measurement Port Order, 2nd measurement */
 #define AS60XX_C7_TPM_CLOAD_TRIM_Pos                (20U)
 #define AS60XX_C7_TPM_CLOAD_TRIM_Msk                (0x03UL << AS60XX_C7_TPM_CLOAD_TRIM_Pos)        /*!< 0x00300000 */
-#define AS60XX_C7_TPM_CLOAD_TRIM_0                  (1)                                             /*!< TPM_CLOAD_TRIM[21:20]Temperature Measurement Load Trim */
-#define AS60XX_C7_TPM_CLOAD_TRIM_1                  (2)                                             /*!< TPM_CLOAD_TRIM[21:20]Temperature Measurement Load Trim, 3.95 us, recommended */
+#define AS60XX_C7_TPM_CLOAD_TRIM_0                  (1L)                                            /*!< TPM_CLOAD_TRIM[21:20]Temperature Measurement Load Trim */
+#define AS60XX_C7_TPM_CLOAD_TRIM_1                  (2L)                                            /*!< TPM_CLOAD_TRIM[21:20]Temperature Measurement Load Trim, 3.95 us, recommended */
 #define AS60XX_C7_TPM_CYCLE_SEL_Pos                 (22U)
 #define AS60XX_C7_TPM_CYCLE_SEL_Msk                 (0x1UL << AS60XX_C7_TPM_CYCLE_SEL_Pos)          /*!< 0x00400000 */
-#define AS60XX_C7_TPM_CYCLE_SEL_512_USEC            (0)                                             /*!< Temperature Measurement Cycle Select, 512 microseconds*/
-#define AS60XX_C7_TPM_CYCLE_SEL_1024_USEC           (1)                                             /*!< Temperature Measurement Cycle Select, 1024 microseconds */
+#define AS60XX_C7_TPM_CYCLE_SEL_512_USEC            (0L)                                            /*!< Temperature Measurement Cycle Select, 512 microseconds*/
+#define AS60XX_C7_TPM_CYCLE_SEL_1024_USEC           (1L)                                            /*!< Temperature Measurement Cycle Select, 1024 microseconds */
 #define AS60XX_C7_TPM_FAKE_NO_Pos                   (23U)
 #define AS60XX_C7_TPM_FAKE_NO_Msk                   (0x1UL << AS60XX_C7_TPM_FAKE_NO_Pos)            /*!< 0x00800000 */
-#define AS60XX_C7_TPM_FAKE_NO_2                     (0)                                             /*!< Number of Fake measurements, 2 */
-#define AS60XX_C7_TPM_FAKE_NO_8                     (1)                                             /*!< Number of Fake measurements, 8 */
+#define AS60XX_C7_TPM_FAKE_NO_2                     (0L)                                            /*!< Number of Fake measurements, 2 */
+#define AS60XX_C7_TPM_FAKE_NO_8                     (1L)                                            /*!< Number of Fake measurements, 8 */
 #define AS60XX_C7_NOT_USED_31_24_Pos                (24U)
 #define AS60XX_C7_NOT_USED_31_24_Msk                (0xFFUL << AS60XX_C7_NOT_USED_31_24_Pos)        /*!< 0xFF000000 */
-#define AS60XX_C7_NOT_USED_31_24                    (0)                                             /*!< NOT_USED_31_24[31:24]Mandatory setting: h00 */
+#define AS60XX_C7_NOT_USED_31_24                    (0L)                                            /*!< NOT_USED_31_24[31:24]Mandatory setting: h00 */
 
 /******************  Bit definition for AS60XX_C8 register  *******************/
 #define AS60XX_C8_USM_PAUSE_Pos                     (0U)
 #define AS60XX_C8_USM_PAUSE_Msk                     (0x07UL << AS60XX_C8_USM_PAUSE_Pos)             /*!< 0x00000007 */
-#define AS60XX_C8_USM_PAUSE_DISABLED                (0)                                             /*!< USM_PAUSE[2:0]Pause time between two ultrasonic measurements */
+#define AS60XX_C8_USM_PAUSE_DISABLED                (0L)                                            /*!< USM_PAUSE[2:0]Pause time between two ultrasonic measurements */
 #define AS60XX_C8_USM_PAUSE_0                       (0x1)                                           /*!< USM_PAUSE[2:0]Pause time between two ultrasonic measurements */
 #define AS60XX_C8_USM_PAUSE_1                       (0x2)                                           /*!< USM_PAUSE[2:0]Pause time between two ultrasonic measurements */
 #define AS60XX_C8_USM_PAUSE_2                       (0x4)                                           /*!< USM_PAUSE[2:0]Pause time between two ultrasonic measurements */
 #define AS60XX_C8_TI_PGA_AZ_DIS_Pos                 (3U)
 #define AS60XX_C8_TI_PGA_AZ_DIS_Msk                 (0x1UL << AS60XX_C8_TI_PGA_AZ_DIS_Pos)          /*!< 0x00000008 */
-#define AS60XX_C8_TI_PGA_AZ_DIS_ENABLED             (0)                                             /*!< PGA Auto-zero Disable, PGA Auto-zero process as defined */
-#define AS60XX_C8_TI_PGA_AZ_DIS_DISABLED            (1)                                             /*!< PGA Auto-zero Disable, PGA Auto-zero disabled */
+#define AS60XX_C8_TI_PGA_AZ_DIS_ENABLED             (0L)                                            /*!< PGA Auto-zero Disable, PGA Auto-zero process as defined */
+#define AS60XX_C8_TI_PGA_AZ_DIS_DISABLED            (1L)                                            /*!< PGA Auto-zero Disable, PGA Auto-zero disabled */
 #define AS60XX_C8_USM_DIR_MODE_Pos                  (4U)
 #define AS60XX_C8_USM_DIR_MODE_Msk                  (0x03UL << AS60XX_C8_USM_DIR_MODE_Pos)          /*!< 0x00000030 */
-#define AS60XX_C8_USM_DIR_MODE_VIA_UP               (0)                                             /*!< USM_DIR_MODE[5:4]Ultrasonic Measurement Direction Mode always starting firing via UP-buffer */
-#define AS60XX_C8_USM_DIR_MODE_VIA_DN               (1)                                             /*!< USM_DIR_MODE[5:4]Ultrasonic Measurement Direction Mode always starting firing via DOWN-buffer */
-#define AS60XX_C8_USM_DIR_MODE_VIA_TOGGLE           (2)                                             /*!< USM_DIR_MODE[5:4]Ultrasonic Measurement Direction Mode toggle direction every measurement*/
+#define AS60XX_C8_USM_DIR_MODE_VIA_UP               (0L)                                            /*!< USM_DIR_MODE[5:4]Ultrasonic Measurement Direction Mode always starting firing via UP-buffer */
+#define AS60XX_C8_USM_DIR_MODE_VIA_DN               (1L)                                            /*!< USM_DIR_MODE[5:4]Ultrasonic Measurement Direction Mode always starting firing via DOWN-buffer */
+#define AS60XX_C8_USM_DIR_MODE_VIA_TOGGLE           (2L)                                            /*!< USM_DIR_MODE[5:4]Ultrasonic Measurement Direction Mode toggle direction every measurement*/
 #define AS60XX_C8_USM_NOISE_MASK_WIN_Pos            (6U)
 #define AS60XX_C8_USM_NOISE_MASK_WIN_Msk            (0x03FFUL << AS60XX_C8_USM_NOISE_MASK_WIN_Pos)  /*!< 0x0000FFC0 */
 #define AS60XX_C8_USM_NOISE_MASK_WIN_0              (0x001)                                         /*!< USM_NOISE_MASK_WIN[15:6]Noise Mask Window */
@@ -761,34 +761,34 @@
 #define AS60XX_C8_USM_NOISE_MASK_WIN_9              (0x200)                                         /*!< USM_NOISE_MASK_WIN[15:6]Noise Mask Window */
 #define AS60XX_C8_USM_TO_Pos                        (16U)
 #define AS60XX_C8_USM_TO_Msk                        (0x03UL << AS60XX_C8_USM_TO_Pos)                /*!< 0x00030000 */
-#define AS60XX_C8_USM_TO_128_USEC                   (0)                                             /*!< USM_TO[17:16]Timeout */
-#define AS60XX_C8_USM_TO_256_USEC                   (1)                                             /*!< USM_TO[17:16]Timeout */
-#define AS60XX_C8_USM_TO_1024_USEC                  (2)                                             /*!< USM_TO[17:16]Timeout */
-#define AS60XX_C8_USM_TO_4096_USEC                  (3)                                             /*!< USM_TO[17:16]Timeout */
+#define AS60XX_C8_USM_TO_128_USEC                   (0L)                                            /*!< USM_TO[17:16]Timeout */
+#define AS60XX_C8_USM_TO_256_USEC                   (1L)                                            /*!< USM_TO[17:16]Timeout */
+#define AS60XX_C8_USM_TO_1024_USEC                  (2L)                                            /*!< USM_TO[17:16]Timeout */
+#define AS60XX_C8_USM_TO_4096_USEC                  (3L)                                            /*!< USM_TO[17:16]Timeout */
 #define AS60XX_C8_NOT_USED_18_Pos                   (18U)
 #define AS60XX_C8_NOT_USED_18_Msk                   (0x1UL << AS60XX_C8_NOT_USED_18_Pos)            /*!< 0x00040000 */
-#define AS60XX_C8_NOT_USED_18                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C8_NOT_USED_18                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C8_USM_RLS_MODE_Pos                  (19U)
 #define AS60XX_C8_USM_RLS_MODE_Msk                  (0x1UL << AS60XX_C8_USM_RLS_MODE_Pos)           /*!< 0x00080000 */
-#define AS60XX_C8_USM_RLS_MODE_FIRST_HIT_ONLY       (0)                                             /*!< Select mode for multihit start release, derived by detection of First Hit Level only */
-#define AS60XX_C8_USM_RLS_MODE_COMBINED             (1)                                             /*!< Select mode for multihit start release, derived by Ultrasonic Release Delay only or in combination by First Hit Level detection */
+#define AS60XX_C8_USM_RLS_MODE_FIRST_HIT_ONLY       (0L)                                            /*!< Select mode for multihit start release, derived by detection of First Hit Level only */
+#define AS60XX_C8_USM_RLS_MODE_COMBINED             (1L)                                            /*!< Select mode for multihit start release, derived by Ultrasonic Release Delay only or in combination by First Hit Level detection */
 #define AS60XX_C8_ZCC_RATE_Pos                      (20U)
 #define AS60XX_C8_ZCC_RATE_Msk                      (0x07UL << AS60XX_C8_ZCC_RATE_Pos)              /*!< 0x00700000 */
-#define AS60XX_C8_ZCC_RATE_DISABLED                 (0)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_1                  (1)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_2                  (2)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_5                  (3)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_10                 (4)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_20                 (5)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_50                 (6)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
-#define AS60XX_C8_ZCC_RATE_EVERY_100                (7)                                             /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_DISABLED                 (0L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_1                  (1L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_2                  (2L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_5                  (3L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_10                 (4L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_20                 (5L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_50                 (6L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
+#define AS60XX_C8_ZCC_RATE_EVERY_100                (7L)                                            /*!< ZCC_RATE[22:20]Zero Cross Calibration Rate */
 #define AS60XX_C8_NOT_USED_29_23_Pos                (23U)
 #define AS60XX_C8_NOT_USED_29_23_Msk                (0x1FFUL << AS60XX_C8_NOT_USED_29_23_Pos)       /*!< 0x3F800000 */
-#define AS60XX_C8_NOT_USED_29_23                    (0)                                             /*!< NOT_USED_29_23[29:23]Not used */
+#define AS60XX_C8_NOT_USED_29_23                    (0L)                                            /*!< NOT_USED_29_23[29:23]Not used */
 #define AS60XX_C8_TI_PGA_CON_MODE_Pos               (30U)
 #define AS60XX_C8_TI_PGA_CON_MODE_Msk               (0x3UL << AS60XX_C8_TI_PGA_CON_MODE_Pos)        /*!< 0xC0000000 */
-#define AS60XX_C8_TI_PGA_CON_MODE_NO_EXTERNAL       (0)                                             /*!< Connection of PGA filter, without external filter */
-#define AS60XX_C8_TI_PGA_CON_MODE_WITH_EXTERNAL     (2)                                             /*!< Connection of PGA filter, external filter connected */
+#define AS60XX_C8_TI_PGA_CON_MODE_NO_EXTERNAL       (0L)                                            /*!< Connection of PGA filter, without external filter */
+#define AS60XX_C8_TI_PGA_CON_MODE_WITH_EXTERNAL     (2L)                                            /*!< Connection of PGA filter, external filter connected */
 
 /******************  Bit definition for AS60XX_C9 register  *******************/
 #define AS60XX_C9_FBG_CLK_DIV_Pos                   (0U)
@@ -802,8 +802,8 @@
 #define AS60XX_C9_FBG_CLK_DIV_6                     (0x40)                                          /*!< FBG_CLK_DIV[6:0]Clock divider for fire burst generator */
 #define AS60XX_C9_FBG_MODE_Pos                      (7U)
 #define AS60XX_C9_FBG_MODE_Msk                      (0x1UL << AS60XX_C9_FBG_MODE_Pos)               /*!< 0x00000080 */
-#define AS60XX_C9_FBG_MODE_LOW_PHASE_INSERTION      (0)                                             /*!< Fire Burst Generator Mode */
-#define AS60XX_C9_FBG_MODE_HIGH_PHASE_INSERTION     (1)                                             /*!< Fire Burst Generator Mode */
+#define AS60XX_C9_FBG_MODE_LOW_PHASE_INSERTION      (0L)                                            /*!< Fire Burst Generator Mode */
+#define AS60XX_C9_FBG_MODE_HIGH_PHASE_INSERTION     (1L)                                            /*!< Fire Burst Generator Mode */
 #define AS60XX_C9_FBG_PHASE_INS_Pos                 (8U)
 #define AS60XX_C9_FBG_PHASE_INS_Msk                 (0xFFUL << AS60XX_C9_FBG_PHASE_INS_Pos)         /*!< 0x0000FF00 */
 #define AS60XX_C9_FBG_PHASE_INS_0                   (0x01)                                          /*!< FBG_PHASE_INS[15:8]Fire Burst Generator, Phase Insertion */
@@ -832,22 +832,22 @@
 #define AS60XX_C9_FBG_BURST_POST_5                  (0x20)                                          /*!< FBG_BURST_POST[27:22]Fire Burst Generator, post-burst */
 #define AS60XX_C9_NOT_USED_28_Pos                   (28U)
 #define AS60XX_C9_NOT_USED_28_Msk                   (0x1UL << AS60XX_C9_NOT_USED_28_Pos)            /*!< 0x10000000 */
-#define AS60XX_C9_NOT_USED_28                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C9_NOT_USED_28                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_C9_NOT_USED_29_Pos                   (29U)
 #define AS60XX_C9_NOT_USED_29_Msk                   (0x1UL << AS60XX_C9_NOT_USED_29_Pos)            /*!< 0x20000000 */
-#define AS60XX_C9_NOT_USED_29                       (1)                                             /*!< Mandatory setting: b1 */
+#define AS60XX_C9_NOT_USED_29                       (1L)                                            /*!< Mandatory setting: b1 */
 #define AS60XX_C9_TOF_HIT_MODE_Pos                  (30U)
 #define AS60XX_C9_TOF_HIT_MODE_Msk                  (0x1UL << AS60XX_C9_TOF_HIT_MODE_Pos)           /*!< 0x40000000 */
-#define AS60XX_C9_TOF_HIT_MODE_AS60XX               (0)                                             /*!< TOF data in FDB according to Multi-Hit Mode, 10 TOF in 3 bundles */
-#define AS60XX_C9_TOF_HIT_MODE_GP30                 (1)                                             /*!< TOF data in FDB according to Multi-Hit Mode, 10 TOF in 1 bundle */
+#define AS60XX_C9_TOF_HIT_MODE_AS60XX               (0L)                                            /*!< TOF data in FDB according to Multi-Hit Mode, 10 TOF in 3 bundles */
+#define AS60XX_C9_TOF_HIT_MODE_GP30                 (1L)                                            /*!< TOF data in FDB according to Multi-Hit Mode, 10 TOF in 1 bundle */
 #define AS60XX_C9_NOT_USED_31_Pos                   (31U)
 #define AS60XX_C9_NOT_USED_31_Msk                   (0x1UL << AS60XX_C9_NOT_USED_31_Pos)            /*!< 0x80000000 */
-#define AS60XX_C9_NOT_USED_31                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_C9_NOT_USED_31                       (0L)                                            /*!< Mandatory setting: b0 */
 
 /******************  Bit definition for AS60XX_CA register  *******************/
 #define AS60XX_CA_NOT_USED_0_Pos                    (0U)
 #define AS60XX_CA_NOT_USED_0_Msk                    (0x1UL << AS60XX_CA_NOT_USED_0_Pos)             /*!< 0x00000001 */
-#define AS60XX_CA_NOT_USED_0                        (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_CA_NOT_USED_0                        (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_CA_TOF_HIT_START_Pos                 (1U)
 #define AS60XX_CA_TOF_HIT_START_Msk                 (0x1FUL << AS60XX_CA_TOF_HIT_START_Pos)         /*!< 0x0000003E */
 #define AS60XX_CA_TOF_HIT_START_0                   (0x01)                                          /*!< TOF_HIT_START[5:1]Defines number of detected hits (including first hit) */
@@ -857,10 +857,10 @@
 #define AS60XX_CA_TOF_HIT_START_4                   (0x10)                                          /*!< TOF_HIT_START[5:1]Defines number of detected hits (including first hit) */
 #define AS60XX_CA_TOF_HIT_IGN_Pos                   (6U)
 #define AS60XX_CA_TOF_HIT_IGN_Msk                   (0x03UL << AS60XX_CA_TOF_HIT_IGN_Pos)           /*!< 0x000000C0 */
-#define AS60XX_CA_TOF_HIT_IGN_0_HITS                (0)                                             /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
-#define AS60XX_CA_TOF_HIT_IGN_1_HITS                (1)                                             /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
-#define AS60XX_CA_TOF_HIT_IGN_2_HITS                (2)                                             /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
-#define AS60XX_CA_TOF_HIT_IGN_3_HITS                (3)                                             /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
+#define AS60XX_CA_TOF_HIT_IGN_0_HITS                (0L)                                            /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
+#define AS60XX_CA_TOF_HIT_IGN_1_HITS                (1L)                                            /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
+#define AS60XX_CA_TOF_HIT_IGN_2_HITS                (2L)                                            /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
+#define AS60XX_CA_TOF_HIT_IGN_3_HITS                (3L)                                            /*!< TOF_HIT_IGN[7:6]Number of multi hits ignored between two hits taken for TDC measurement */
 #define AS60XX_CA_TOF_HIT_SUM_NO_Pos                (8U)
 #define AS60XX_CA_TOF_HIT_SUM_NO_Msk                (0x1FUL << AS60XX_CA_TOF_HIT_SUM_NO_Pos)        /*!< 0x00001F00 */
 #define AS60XX_CA_TOF_HIT_SUM_NO_0                  (0x01)                                          /*!< TOF_HIT_SUM_NO[12:8]Number of hits taken for sum value of TOF measurement */
@@ -879,13 +879,13 @@
 #define AS60XX_CA_TOF_HIT_END_6                     (0x40)                                          /*!< TOF_HIT_END[19:13]TOF Hits stored to frontend data buffer */
 #define AS60XX_CA_NOT_USED_21_20_Pos                (20U)
 #define AS60XX_CA_NOT_USED_21_20_Msk                (0x03UL << AS60XX_CA_NOT_USED_21_20_Pos)        /*!< 0x00300000 */
-#define AS60XX_CA_NOT_USED_21_20                    (0)                                             /*!< NOT_USED_21_20[21:20]Mandatory setting: b00 */
+#define AS60XX_CA_NOT_USED_21_20                    (0L)                                            /*!< NOT_USED_21_20[21:20]Mandatory setting: b00 */
 #define AS60XX_CA_TOF_EDGE_MODE_Pos                 (22U)
 #define AS60XX_CA_TOF_EDGE_MODE_Msk                 (0x03UL << AS60XX_CA_TOF_EDGE_MODE_Pos)         /*!< 0x00C00000 */
-#define AS60XX_CA_TOF_EDGE_MODE_POS_EDGE            (0)                                             /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, on positive edge of TOF hit */
-#define AS60XX_CA_TOF_EDGE_MODE_NEG_EDGE            (1)                                             /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, on negative edge of TOF hit*/
-#define AS60XX_CA_TOF_EDGE_MODE_TOGGLE_EVERY_1      (2)                                             /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, toggle edge every measurement*/
-#define AS60XX_CA_TOF_EDGE_MODE_TOGGLE_EVERY_2      (3)                                             /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, toggle edge after 2 measurements*/
+#define AS60XX_CA_TOF_EDGE_MODE_POS_EDGE            (0L)                                            /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, on positive edge of TOF hit */
+#define AS60XX_CA_TOF_EDGE_MODE_NEG_EDGE            (1L)                                            /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, on negative edge of TOF hit*/
+#define AS60XX_CA_TOF_EDGE_MODE_TOGGLE_EVERY_1      (2L)                                            /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, toggle edge every measurement*/
+#define AS60XX_CA_TOF_EDGE_MODE_TOGGLE_EVERY_2      (3L)                                            /*!< TOF_EDGE_MODE[23:22]Time of Flight, edge mode, toggle edge after 2 measurements*/
 #define AS60XX_CA_TOF_RATE_INIT_Pos                 (24U)
 #define AS60XX_CA_TOF_RATE_INIT_Msk                 (0x3FUL << AS60XX_CA_TOF_RATE_INIT_Pos)         /*!< 0x3F000000 */
 #define AS60XX_CA_TOF_RATE_INIT_0                   (0x01)                                          /*!< TOF_RATE_INIT[29:24]FWD copy of initial value for TOF rate */
@@ -896,75 +896,75 @@
 #define AS60XX_CA_TOF_RATE_INIT_5                   (0x20)                                          /*!< TOF_RATE_INIT[29:24]FWD copy of initial value for TOF rate */
 #define AS60XX_CA_NOT_USED_31_30_Pos                (30U)
 #define AS60XX_CA_NOT_USED_31_30_Msk                (0x03UL << AS60XX_CA_NOT_USED_31_30_Pos)        /*!< 0xC0000000 */
-#define AS60XX_CA_NOT_USED_31_30                    (0)                                             /*!< NOT_USED_31_30[31:30]Not Used */
+#define AS60XX_CA_NOT_USED_31_30                    (0L)                                            /*!< NOT_USED_31_30[31:30]Not Used */
 
 /******************  Bit definition for AS60XX_CB register  *******************/
 #define AS60XX_CB_AM_RATE_Pos                       (0U)
 #define AS60XX_CB_AM_RATE_Msk                       (0x07UL << AS60XX_CB_AM_RATE_Pos)               /*!< 0x00000007 */
-#define AS60XX_CB_AM_RATE_DISABLED                  (0)
-#define AS60XX_CB_AM_RATE_EVERY_1                   (1)
-#define AS60XX_CB_AM_RATE_EVERY_2                   (2)
-#define AS60XX_CB_AM_RATE_EVERY_5                   (3)
-#define AS60XX_CB_AM_RATE_EVERY_10                  (4)
-#define AS60XX_CB_AM_RATE_EVERY_20                  (5)
-#define AS60XX_CB_AM_RATE_EVERY_50                  (6)
-#define AS60XX_CB_AM_RATE_EVERY_100                 (7)
+#define AS60XX_CB_AM_RATE_DISABLED                  (0L)                                            /*!< Amplitude measurement rate diabled */
+#define AS60XX_CB_AM_RATE_EVERY_1                   (1L)                                            /*!< Amplitude measurement rate every TOF trigger */
+#define AS60XX_CB_AM_RATE_EVERY_2                   (2L)                                            /*!< Amplitude measurement rate every 2nd TOF trigger */
+#define AS60XX_CB_AM_RATE_EVERY_5                   (3L)                                            /*!< Amplitude measurement rate every 5th TOF trigger */
+#define AS60XX_CB_AM_RATE_EVERY_10                  (4L)                                            /*!< Amplitude measurement rate every 10th TOF trigger */
+#define AS60XX_CB_AM_RATE_EVERY_20                  (5L)                                            /*!< Amplitude measurement rate every 20th TOF trigger */
+#define AS60XX_CB_AM_RATE_EVERY_50                  (6L)                                            /*!< Amplitude measurement rate every 50th TOF trigger */
+#define AS60XX_CB_AM_RATE_EVERY_100                 (7L)                                            /*!< Amplitude measurement rate every 100th TOF trigger */
 #define AS60XX_CB_NOT_USED_3_Pos                    (3U)
 #define AS60XX_CB_NOT_USED_3_Msk                    (0x1UL << AS60XX_CB_NOT_USED_3_Pos)             /*!< 0x00000008 */
-#define AS60XX_CB_NOT_USED_3                        (0)                                             /*!< Default setting: b0 */
+#define AS60XX_CB_NOT_USED_3                        (0L)                                            /*!< Default setting: b0 */
 #define AS60XX_CB_AM_PD_END_Pos                     (4U)
 #define AS60XX_CB_AM_PD_END_Msk                     (0x1FUL << AS60XX_CB_AM_PD_END_Pos)             /*!< 0x000001F0 */
-#define AS60XX_CB_AM_PD_END_0                       (0x01)                                          /*!< AM_PD_END[8:4]Amplitude measurement, end of peak detection */
-#define AS60XX_CB_AM_PD_END_1                       (0x02)                                          /*!< AM_PD_END[8:4]Amplitude measurement, end of peak detection */
-#define AS60XX_CB_AM_PD_END_2                       (0x04)                                          /*!< AM_PD_END[8:4]Amplitude measurement, end of peak detection */
-#define AS60XX_CB_AM_PD_END_3                       (0x08)                                          /*!< AM_PD_END[8:4]Amplitude measurement, end of peak detection */
-#define AS60XX_CB_AM_PD_END_4                       (0x10)                                          /*!< AM_PD_END[8:4]Amplitude measurement, end of peak detection */
+#define AS60XX_CB_AM_PD_END_0                       (0x01)                                          /*!< Amplitude measurement, end of peak detection */
+#define AS60XX_CB_AM_PD_END_1                       (0x02)                                          /*!< Amplitude measurement, end of peak detection */
+#define AS60XX_CB_AM_PD_END_2                       (0x04)                                          /*!< Amplitude measurement, end of peak detection */
+#define AS60XX_CB_AM_PD_END_3                       (0x08)                                          /*!< Amplitude measurement, end of peak detection */
+#define AS60XX_CB_AM_PD_END_4                       (0x10)                                          /*!< Amplitude measurement, end of peak detection */
 #define AS60XX_CB_NOT_USED_11_9_Pos                 (9U)
 #define AS60XX_CB_NOT_USED_11_9_Msk                 (0x07UL << AS60XX_CB_NOT_USED_11_9_Pos)         /*!< 0x00000E00 */
-#define AS60XX_CB_NOT_USED_11_9                     (7)                                             /*!< NOT_USED_11_9[11:9]Mandatory setting: b111 */
+#define AS60XX_CB_NOT_USED_11_9                     (7L)                                            /*!< NOT_USED_11_9[11:9]Mandatory setting: b111 */
 #define AS60XX_CB_AMC_RATE_Pos                      (12U)
 #define AS60XX_CB_AMC_RATE_Msk                      (0x07UL << AS60XX_CB_AMC_RATE_Pos)              /*!< 0x00007000 */
-#define AS60XX_CB_AMC_RATE_DISABLED                 (0)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_1                  (1)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_2                  (2)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_5                  (3)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_10                 (4)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_20                 (5)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_50                 (6)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
-#define AS60XX_CB_AMC_RATE_EVERY_100                (7)                                             /*!< AMC_RATE[14:12]Amplitude measurement calibration rate */
+#define AS60XX_CB_AMC_RATE_DISABLED                 (0L)                                            /*!< Amplitude measurement calibration disabled*/
+#define AS60XX_CB_AMC_RATE_EVERY_1                  (1L)                                            /*!< Amplitude measurement calibration rate every amplitude measurement */
+#define AS60XX_CB_AMC_RATE_EVERY_2                  (2L)                                            /*!< Amplitude measurement calibration rate every 2nd amplitude measurement */
+#define AS60XX_CB_AMC_RATE_EVERY_5                  (3L)                                            /*!< Amplitude measurement calibration rate every 5th amplitude measurement */
+#define AS60XX_CB_AMC_RATE_EVERY_10                 (4L)                                            /*!< Amplitude measurement calibration rate every 10th amplitude measurement */
+#define AS60XX_CB_AMC_RATE_EVERY_20                 (5L)                                            /*!< Amplitude measurement calibration rate every 20th amplitude measurement */
+#define AS60XX_CB_AMC_RATE_EVERY_50                 (6L)                                            /*!< Amplitude measurement calibration rate every 50th amplitude measurement */
+#define AS60XX_CB_AMC_RATE_EVERY_100                (7L)                                            /*!< Amplitude measurement calibration rate every 100th amplitude measurement */
 #define AS60XX_CB_PWD_EN_Pos                        (15U)
 #define AS60XX_CB_PWD_EN_Msk                        (0x1UL << AS60XX_CB_PWD_EN_Pos)                 /*!< 0x00008000 */
-#define AS60XX_CB_PWD_EN                            (1)                                             /*!< Enables pulse width detection */
+#define AS60XX_CB_PWD_EN                            (1L)                                            /*!< Enables pulse width detection */
 #define AS60XX_CB_PGA_TRIM_Pos                      (16U)
 #define AS60XX_CB_PGA_TRIM_Msk                      (0x07UL << AS60XX_CB_PGA_TRIM_Pos)              /*!< 0x00070000 */
-#define AS60XX_CB_PGA_TRIM_2_V_PER_V                (0)                                             /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_3_V_PER_V                (0x1)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_4_V_PER_V                (0x2)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_5_V_PER_V                (0x3)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_7_V_PER_V                (0x4)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_10_V_PER_V               (0x5)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_14_V_PER_V               (0x6)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_19_V_PER_V               (0x7)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_26_V_PER_V               (0x8)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_36_V_PER_V               (0x9)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_50_V_PER_V               (0xA)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_69_V_PER_V               (0xB)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_96_V_PER_V               (0xC)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_TRIM_132_V_PER_V              (0xD)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
-#define AS60XX_CB_PGA_EN_MODE_Pos                   (20U)                                           /*!< PGA_TRIM[18:16]DC gain of the PGA */
+#define AS60XX_CB_PGA_TRIM_2_V_PER_V                (0L)                                            /*!< PGA gain in steps of 2 V/V */
+#define AS60XX_CB_PGA_TRIM_3_V_PER_V                (1L)                                            /*!< PGA gain in steps of 3 V/V */
+#define AS60XX_CB_PGA_TRIM_4_V_PER_V                (2L)                                            /*!< PGA gain in steps of 4 V/V */
+#define AS60XX_CB_PGA_TRIM_5_V_PER_V                (3L)                                            /*!< PGA gain in steps of 5 V/V */
+#define AS60XX_CB_PGA_TRIM_7_V_PER_V                (4L)                                            /*!< PGA gain in steps of 7 V/V */
+#define AS60XX_CB_PGA_TRIM_10_V_PER_V               (5L)                                            /*!< PGA gain in steps of 10 V/V */
+#define AS60XX_CB_PGA_TRIM_14_V_PER_V               (6L)                                            /*!< PGA gain in steps of 14 V/V */
+#define AS60XX_CB_PGA_TRIM_19_V_PER_V               (7L)                                            /*!< PGA gain in steps of 19 V/V */
+#define AS60XX_CB_PGA_TRIM_26_V_PER_V               (8L)                                            /*!< PGA gain in steps of 26 V/V */
+#define AS60XX_CB_PGA_TRIM_36_V_PER_V               (9L)                                            /*!< PGA gain in steps of 36 V/V */
+#define AS60XX_CB_PGA_TRIM_50_V_PER_V               (10L)                                           /*!< PGA gain in steps of 50 V/V */
+#define AS60XX_CB_PGA_TRIM_69_V_PER_V               (11L)                                           /*!< PGA gain in steps of 69 V/V */
+#define AS60XX_CB_PGA_TRIM_96_V_PER_V               (12L)                                           /*!< PGA gain in steps of 96 V/V */
+#define AS60XX_CB_PGA_TRIM_132_V_PER_V              (13L)                                           /*!< PGA gain in steps of 132 V/V */
+#define AS60XX_CB_PGA_EN_MODE_Pos                   (20U)
 #define AS60XX_CB_PGA_EN_MODE_Msk                   (0x1UL << AS60XX_CB_PGA_EN_MODE_Pos)            /*!< 0x00100000 */
-#define AS60XX_CB_PGA_EN_MODE                       (0)                                             /*!< Default setting: b0 */
+#define AS60XX_CB_PGA_EN_MODE                       (0L)                                            /*!< Default setting: b0 */
 #define AS60XX_CB_PGA_MODE_Pos                      (21U)
 #define AS60XX_CB_PGA_MODE_Msk                      (0x1UL << AS60XX_CB_PGA_MODE_Pos)               /*!< 0x00200000 */
-#define AS60XX_CB_PGA_MODE_DISABLED                 (0)                                             /*!< Ultrasonic measurement PGA Mode */
-#define AS60XX_CB_PGA_MODE_ENABLED                  (1)                                             /*!< Ultrasonic measurement PGA Mode */
+#define AS60XX_CB_PGA_MODE_DISABLED                 (0L)                                            /*!< Ultrasonic measurement PGA Mode */
+#define AS60XX_CB_PGA_MODE_ENABLED                  (1L)                                            /*!< Ultrasonic measurement PGA Mode */
 #define AS60XX_CB_NOT_USED_22_Pos                   (22U)
 #define AS60XX_CB_NOT_USED_22_Msk                   (0x1UL << AS60XX_CB_NOT_USED_22_Pos)            /*!< 0x00400000 */
-#define AS60XX_CB_NOT_USED_22                       (0)                                             /*!< Mandatory setting: b0 */
+#define AS60XX_CB_NOT_USED_22                       (0L)                                            /*!< Mandatory setting: b0 */
 #define AS60XX_CB_AM_PD_START_MODE_Pos              (23U)
 #define AS60XX_CB_AM_PD_START_MODE_Msk              (0x1UL << AS60XX_CB_AM_PD_START_MODE_Pos)       /*!< 0x00800000 */
-#define AS60XX_CB_AM_PD_START_MODE_NOISE_MASK       (0)                                             /*!< Peak Detection Start Mode, starts after noise mask window expires */
-#define AS60XX_CB_AM_PD_START_MODE_US_RELEASE       (1)                                             /*!< Peak Detection Start Mode, starts after ultrasonic release delay expires */
+#define AS60XX_CB_AM_PD_START_MODE_NOISE_MASK       (0L)                                            /*!< Peak Detection Start Mode, starts after noise mask window expires */
+#define AS60XX_CB_AM_PD_START_MODE_US_RELEASE       (1L)                                            /*!< Peak Detection Start Mode, starts after ultrasonic release delay expires */
 #define AS60XX_CB_ZCD_FHL_INIT_Pos                  (24U)
 #define AS60XX_CB_ZCD_FHL_INIT_Msk                  (0xFFUL << AS60XX_CB_ZCD_FHL_INIT_Pos)          /*!< 0xFF000000 */
 #define AS60XX_CB_ZCD_FHL_INIT_0                    (0x01)                                          /*!< ZCD_FHL_INIT[31:24]FWD copy of initial value for first hit levels */
@@ -1005,7 +1005,7 @@
 #define AS60XX_D0_TOF_RATE_5                        (0x20)                                          /*!< TOF_RATE[5:0]TOF Rate */
 #define AS60XX_D0_NOT_USED_31_6_Pos                 (6U)
 #define AS60XX_D0_NOT_USED_31_6_Msk                 (0x03FFFFFFUL << AS60XX_D0_NOT_USED_31_6_Pos)   /*!< 0xFFFFFFC0 */
-#define AS60XX_D0_NOT_USED_31_6                     (0)                                             /*!< NOT_USED_31_6[31:6]Not used */
+#define AS60XX_D0_NOT_USED_31_6                     (0L)                                            /*!< NOT_USED_31_6[31:6]Not used */
 
 /******************  Bit definition for AS60XX_D1 register  *******************/
 #define AS60XX_D1_USM_RLS_DLY_U_Pos                 (0U)
@@ -1031,7 +1031,7 @@
 #define AS60XX_D1_USM_RLS_DLY_U_18                  (0x40000)                                       /*!< USM_RLS_DLY_U[18:0]Delay window in up direction, releasing ultrasonic measurement */
 #define AS60XX_D1_NOT_USED_31_19_Pos                (19U)
 #define AS60XX_D1_NOT_USED_31_19_Msk                (0x1FFFUL << AS60XX_D1_NOT_USED_31_19_Pos)      /*!< 0xFFF80000 */
-#define AS60XX_D1_NOT_USED_31_19                    (0)                                             /*!< NOT_USED_31_19[31:19]Not used */
+#define AS60XX_D1_NOT_USED_31_19                    (0L)                                            /*!< NOT_USED_31_19[31:19]Not used */
 
 /******************  Bit definition for AS60XX_D2 register  *******************/
 #define AS60XX_D2_USM_RLS_DLY_D_Pos                 (0U)
@@ -1057,7 +1057,7 @@
 #define AS60XX_D2_USM_RLS_DLY_D_18                  (0x40000)                                       /*!< USM_RLS_DLY_D[18:0]Delay window in down direction, releasing ultrasonic measurement */
 #define AS60XX_D2_NOT_USED_31_19_Pos                (19U)
 #define AS60XX_D2_NOT_USED_31_19_Msk                (0x1FFFUL << AS60XX_D2_NOT_USED_31_19_Pos)      /*!< 0xFFF80000 */
-#define AS60XX_D2_NOT_USED_31_19                    (0)                                             /*!< NOT_USED_31_19[31:19]Not used */
+#define AS60XX_D2_NOT_USED_31_19                    (0L)                                            /*!< NOT_USED_31_19[31:19]Not used */
 
 /******************  Bit definition for AS60XX_D3 register  *******************/
 #define AS60XX_D3_GPO_Pos                           (0U)
@@ -1070,25 +1070,25 @@
 #define AS60XX_D3_GPO_5                             (0x20)                                          /*!< GPO[5:0]General Purpose Out */
 #define AS60XX_D3_NOT_USED_7_6_Pos                  (6U)
 #define AS60XX_D3_NOT_USED_7_6_Msk                  (0x3UL << AS60XX_D3_NOT_USED_7_6_Pos)           /*!< 0x000000C0 */
-#define AS60XX_D3_NOT_USED_7_6                      (0)                                             /*!< NOT_USED_7_6[7:6]Not used */
+#define AS60XX_D3_NOT_USED_7_6                      (0L)                                            /*!< NOT_USED_7_6[7:6]Not used */
 #define AS60XX_D3_PI_OUT_FRC0_Pos                   (8U)
 #define AS60XX_D3_PI_OUT_FRC0_Msk                   (0x1UL << AS60XX_D3_PI_OUT_FRC0_Pos)            /*!< 0x00000100 */
-#define AS60XX_D3_PI_OUT_FRC0                       (1)                                             /*!< Forces LOW on pulse output */
+#define AS60XX_D3_PI_OUT_FRC0                       (1L)                                            /*!< Forces LOW on pulse output */
 #define AS60XX_D3_PI_OUT_FRC1_Pos                   (9U)
 #define AS60XX_D3_PI_OUT_FRC1_Msk                   (0x1UL << AS60XX_D3_PI_OUT_FRC1_Pos)            /*!< 0x00000200 */
-#define AS60XX_D3_PI_OUT_FRC1                       (1)                                             /*!< Forces HIGH on pulse output */
+#define AS60XX_D3_PI_OUT_FRC1                       (1L)                                            /*!< Forces HIGH on pulse output */
 #define AS60XX_D3_PI_DIR_FRC0_Pos                   (10U)
 #define AS60XX_D3_PI_DIR_FRC0_Msk                   (0x1UL << AS60XX_D3_PI_DIR_FRC0_Pos)            /*!< 0x00000400 */
-#define AS60XX_D3_PI_DIR_FRC0                       (1)                                             /*!< Forces LOW on pulse direction */
+#define AS60XX_D3_PI_DIR_FRC0                       (1L)                                            /*!< Forces LOW on pulse direction */
 #define AS60XX_D3_PI_DIR_FRC1_Pos                   (11U)
 #define AS60XX_D3_PI_DIR_FRC1_Msk                   (0x1UL << AS60XX_D3_PI_DIR_FRC1_Pos)            /*!< 0x00000800 */
-#define AS60XX_D3_PI_DIR_FRC1                       (1)                                             /*!< Forces HIGH on pulse direction */
+#define AS60XX_D3_PI_DIR_FRC1                       (1L)                                            /*!< Forces HIGH on pulse direction */
 #define AS60XX_D3_FWCU_CS_ERR_Pos                   (12U)
 #define AS60XX_D3_FWCU_CS_ERR_Msk                   (0x1UL << AS60XX_D3_FWCU_CS_ERR_Pos)            /*!< 0x00001000 */
-#define AS60XX_D3_FWCU_CS_ERR                       (1)                                             /*!< FWCU checksum error */
+#define AS60XX_D3_FWCU_CS_ERR                       (1L)                                            /*!< FWCU checksum error */
 #define AS60XX_D3_FWDU_CS_ERR_Pos                   (13U)
 #define AS60XX_D3_FWDU_CS_ERR_Msk                   (0x1UL << AS60XX_D3_FWDU_CS_ERR_Pos)            /*!< 0x00002000 */
-#define AS60XX_D3_FWDU_CS_ERR                       (1)                                             /*!< FWDU checksum error */
+#define AS60XX_D3_FWDU_CS_ERR                       (1L)                                            /*!< FWDU checksum error */
 #define AS60XX_D3_FWA_CS_ERR_Pos                    (14U)
 #define AS60XX_D3_FWA_CS_ERR_Msk                    (0x1FUL << AS60XX_D3_FWA_CS_ERR_Pos)            /*!< 0x0007C000 */
 #define AS60XX_D3_FWA_CS_ERR_0                      (0x01)                                          /*!< FWA_CS_ERR[18:14]Different FWA checksum errors */
@@ -1098,10 +1098,10 @@
 #define AS60XX_D3_FWA_CS_ERR_4                      (0x10)                                          /*!< FWA_CS_ERR[18:14]Different FWA checksum errors */
 #define AS60XX_D3_FW_ERR_Pos                        (19U)
 #define AS60XX_D3_FW_ERR_Msk                        (0x1UL << AS60XX_D3_FW_ERR_Pos)                 /*!< 0x00080000 */
-#define AS60XX_D3_FW_ERR                            (1)                                             /*!< FW error */
+#define AS60XX_D3_FW_ERR                            (1L)                                            /*!< FW error */
 #define AS60XX_D3_NOT_USED_31_20_Pos                (20U)
 #define AS60XX_D3_NOT_USED_31_20_Msk                (0xFFFUL << AS60XX_D3_NOT_USED_31_20_Pos)       /*!< 0xFFF00000 */
-#define AS60XX_D3_NOT_USED_31_20                    (0)                                             /*!< NOT_USED_31_20[31:20]Not used */
+#define AS60XX_D3_NOT_USED_31_20                    (0L)                                            /*!< NOT_USED_31_20[31:20]Not used */
 
 /******************  Bit definition for AS60XX_D4 register  *******************/
 #define AS60XX_D4_PI_NPULSE_Pos                     (0U)
@@ -1112,28 +1112,28 @@
 #define AS60XX_D5_PI_TPA_Msk                        (0xFFFFUL << AS60XX_D5_PI_TPA_Pos)              /*!< 0x0000FFFF */
 #define AS60XX_D5_NOT_USED_31_16_Pos                (16U)
 #define AS60XX_D5_NOT_USED_31_16_Msk                (0xFFFFUL << AS60XX_D5_NOT_USED_31_16_Pos)      /*!< 0xFFFF0000 */
-#define AS60XX_D5_NOT_USED_31_16                    (0)                                             /*!< NOT_USED_31_16[31:16]Not used */
+#define AS60XX_D5_NOT_USED_31_16                    (0L)                                            /*!< NOT_USED_31_16[31:16]Not used */
 
 /******************  Bit definition for AS60XX_D6 register  *******************/
 #define AS60XX_D6_PI_IU_TIME_Pos                    (0U)
 #define AS60XX_D6_PI_IU_TIME_Msk                    (0xFFFFUL << AS60XX_D6_PI_IU_TIME_Pos)          /*!< 0x0000FFFF */
 #define AS60XX_D6_NOT_USED_31_16_Pos                (16U)
 #define AS60XX_D6_NOT_USED_31_16_Msk                (0xFFFFUL << AS60XX_D5_NOT_USED_31_16_Pos)      /*!< 0xFFFF0000 */
-#define AS60XX_D6_NOT_USED_31_16                    (0)                                             /*!< NOT_USED_31_16[31:16]Not used */
+#define AS60XX_D6_NOT_USED_31_16                    (0L)                                            /*!< NOT_USED_31_16[31:16]Not used */
 
 /******************  Bit definition for AS60XX_D7 register  *******************/
 #define AS60XX_D7_PI_IU_NO_Pos                      (0U)
 #define AS60XX_D7_PI_IU_NO_Msk                      (0xFFUL << AS60XX_D7_PI_IU_NO_Pos)              /*!< 0x000000FF */
 #define AS60XX_D7_NOT_USED_31_8_Pos                 (8U)
 #define AS60XX_D7_NOT_USED_31_8_Msk                 (0xFFFFFFUL << AS60XX_D7_NOT_USED_31_8_Pos)     /*!< 0xFFFFFF00 */
-#define AS60XX_D7_NOT_USED_31_8                     (0)                                             /*!< NOT_USED_31_8[31:8]Not used */
+#define AS60XX_D7_NOT_USED_31_8                     (0L)                                            /*!< NOT_USED_31_8[31:8]Not used */
 
 /******************  Bit definition for AS60XX_D9 register  *******************/
 #define AS60XX_D9_ZCD_LVL_Pos                       (0U)
 #define AS60XX_D9_ZCD_LVL_Msk                       (0x7FFUL << AS60XX_D9_ZCD_LVL_Pos)              /*!< 0x000007FF */
 #define AS60XX_D9_NOT_USED_31_10_Pos                (10U)
 #define AS60XX_D9_NOT_USED_31_10_Msk                (0xFFFFF8UL << AS60XX_D9_NOT_USED_31_10_Pos)    /*!< 0xFFFFF800 */
-#define AS60XX_D9_NOT_USED_31_10                    (0)                                             /*!< NOT_USED_31_10[31:10]Not used */
+#define AS60XX_D9_NOT_USED_31_10                    (0L)                                            /*!< NOT_USED_31_10[31:10]Not used */
 
 /******************  Bit definition for AS60XX_DA register  *******************/
 #define AS60XX_DA_ZCD_FHL_U_Pos                     (0U)
@@ -1148,7 +1148,7 @@
 #define AS60XX_DA_ZCD_FHL_U_7                       (0x80)                                          /*!< ZCD_FHL_U[7:0]First Hit Level Up */
 #define AS60XX_DA_NOT_USED_31_8_Pos                 (8U)
 #define AS60XX_DA_NOT_USED_31_8_Msk                 (0xFFFFFFUL << AS60XX_DA_NOT_USED_31_8_Pos)     /*!< 0xFFFFFF00 */
-#define AS60XX_DA_NOT_USED_31_8                     (0)                                             /*!< NOT_USED_31_8[31:8]Not used */
+#define AS60XX_DA_NOT_USED_31_8                     (0L)                                            /*!< NOT_USED_31_8[31:8]Not used */
 
 /******************  Bit definition for AS60XX_DB register  *******************/
 #define AS60XX_DB_ZCD_FHL_D_Pos                     (0U)
@@ -1163,54 +1163,54 @@
 #define AS60XX_DB_ZCD_FHL_D_7                       (0x80)                                          /*!< ZCD_FHL_D[7:0]First Hit Level Down */
 #define AS60XX_DB_NOT_USED_31_8_Pos                 (8U)
 #define AS60XX_DB_NOT_USED_31_8_Msk                 (0xFFFFFFUL << AS60XX_DB_NOT_USED_31_8_Pos)     /*!< 0xFFFFFF00 */
-#define AS60XX_DB_NOT_USED_31_8                     (0)                                             /*!< NOT_USED_31_8[31:8]Not used */
+#define AS60XX_DB_NOT_USED_31_8                     (0L)                                            /*!< NOT_USED_31_8[31:8]Not used */
 
 /******************  Bit definition for AS60XX_DC register  *******************/
 #define AS60XX_DC_CPU_REQ_BLD_EXC_Pos               (0U)
 #define AS60XX_DC_CPU_REQ_BLD_EXC_Msk               (0x1UL << AS60XX_DC_CPU_REQ_BLD_EXC_Pos)        /*!< 0x00000001 */
-#define AS60XX_DC_CPU_REQ_BLD_EXC_NOT_REQUESTED     (0)                                             /*!< CPU Request Bootloader Execute, Bootloader subroutine in CPU not requested */
-#define AS60XX_DC_CPU_REQ_BLD_EXC_REQUESTED         (1)                                             /*!< CPU Request Bootloader Execute, Bootloader subroutine in CPU requested */
+#define AS60XX_DC_CPU_REQ_BLD_EXC_NOT_REQUESTED     (0L)                                            /*!< CPU Request Bootloader Execute, Bootloader subroutine in CPU not requested */
+#define AS60XX_DC_CPU_REQ_BLD_EXC_REQUESTED         (1L)                                            /*!< CPU Request Bootloader Execute, Bootloader subroutine in CPU requested */
 #define AS60XX_DC_CPU_REQ_CHKSUM_Pos                (1U)
 #define AS60XX_DC_CPU_REQ_CHKSUM_Msk                (0x1UL << AS60XX_DC_CPU_REQ_CHKSUM_Pos)         /*!< 0x00000002 */
-#define AS60XX_DC_CPU_REQ_CHKSUM_NOT_REQUESTED      (0)                                             /*!< CPU Request Build Checksum, Build checksum in CPU not requested */
-#define AS60XX_DC_CPU_REQ_CHKSUM_REQUESTED          (1)                                             /*!< CPU Request Build Checksum, Build checksum in CPU requested */
+#define AS60XX_DC_CPU_REQ_CHKSUM_NOT_REQUESTED      (0L)                                            /*!< CPU Request Build Checksum, Build checksum in CPU not requested */
+#define AS60XX_DC_CPU_REQ_CHKSUM_REQUESTED          (1L)                                            /*!< CPU Request Build Checksum, Build checksum in CPU requested */
 #define AS60XX_DC_CPU_REQ_PP_T_Pos                  (2U)
 #define AS60XX_DC_CPU_REQ_PP_T_Msk                  (0x1UL << AS60XX_DC_CPU_REQ_PP_T_Pos)           /*!< 0x00000004 */
-#define AS60XX_DC_CPU_REQ_PP_T_NOT_REQUESTED        (0)                                             /*!< CPU Request Post Processing PB, Post processing PB in CPU not requested */
-#define AS60XX_DC_CPU_REQ_PP_T_REQUESTED            (1)                                             /*!< CPU Request Post Processing PB, Post processing PB in CPU requested */
+#define AS60XX_DC_CPU_REQ_PP_T_NOT_REQUESTED        (0L)                                            /*!< CPU Request Post Processing PB, Post processing PB in CPU not requested */
+#define AS60XX_DC_CPU_REQ_PP_T_REQUESTED            (1L)                                            /*!< CPU Request Post Processing PB, Post processing PB in CPU requested */
 #define AS60XX_DC_CPU_REQ_PP_F_Pos                  (3U)
 #define AS60XX_DC_CPU_REQ_PP_F_Msk                  (0x1UL << AS60XX_DC_CPU_REQ_PP_F_Pos)           /*!< 0x00000008 */
-#define AS60XX_DC_CPU_REQ_PP_F_NOT_REQUESTED        (0)                                             /*!< CPU Request Post Processing PA, Post processing PA in CPU not requested */
-#define AS60XX_DC_CPU_REQ_PP_F_REQUESTED            (1)                                             /*!< CPU Request Post Processing PA, Post processing PA in CPU requested */
+#define AS60XX_DC_CPU_REQ_PP_F_NOT_REQUESTED        (0L)                                            /*!< CPU Request Post Processing PA, Post processing PA in CPU not requested */
+#define AS60XX_DC_CPU_REQ_PP_F_REQUESTED            (1L)                                            /*!< CPU Request Post Processing PA, Post processing PA in CPU requested */
 #define AS60XX_DC_CPU_REQ_GPH_Pos                   (4U)
 #define AS60XX_DC_CPU_REQ_GPH_Msk                   (0x1UL << AS60XX_DC_CPU_REQ_GPH_Pos)            /*!< 0x00000010 */
-#define AS60XX_DC_CPU_REQ_GPH_NOT_REQUESTED         (0)                                             /*!< CPU Request General Purpose Handling, General purpose handling in CPU not requested */
-#define AS60XX_DC_CPU_REQ_GPH_REQUESTED             (1)                                             /*!< CPU Request General Purpose Handling, General purpose handling in CPU requested */
+#define AS60XX_DC_CPU_REQ_GPH_NOT_REQUESTED         (0L)                                            /*!< CPU Request General Purpose Handling, General purpose handling in CPU not requested */
+#define AS60XX_DC_CPU_REQ_GPH_REQUESTED             (1L)                                            /*!< CPU Request General Purpose Handling, General purpose handling in CPU requested */
 #define AS60XX_DC_CPU_REQ_FW_INIT_Pos               (5U)
 #define AS60XX_DC_CPU_REQ_FW_INIT_Msk               (0x1UL << AS60XX_DC_CPU_REQ_FW_INIT_Pos)        /*!< 0x00000020 */
-#define AS60XX_DC_CPU_REQ_FW_INIT_NOT_REQUESTED     (0)                                             /*!< CPU Request Firmware Initialization, Firmware initialization not requested */
-#define AS60XX_DC_CPU_REQ_FW_INIT_REQUESTED         (1)                                             /*!< CPU Request Firmware Initialization, Firmware initialization requested */
+#define AS60XX_DC_CPU_REQ_FW_INIT_NOT_REQUESTED     (0L)                                            /*!< CPU Request Firmware Initialization, Firmware initialization not requested */
+#define AS60XX_DC_CPU_REQ_FW_INIT_REQUESTED         (1L)                                            /*!< CPU Request Firmware Initialization, Firmware initialization requested */
 #define AS60XX_DC_NOT_USED_6_Pos                    (6U)
 #define AS60XX_DC_NOT_USED_6_Msk                    (0x1UL << AS60XX_DC_NOT_USED_6_Pos)             /*!< 0x00000040 */
-#define AS60XX_DC_NOT_USED_6                        (0)                                             /*!< Not used */
+#define AS60XX_DC_NOT_USED_6                        (0L)                                            /*!< Not used */
 #define AS60XX_DC_NOT_USED_7_Pos                    (7U)
 #define AS60XX_DC_NOT_USED_7_Msk                    (0x1UL << AS60XX_DC_NOT_USED_7_Pos)             /*!< 0x00000080 */
-#define AS60XX_DC_NOT_USED_7                        (0)                                             /*!< Not used */
+#define AS60XX_DC_NOT_USED_7                        (0L)                                            /*!< Not used */
 #define AS60XX_DC_CPU_SFLAG_HSO_ST_TO_Pos           (8U)
 #define AS60XX_DC_CPU_SFLAG_HSO_ST_TO_Msk           (0x1UL << AS60XX_DC_CPU_SFLAG_HSO_ST_TO_Msk)    /*!< 0x00000100 */
-#define AS60XX_DC_CPU_SFLAG_HSO_ST_TO_NOT_SETTLED   (0)                                             /*!< High speed oscillator, not settled yet */
-#define AS60XX_DC_CPU_SFLAG_HSO_ST_TO_SETTLED       (1)                                             /*!< High speed oscillator, settled and stable */
+#define AS60XX_DC_CPU_SFLAG_HSO_ST_TO_NOT_SETTLED   (0L)                                            /*!< High speed oscillator, not settled yet */
+#define AS60XX_DC_CPU_SFLAG_HSO_ST_TO_SETTLED       (1L)                                            /*!< High speed oscillator, settled and stable */
 #define AS60XX_DC_CPU_COM_REQ_Pos                   (9U)
 #define AS60XX_DC_CPU_COM_REQ_Msk                   (0x1UL << AS60XX_DC_CPU_COM_REQ_Pos)            /*!< 0x00000200 */
-#define AS60XX_DC_CPU_COM_REQ_NOT_REQUESTED         (0)                                             /*!< No communication request set by SPI interface */
-#define AS60XX_DC_CPU_COM_REQ_REQUESTED             (1)                                             /*!< Communication request set by SPI interface */
+#define AS60XX_DC_CPU_COM_REQ_NOT_REQUESTED         (0L)                                            /*!< No communication request set by SPI interface */
+#define AS60XX_DC_CPU_COM_REQ_REQUESTED             (1L)                                            /*!< Communication request set by SPI interface */
 #define AS60XX_DC_CPU_LS_CORE_CLK_Pos               (10U)
 #define AS60XX_DC_CPU_LS_CORE_CLK_Msk               (0x1UL << AS60XX_DC_CPU_LS_CORE_CLK_Pos)        /*!< 0x00000400 */
-#define AS60XX_DC_CPU_LS_CORE_CLK_LOW_PHASE         (0)                                             /*!< Low phase of LS_CORE_CLK */
-#define AS60XX_DC_CPU_LS_CORE_CLK_HIGH_PHASE        (1)                                             /*!< High phase of LS_CORE_CLK */
+#define AS60XX_DC_CPU_LS_CORE_CLK_LOW_PHASE         (0L)                                            /*!< Low phase of LS_CORE_CLK */
+#define AS60XX_DC_CPU_LS_CORE_CLK_HIGH_PHASE        (1L)                                            /*!< High phase of LS_CORE_CLK */
 #define AS60XX_DC_NOT_USED_31_11_Pos                (11U)
 #define AS60XX_DC_NOT_USED_31_11_Msk                (0x1FFFFUL << AS60XX_DA_NOT_USED_31_11_Pos)     /*!< 0xFFFFF800 */
-#define AS60XX_DC_NOT_USED_31_11                    (0)                                             /*!< NOT_USED_31_8[31:11]Not used */
+#define AS60XX_DC_NOT_USED_31_11                    (0L)                                            /*!< NOT_USED_31_8[31:11]Not used */
 
 /******************  Bit definition for AS60XX_DD register  *******************/
 #define AS60XX_DD_IF_CLR_Pos                        (0U)
@@ -1272,71 +1272,71 @@
 #define AS60XX_DD_HSO_CLR_CLEAR                     (AS60XX_DD_HSO_CLR_Msk)                         /*!< Clear high speed oscillator */
 #define AS60XX_DD_NOT_USED_31_19_Pos                (19U)
 #define AS60XX_DD_NOT_USED_31_19_Msk                (0x1FFFUL << AS60XX_DA_NOT_USED_31_19_Pos)      /*!< 0xFFF80000 */
-#define AS60XX_DD_NOT_USED_31_19                    (0)                                             /*!< NOT_USED_31_19[31:19]Not used */
+#define AS60XX_DD_NOT_USED_31_19                    (0L)                                            /*!< NOT_USED_31_19[31:19]Not used */
 
 /******************  Bit definition for AS60XX_DE register  *******************/
 #define AS60XX_DE_CFG_OK_Pos                        (0U)
 #define AS60XX_DE_CFG_OK_Msk                        (0x3UL << AS60XX_DD_CFG_OK_Pos)                 /*!< 0x00000003 */
-#define AS60XX_DE_CFG_OK_NO_CHANGE                  (0)                                             /*!< UFC Configuration OK, No change of CFG_OK state */
-#define AS60XX_DE_CFG_OK_NOT_PROPERLY_CONFIGURED    (1)                                             /*!< UFC Configuration OK, CFG_OK not properly configured */
-#define AS60XX_DE_CFG_OK_PROPERLY_CONFIGURED        (2)                                             /*!< UFC Configuration OK, CFG_OK properly configured */
+#define AS60XX_DE_CFG_OK_NO_CHANGE                  (0L)                                            /*!< UFC Configuration OK, No change of CFG_OK state */
+#define AS60XX_DE_CFG_OK_NOT_PROPERLY_CONFIGURED    (1L)                                            /*!< UFC Configuration OK, CFG_OK not properly configured */
+#define AS60XX_DE_CFG_OK_PROPERLY_CONFIGURED        (2L)                                            /*!< UFC Configuration OK, CFG_OK properly configured */
 #define AS60XX_DE_HSC_DIV_STATE_Pos                 (2U)
 #define AS60XX_DE_HSC_DIV_STATE_Msk                 (0x3UL << AS60XX_DE_HSC_DIV_STATE_Pos)          /*!< 0x0000000C */
 #define AS60XX_DE_HSC_DIV_STATE_0                   (0x1)                                           /*!< State of HSC_DIV in CR_CPM */
 #define AS60XX_DE_HSC_DIV_STATE_1                   (0x2)                                           /*!< State of HSC_DIV in CR_CPM */
 #define AS60XX_DE_RC_FLAG2_Pos                      (4U)
 #define AS60XX_DE_RC_FLAG2_Msk                      (0x3UL << AS60XX_DE_RC_FLAG2_Pos)               /*!< 0x00000030 */
-#define AS60XX_DE_RC_FLAG2_NO_CHANGE                (0)                                             /*!< User Definable Flag, No change of RC_FLAG2 state */
-#define AS60XX_DE_RC_FLAG2_NOT_SET                  (1)                                             /*!< User Definable Flag, RC_FLAG2 not set */
-#define AS60XX_DE_RC_FLAG2_SET                      (2)                                             /*!< User Definable Flag, RC_FLAG2 set */
+#define AS60XX_DE_RC_FLAG2_NO_CHANGE                (0L)                                            /*!< User Definable Flag, No change of RC_FLAG2 state */
+#define AS60XX_DE_RC_FLAG2_NOT_SET                  (1L)                                            /*!< User Definable Flag, RC_FLAG2 not set */
+#define AS60XX_DE_RC_FLAG2_SET                      (2L)                                            /*!< User Definable Flag, RC_FLAG2 set */
 #define AS60XX_DA_NOT_USED_7_6_Pos                  (6U)
 #define AS60XX_DA_NOT_USED_7_6_Msk                  (0x3UL << AS60XX_DA_NOT_USED_7_6_Pos)           /*!< 0x000000C0 */
-#define AS60XX_DA_NOT_USED_7_6                      (0)                                             /*!< NOT_USED_7_6[7:6]Not used */
+#define AS60XX_DA_NOT_USED_7_6                      (0L)                                            /*!< NOT_USED_7_6[7:6]Not used */
 #define AS60XX_DE_HSO_MODE_Pos                      (8U)
 #define AS60XX_DE_HSO_MODE_Msk                      (0x3UL << AS60XX_DE_HSO_MODE_Pos)               /*!< 0x00000300 */
-#define AS60XX_DE_HSO_MODE_NO_CHANGE                (0)                                             /*!< High Speed Oscillator Mode, No change of HSO_MODE state */
-#define AS60XX_DE_HSO_MODE_CONTROLLED_AS_CONFIG     (1)                                             /*!< High Speed Oscillator Mode, HSO controlled as configured */
-#define AS60XX_DE_HSO_MODE_ALWAYS_ON                (2)                                             /*!< High Speed Oscillator Mode, HSO always on */
+#define AS60XX_DE_HSO_MODE_NO_CHANGE                (0L)                                            /*!< High Speed Oscillator Mode, No change of HSO_MODE state */
+#define AS60XX_DE_HSO_MODE_CONTROLLED_AS_CONFIG     (1L)                                            /*!< High Speed Oscillator Mode, HSO controlled as configured */
+#define AS60XX_DE_HSO_MODE_ALWAYS_ON                (2L)                                            /*!< High Speed Oscillator Mode, HSO always on */
 #define AS60XX_DE_BG_MODE_Pos                       (10U)
 #define AS60XX_DE_BG_MODE_Msk                       (0x3UL << AS60XX_DE_BG_MODE_Pos)                /*!< 0x00000C00 */
-#define AS60XX_DE_BG_MODE_NO_CHANGE                 (0)                                             /*!< High Speed Oscillator Mode, No change of BG_MODE state */
-#define AS60XX_DE_BG_MODE_CONTROLLED_AS_CONFIG      (1)                                             /*!< High Speed Oscillator Mode, Bandgap controlled as configured */
-#define AS60XX_DE_BG_MODE_ALWAYS_ON                 (2)                                             /*!< High Speed Oscillator Mode, Bandgap always on */
+#define AS60XX_DE_BG_MODE_NO_CHANGE                 (0L)                                            /*!< High Speed Oscillator Mode, No change of BG_MODE state */
+#define AS60XX_DE_BG_MODE_CONTROLLED_AS_CONFIG      (1L)                                            /*!< High Speed Oscillator Mode, Bandgap controlled as configured */
+#define AS60XX_DE_BG_MODE_ALWAYS_ON                 (2L)                                            /*!< High Speed Oscillator Mode, Bandgap always on */
 #define AS60XX_DE_RC_FLAG3_Pos                      (12U)
 #define AS60XX_DE_RC_FLAG3_Msk                      (0x3UL << AS60XX_DE_RC_FLAG3_Pos)               /*!< 0x00003000 */
-#define AS60XX_DE_RC_FLAG3_NO_CHANGE                (0)                                             /*!< User Definable Flag, No change of RC_FLAG3 state */
-#define AS60XX_DE_RC_FLAG3_NOT_SET                  (1)                                             /*!< User Definable Flag, RC_FLAG3 not set */
-#define AS60XX_DE_RC_FLAG3_SET                      (2)                                             /*!< User Definable Flag, RC_FLAG3 set */
+#define AS60XX_DE_RC_FLAG3_NO_CHANGE                (0L)                                            /*!< User Definable Flag, No change of RC_FLAG3 state */
+#define AS60XX_DE_RC_FLAG3_NOT_SET                  (1L)                                            /*!< User Definable Flag, RC_FLAG3 not set */
+#define AS60XX_DE_RC_FLAG3_SET                      (2L)                                            /*!< User Definable Flag, RC_FLAG3 set */
 #define AS60XX_DE_SYS_RST_Pos                       (14U)
 #define AS60XX_DE_SYS_RST_Msk                       (0x1UL << AS60XX_DE_SYS_RST_Pos)                /*!< 0x00004000 */
-#define AS60XX_DE_SYS_RST_CLEAR                     (1)                                             /*!< Performs a system reset */
+#define AS60XX_DE_SYS_RST_CLEAR                     (1L)                                            /*!< Performs a system reset */
 #define AS60XX_DE_SYS_INIT_Pos                      (15U)
 #define AS60XX_DE_SYS_INIT_Msk                      (0x1UL << AS60XX_DE_SYS_INIT_Pos)               /*!< 0x00008000 */
-#define AS60XX_DE_SYS_INIT_CLEAR                    (1)                                             /*!< Performs a system reset */
+#define AS60XX_DE_SYS_INIT_CLEAR                    (1L)                                            /*!< Performs a system reset */
 #define AS60XX_DE_FW_STORE_ALL_Pos                  (16U)
 #define AS60XX_DE_FW_STORE_ALL_Msk                  (0x1UL << AS60XX_DE_FW_STORE_ALL_Pos)           /*!< 0x00010000 */
-#define AS60XX_DE_FW_STORE_ALL_REQUEST              (1)                                             /*!< Requests storing of complete firmware code & data */
+#define AS60XX_DE_FW_STORE_ALL_REQUEST              (1L)                                            /*!< Requests storing of complete firmware code & data */
 #define AS60XX_DE_FW_STORE_LOCK_Pos                 (17U)
 #define AS60XX_DE_FW_STORE_LOCK_Msk                 (0x1UL << AS60XX_DE_FW_STORE_LOCK_Pos)          /*!< 0x00020000 */
-#define AS60XX_DE_FW_STORE_LOCK_REQUEST             (1)                                             /*!< Requests storing & locking of user firmware program code & data */
+#define AS60XX_DE_FW_STORE_LOCK_REQUEST             (1L)                                            /*!< Requests storing & locking of user firmware program code & data */
 #define AS60XX_DE_FW_ERASE_Pos                      (18U)
 #define AS60XX_DE_FW_ERASE_Msk                      (0x1UL << AS60XX_DE_FW_ERASE_Pos)               /*!< 0x00040000 */
-#define AS60XX_DE_FW_ERASE_REQUEST                  (1)                                             /*!< Requests erasing user firmware program code & data */
+#define AS60XX_DE_FW_ERASE_REQUEST                  (1L)                                            /*!< Requests erasing user firmware program code & data */
 #define AS60XX_DE_FWC_RECALL_Pos                    (19U)
 #define AS60XX_DE_FWC_RECALL_Msk                    (0x1UL << AS60XX_DE_FWC_RECALL_Pos)             /*!< 0x00080000 */
-#define AS60XX_DE_FWC_RECALL_REQUEST                (1)                                             /*!< Requests recalling of firmware program code from Flash to SRAM */
+#define AS60XX_DE_FWC_RECALL_REQUEST                (1L)                                            /*!< Requests recalling of firmware program code from Flash to SRAM */
 #define AS60XX_DE_FWD_RECALL_Pos                    (20U)
 #define AS60XX_DE_FWD_RECALL_Msk                    (0x1UL << AS60XX_DE_FWD_RECALL_Pos)             /*!< 0x00100000 */
-#define AS60XX_DE_FWD_RECALL_REQUEST                (1)                                             /*!< Requests recalling of firmware data from Flash to SRAM  */
+#define AS60XX_DE_FWD_RECALL_REQUEST                (1L)                                            /*!< Requests recalling of firmware data from Flash to SRAM  */
 #define AS60XX_DE_FWC_STORE_Pos                     (21U)
 #define AS60XX_DE_FWC_STORE_Msk                     (0x1UL << AS60XX_DE_FWC_STORE_Pos)              /*!< 0x00200000 */
-#define AS60XX_DE_FWC_STORE_REQUEST                 (1)                                             /*!< Requests storing of firmware program code from SRAM to Flash  */
+#define AS60XX_DE_FWC_STORE_REQUEST                 (1L)                                            /*!< Requests storing of firmware program code from SRAM to Flash  */
 #define AS60XX_DE_FWD_STORE_Pos                     (22U)
 #define AS60XX_DE_FWD_STORE_Msk                     (0x1UL << AS60XX_DE_FWD_STORE_Pos)              /*!< 0x00400000 */
-#define AS60XX_DE_FWD_STORE_REQUEST                 (1)                                             /*!< Requests storing of user firmware data from SRAM to Flash  */
+#define AS60XX_DE_FWD_STORE_REQUEST                 (1L)                                            /*!< Requests storing of user firmware data from SRAM to Flash  */
 #define AS60XX_DE_NOT_USED_31_23_Pos                (30U)
 #define AS60XX_DE_NOT_USED_31_23_Msk                (0x1FFUL << AS60XX_DE_NOT_USED_31_23_Pos)       /*!< 0xFF800000 */
-#define AS60XX_DE_NOT_USED_31_23                    (0)                                             /*!< NOT_USED_31_23[31:23]Not used */
+#define AS60XX_DE_NOT_USED_31_23                    (0L)                                            /*!< NOT_USED_31_23[31:23]Not used */
 
 /******************  Bit definition for AS60XX_DF register  *******************/
 #define AS60XX_DF_RC_RLS_Pos                        (0U)
@@ -1347,161 +1347,161 @@
 /******************  Bit definition for AS60XX_E0 register  *******************/
 #define AS60XX_E0_TSQ_FNS_Pos                       (0U)
 #define AS60XX_E0_TSQ_FNS_Msk                       (0x1UL << AS60XX_E0_TSQ_FNS_Pos)                /*!< 0x00000001 */
-#define AS60XX_E0_TSQ_FNS                           (1)                                             /*!< Task sequencer finished */
+#define AS60XX_E0_TSQ_FNS                           (1L)                                            /*!< Task sequencer finished */
 #define AS60XX_E0_FW_TRANS_FNS_Pos                  (1U)
 #define AS60XX_E0_FW_TRANS_FNS_Msk                  (0x1UL << AS60XX_E0_FW_TRANS_FNS_Pos)           /*!< 0x00000002 */
-#define AS60XX_E0_FW_TRANS_FNS                      (1)                                             /*!< Firmware transaction finished */
+#define AS60XX_E0_FW_TRANS_FNS                      (1L)                                            /*!< Firmware transaction finished */
 #define AS60XX_E0_BLD_FNS_Pos                       (2U)
 #define AS60XX_E0_BLD_FNS_Msk                       (0x1UL << AS60XX_E0_BLD_FNS_Pos)                /*!< 0x00000004 */
-#define AS60XX_E0_BLD_FNS                           (1)                                             /*!< Bootloader finished */
+#define AS60XX_E0_BLD_FNS                           (1L)                                            /*!< Bootloader finished */
 #define AS60XX_E0_CHKSUM_FNS_Pos                    (3U)
 #define AS60XX_E0_CHKSUM_FNS_Msk                    (0x1UL << AS60XX_E0_CHKSUM_FNS_Pos)             /*!< 0x00000008 */
-#define AS60XX_E0_CHKSUM_FNS                        (1)                                             /*!< Checksum subroutine finished */
+#define AS60XX_E0_CHKSUM_FNS                        (1L)                                            /*!< Checksum subroutine finished */
 #define AS60XX_E0_FW_IRQ_S_Pos                      (4U)
 #define AS60XX_E0_FW_IRQ_S_Msk                      (0x1UL << AS60XX_E0_FW_IRQ_S_Pos)               /*!< 0x00000010 */
-#define AS60XX_E0_FW_IRQ_S                          (1)                                             /*!< Firmware interrupt request, synchronized with task sequencer */
+#define AS60XX_E0_FW_IRQ_S                          (1L)                                            /*!< Firmware interrupt request, synchronized with task sequencer */
 #define AS60XX_E0_TSQ_TMO_Pos                       (5U)
 #define AS60XX_E0_TSQ_TMO_Msk                       (0x1UL << AS60XX_E0_TSQ_TMO_Pos)                /*!< 0x00000020 */
-#define AS60XX_E0_TSQ_TMO                           (1)                                             /*!< Task sequencer timeout */
+#define AS60XX_E0_TSQ_TMO                           (1L)                                            /*!< Task sequencer timeout */
 #define AS60XX_E0_NOT_USED_6_Pos                    (6U)
 #define AS60XX_E0_NOT_USED_6_Msk                    (0x1UL << AS60XX_E0_NOT_USED_6_Pos)             /*!< 0x00000040 */
-#define AS60XX_E0_NOT_USED_6                        (0)                                             /*!< Not used */
+#define AS60XX_E0_NOT_USED_6                        (0L)                                            /*!< Not used */
 #define AS60XX_E0_ERR_FLAG_Pos                      (7U)
 #define AS60XX_E0_ERR_FLAG_Msk                      (0x1UL << AS60XX_E0_ERR_FLAG_Pos)               /*!< 0x00000080 */
-#define AS60XX_E0_ERR_FLAG                          (1)                                             /*!< At least 1 error flag is set */
+#define AS60XX_E0_ERR_FLAG                          (1L)                                            /*!< At least 1 error flag is set */
 #define AS60XX_E0_NOT_USED_31_8_Pos                 (8U)
 #define AS60XX_E0_NOT_USED_31_8_Msk                 (0xFFFFFFUL << AS60XX_E0_NOT_USED_31_8_Pos)     /*!< 0xFFFFFF00 */
-#define AS60XX_E0_NOT_USED_31_8                     (0)                                             /*!< NOT_USED_31_8[31:8]Not used */
+#define AS60XX_E0_NOT_USED_31_8                     (0L)                                            /*!< NOT_USED_31_8[31:8]Not used */
 
 /******************  Bit definition for AS60XX_E1 register  *******************/
 #define AS60XX_E1_EF_TDC_TMO_Pos                    (0U)
 #define AS60XX_E1_EF_TDC_TMO_Msk                    (0x1UL << AS60XX_E1_EF_TDC_TMO_Pos)             /*!< 0x00000001 */
-#define AS60XX_E1_EF_TDC_TMO                        (1)                                             /*!< Error flag TDC timeout */
+#define AS60XX_E1_EF_TDC_TMO                        (1L)                                            /*!< Error flag TDC timeout */
 #define AS60XX_E1_EF_TOF_TMO_Pos                    (1U)
 #define AS60XX_E1_EF_TOF_TMO_Msk                    (0x1UL << AS60XX_E1_EF_TOF_TMO_Pos)             /*!< 0x00000002 */
-#define AS60XX_E1_EF_TOF_TMO                        (1)                                             /*!< Error flag TOF timeout */
+#define AS60XX_E1_EF_TOF_TMO                        (1L)                                            /*!< Error flag TOF timeout */
 #define AS60XX_E1_EF_AM_TMO_Pos                     (2U)
 #define AS60XX_E1_EF_AM_TMO_Msk                     (0x1UL << AS60XX_E1_EF_AM_TMO_Pos)              /*!< 0x00000004 */
-#define AS60XX_E1_EF_AM_TMO                         (1)                                             /*!< Error flag amplitude measurement timeout */
+#define AS60XX_E1_EF_AM_TMO                         (1L)                                            /*!< Error flag amplitude measurement timeout */
 #define AS60XX_E1_EF_TM_OC_ERR_Pos                  (3U)
 #define AS60XX_E1_EF_TM_OC_ERR_Msk                  (0x1UL << AS60XX_E1_EF_TM_OC_ERR_Pos)           /*!< 0x00000008 */
-#define AS60XX_E1_EF_TM_OC_ERR                      (1)                                             /*!< Error flag temperature measurement open circuit */
+#define AS60XX_E1_EF_TM_OC_ERR                      (1L)                                            /*!< Error flag temperature measurement open circuit */
 #define AS60XX_E1_EF_TM_SC_ERR_Pos                  (4U)
 #define AS60XX_E1_EF_TM_SC_ERR_Msk                  (0x1UL << AS60XX_E1_EF_TM_SC_ERR_Pos)           /*!< 0x00000010 */
-#define AS60XX_E1_EF_TM_SC_ERR                      (1)                                             /*!< Error flag temperature measurement short circuit */
+#define AS60XX_E1_EF_TM_SC_ERR                      (1L)                                            /*!< Error flag temperature measurement short circuit */
 #define AS60XX_E1_EF_ZCC_ERR_Pos                    (5U)
 #define AS60XX_E1_EF_ZCC_ERR_Msk                    (0x1UL << AS60XX_E1_EF_ZCC_ERR_Pos)             /*!< 0x00000020 */
-#define AS60XX_E1_EF_ZCC_ERR                        (1)                                             /*!< Error flag zero cross calibration */
+#define AS60XX_E1_EF_ZCC_ERR                        (1L)                                            /*!< Error flag zero cross calibration */
 #define AS60XX_E1_EF_LBD_ERR_Pos                    (6U)
 #define AS60XX_E1_EF_LBD_ERR_Msk                    (0x1UL << AS60XX_EF_LBD_ERR_Pos)                /*!< 0x00000040 */
-#define AS60XX_E1_EF_LBD_ERR                        (1)                                             /*!< Error flag low battery detect */
+#define AS60XX_E1_EF_LBD_ERR                        (1L)                                            /*!< Error flag low battery detect */
 #define AS60XX_E1_EF_USM_SQC_TMO_Pos                (7U)
 #define AS60XX_E1_EF_USM_SQC_TMO_Msk                (0x1UL << AS60XX_E1_EF_USM_SQC_TMO_Pos)         /*!< 0x00000080 */
-#define AS60XX_E1_EF_USM_SQC_TMO                    (1)                                             /*!< Error flag ultrasonic sequence timeout */
+#define AS60XX_E1_EF_USM_SQC_TMO                    (1L)                                            /*!< Error flag ultrasonic sequence timeout */
 #define AS60XX_E1_EF_TM_SQC_TMO_Pos                 (8U)
 #define AS60XX_E1_EF_TM_SQC_TMO_Msk                 (0x1UL << AS60XX_E1_EF_TM_SQC_TMO_Pos)          /*!< 0x00000100 */
-#define AS60XX_E1_EF_TM_SQC_TMO                     (1)                                             /*!< Error flag temperature sequence timeout */
+#define AS60XX_E1_EF_TM_SQC_TMO                     (1L)                                            /*!< Error flag temperature sequence timeout */
 #define AS60XX_E1_EF_TSQ_TMO_Pos                    (9U)
 #define AS60XX_E1_EF_TSQ_TMO_Msk                    (0x1UL << AS60XX_E1_EF_TSQ_TMO_Pos)             /*!< 0x00000200 */
-#define AS60XX_E1_EF_TSQ_TMO                        (1)                                             /*!< Error flag task sequencer timeout */
+#define AS60XX_E1_EF_TSQ_TMO                        (1L)                                            /*!< Error flag task sequencer timeout */
 #define AS60XX_E1_EF_I2C_ACK_ERR_Pos                (10U)
 #define AS60XX_E1_EF_I2C_ACK_ERR_Msk                (0x1UL << AS60XX_E1_EF_I2C_ACK_ERR_Pos)         /*!< 0x00000400 */
-#define AS60XX_E1_EF_I2C_ACK_ERR                    (1)                                             /*!< Error flag EEPROM acknowledge */
+#define AS60XX_E1_EF_I2C_ACK_ERR                    (1L)                                            /*!< Error flag EEPROM acknowledge */
 #define AS60XX_E1_EF_CHP_ERR_Pos                    (11U)
 #define AS60XX_E1_EF_CHP_ERR_Msk                    (0x1UL << AS60XX_E1_EF_CHP_ERR_Pos)             /*!< 0x00000800 */
-#define AS60XX_E1_EF_CHP_ERR                        (1)                                             /*!< Error flag charge pump error */
+#define AS60XX_E1_EF_CHP_ERR                        (1L)                                            /*!< Error flag charge pump error */
 #define AS60XX_E1_EF_NVM_FWCU_ERR_Pos               (12U)
 #define AS60XX_E1_EF_NVM_FWCU_ERR_Msk               (0x1UL << AS60XX_E1_EF_NVM_FWCU_ERR_Pos)        /*!< 0x00001000 */
-#define AS60XX_E1_EF_NVM_FWCU_ERR                   (1)                                             /*!< Error flag NVM error in FWCU area */
+#define AS60XX_E1_EF_NVM_FWCU_ERR                   (1L)                                            /*!< Error flag NVM error in FWCU area */
 #define AS60XX_E1_EF_NVM_FWDU_ERR_Pos               (13U)
 #define AS60XX_E1_EF_NVM_FWDU_ERR_Msk               (0x1UL << AS60XX_E1_EF_NVM_FWDU_ERR_Pos)        /*!< 0x00002000 */
-#define AS60XX_E1_EF_NVM_FWDU_ERR                   (1)                                             /*!< Error flag NVM error in FWDU area */
+#define AS60XX_E1_EF_NVM_FWDU_ERR                   (1L)                                            /*!< Error flag NVM error in FWDU area */
 #define AS60XX_E1_EF_NVM_FWA_ERR_Pos                (14U)
 #define AS60XX_E1_EF_NVM_FWA_ERR_Msk                (0x1UL << AS60XX_E1_EF_NVM_FWA_ERR_Pos)         /*!< 0x00004000 */
-#define AS60XX_E1_EF_NVM_FWA_ERR                    (1)                                             /*!< Error flag NVM error in any FWA area or set by FW */
+#define AS60XX_E1_EF_NVM_FWA_ERR                    (1L)                                            /*!< Error flag NVM error in any FWA area or set by FW */
 #define AS60XX_E1_EF_CPU_ERR_Pos                    (15U)
 #define AS60XX_E1_EF_CPU_ERR_Msk                    (0x1UL << AS60XX_E1_EF_CPU_ERR_Pos)             /*!< 0x00008000 */
-#define AS60XX_E1_EF_CPU_ERR                        (1)                                             /*!< CPU error (invalid program counter or PC stack overflow) */
+#define AS60XX_E1_EF_CPU_ERR                        (1L)                                            /*!< CPU error (invalid program counter or PC stack overflow) */
 #define AS60XX_E1_NOT_USED_31_16_Pos                (8U)
 #define AS60XX_E1_NOT_USED_31_16_Msk                (0xFFFFUL << AS60XX_E1_NOT_USED_31_16_Pos)      /*!< 0xFFFF0000 */
-#define AS60XX_E1_NOT_USED_31_16                    (0)                                             /*!< NOT_USED_31_16[31:16]Not used */
+#define AS60XX_E1_NOT_USED_31_16                    (0L)                                            /*!< NOT_USED_31_16[31:16]Not used */
 
 /******************  Bit definition for AS60XX_E2 register  *******************/
 #define AS60XX_E2_HCC_UPD_Pos                       (0U)
 #define AS60XX_E2_HCC_UPD_Msk                       (0x1UL << AS60XX_E2_HCC_UPD_Pos)                /*!< 0x00000001 */
-#define AS60XX_E2_HCC_UPD                           (1)                                             /*!< High-Speed Clock Calibration Update, Updated value in SRR_HCC_VAL */
+#define AS60XX_E2_HCC_UPD                           (1L)                                            /*!< High-Speed Clock Calibration Update, Updated value in SRR_HCC_VAL */
 #define AS60XX_E2_TM_UPD_Pos                        (1U)
 #define AS60XX_E2_TM_UPD_Msk                        (0x1UL << AS60XX_E2_TM_UPD_Pos)                 /*!< 0x00000002 */
-#define AS60XX_E2_TM_UPD                            (1)                                             /*!< Updated value in temperature measurement related frontend buffer */
+#define AS60XX_E2_TM_UPD                            (1L)                                            /*!< Updated value in temperature measurement related frontend buffer */
 #define AS60XX_E2_NOT_USED_2_Pos                    (2U)
 #define AS60XX_E2_NOT_USED_2_Msk                    (0x1UL << AS60XX_E2_NOT_USED_2_Pos)             /*!< 0x00000004 */
-#define AS60XX_E2_NOT_USED_2                        (1)                                             /*!< Not used */
+#define AS60XX_E2_NOT_USED_2                        (1L)                                            /*!< Not used */
 #define AS60XX_E2_TPM_ST_Pos                        (3U)
 #define AS60XX_E2_TPM_ST_Msk                        (0x1UL << AS60XX_E2_TPM_ST_Pos)                 /*!< 0x00000008 */
-#define AS60XX_E2_TPM_ST_0                          (0)                                             /*!< Temperature measurement with 1 subtask */
-#define AS60XX_E2_TPM_ST_1                          (1)                                             /*!< Temperature measurement with 2 subtasks */
+#define AS60XX_E2_TPM_ST_0                          (0L)                                            /*!< Temperature measurement with 1 subtask */
+#define AS60XX_E2_TPM_ST_1                          (1L)                                            /*!< Temperature measurement with 2 subtasks */
 #define AS60XX_E2_US_U_UPD_Pos                      (4U)
 #define AS60XX_E2_US_U_UPD_Msk                      (0x1UL << AS60XX_E2_US_U_UPD_Pos)               /*!< 0x00000010 */
-#define AS60XX_E2_US_U_UPD                          (1)                                             /*!< Updated value in ultrasonic up area of frontend buffer */
+#define AS60XX_E2_US_U_UPD                          (1L)                                            /*!< Updated value in ultrasonic up area of frontend buffer */
 #define AS60XX_E2_US_D_UPD_Pos                      (5U)
 #define AS60XX_E2_US_D_UPD_Msk                      (0x1UL << AS60XX_E2_US_D_UPD_Pos)               /*!< 0x00000020 */
-#define AS60XX_E2_US_D_UPD                          (1)                                             /*!< Updated value in ultrasonic down area of frontend buffer */
+#define AS60XX_E2_US_D_UPD                          (1L)                                            /*!< Updated value in ultrasonic down area of frontend buffer */
 #define AS60XX_E2_US_TOF_UPD_Pos                    (6U)
 #define AS60XX_E2_US_TOF_UPD_Msk                    (0x1UL << AS60XX_E2_US_TOF_UPD_Pos)             /*!< 0x00000040 */
-#define AS60XX_E2_US_TOF_UPD                        (1)                                             /*!< Updated value in TOF area of frontend buffer */
+#define AS60XX_E2_US_TOF_UPD                        (1L)                                            /*!< Updated value in TOF area of frontend buffer */
 #define AS60XX_E2_US_TOF_EDGE_Pos                   (7U)
 #define AS60XX_E2_US_TOF_EDGE_Msk                   (0x1UL << AS60XX_E2_US_TOF_EDGE_Pos)            /*!< 0x00000080 */
-#define AS60XX_E2_US_TOF_EDGE_POS                   (0)                                             /*!< TOF Measurement positive edge */
-#define AS60XX_E2_US_TOF_EDGE_NEG                   (1)                                             /*!< TOF Measurement negative edge */
+#define AS60XX_E2_US_TOF_EDGE_POS                   (0L)                                            /*!< TOF Measurement positive edge */
+#define AS60XX_E2_US_TOF_EDGE_NEG                   (1L)                                            /*!< TOF Measurement negative edge */
 #define AS60XX_E2_US_AM_UPD_Pos                     (8U)
 #define AS60XX_E2_US_AM_UPD_Msk                     (0x1UL << AS60XX_E2_US_D_UPD_Pos)               /*!< 0x00000100 */
-#define AS60XX_E2_US_AM_UPD                         (1)                                             /*!< Updated value in ultrasonic down area of frontend buffer */
+#define AS60XX_E2_US_AM_UPD                         (1L)                                            /*!< Updated value in ultrasonic down area of frontend buffer */
 #define AS60XX_E2_US_AMC_UPD_Pos                    (9U)
 #define AS60XX_E2_US_AMC_UPD_Msk                    (0x1UL << AS60XX_E2_US_AMC_UPD_Pos)             /*!< 0x00000200 */
-#define AS60XX_E2_US_AMC_UPD                        (1)                                             /*!< Updated value in AMC area of frontend buffer */
+#define AS60XX_E2_US_AMC_UPD                        (1L)                                            /*!< Updated value in AMC area of frontend buffer */
 #define AS60XX_E2_NOT_USED_31_10_Pos                (10U)
 #define AS60XX_E2_NOT_USED_31_10_Msk                (0x3FFFFFUL << AS60XX_E2_NOT_USED_31_10_Pos)    /*!< 0xFFFFFC00 */
-#define AS60XX_E2_NOT_USED_31_10                    (0)                                             /*!< NOT_USED_31_10[31:10]Not used */
+#define AS60XX_E2_NOT_USED_31_10                    (0L)                                            /*!< NOT_USED_31_10[31:10]Not used */
 
 /******************  Bit definition for AS60XX_E3 register  *******************/
 #define AS60XX_E3_GPI_Pos                           (0U)
 #define AS60XX_E3_GPI_Msk                           (0x3FUL << AS60XX_E3_GPI_Pos)                   /*!< 0x0000003F */
-#define AS60XX_E3_GPI_0                             (0)                                             /*!< General Purpose Input */
-#define AS60XX_E3_GPI_1                             (1)                                             /*!< General Purpose Input */
-#define AS60XX_E3_GPI_2                             (2)                                             /*!< General Purpose Input */
-#define AS60XX_E3_GPI_3                             (3)                                             /*!< General Purpose Input */
-#define AS60XX_E3_GPI_4                             (4)                                             /*!< General Purpose Input */
-#define AS60XX_E3_GPI_5                             (5)                                             /*!< General Purpose Input */
+#define AS60XX_E3_GPI_0                             (0L)                                            /*!< General Purpose Input */
+#define AS60XX_E3_GPI_1                             (1L)                                            /*!< General Purpose Input */
+#define AS60XX_E3_GPI_2                             (2L)                                            /*!< General Purpose Input */
+#define AS60XX_E3_GPI_3                             (3L)                                            /*!< General Purpose Input */
+#define AS60XX_E3_GPI_4                             (4L)                                            /*!< General Purpose Input */
+#define AS60XX_E3_GPI_5                             (5L)                                            /*!< General Purpose Input */
 #define AS60XX_E3_NOT_USED_7_6_Pos                  (6U)
 #define AS60XX_E3_NOT_USED_7_6_Msk                  (0x3UL << AS60XX_E3_NOT_USED_7_6_Pos)           /*!< 0x000000C0 */
-#define AS60XX_E3_NOT_USED_7_6                      (0)                                             /*!< NOT_USED_7_6[7:6]Not used */
+#define AS60XX_E3_NOT_USED_7_6                      (0L)                                            /*!< NOT_USED_7_6[7:6]Not used */
 #define AS60XX_E3_LP_MODE_Pos                       (8U)
 #define AS60XX_E3_LP_MODE_Msk                       (0x1UL << AS60XX_E3_LP_MODE_Pos)                /*!< 0x00000100 */
-#define AS60XX_E3_LP_MODE                           (1)                                             /*!< Low Power Mode */
+#define AS60XX_E3_LP_MODE                           (1L)                                            /*!< Low Power Mode */
 #define AS60XX_E3_NOT_USED_31_9_Pos                 (9U)
 #define AS60XX_E3_NOT_USED_31_9_Msk                 (0x7FFFFFUL << AS60XX_E3_NOT_USED_31_9_Pos)     /*!< 0xFFFFFE00 */
-#define AS60XX_E3_NOT_USED_31_9                     (0)                                             /*!< NOT_USED_31_9[31:9]Not used */
+#define AS60XX_E3_NOT_USED_31_9                     (0L)                                            /*!< NOT_USED_31_9[31:9]Not used */
 
 /******************  Bit definition for AS60XX_E4 register  *******************/
 #define AS60XX_E4_HCC_VAL_Pos                       (0U)
 #define AS60XX_E4_HCC_VAL_Msk                       (0x3FFFFFFFUL << AS60XX_E4_HCC_VAL_Pos)         /*!< 0x03FFFFFF */
 #define AS60XX_E4_NOT_USED_31_26_Pos                (26U)
 #define AS60XX_E4_NOT_USED_31_26_Msk                (0x3FUL << AS60XX_E4_NOT_USED_31_26_Pos)        /*!< 0xFC000000 */
-#define AS60XX_E4_NOT_USED_31_26                    (0)                                             /*!< NOT_USED_31_26[31:26]Not used */
+#define AS60XX_E4_NOT_USED_31_26                    (0L)                                            /*!< NOT_USED_31_26[31:26]Not used */
 
 /******************  Bit definition for AS60XX_E5 register  *******************/
 #define AS60XX_E5_VCC_VAL_Pos                       (0U)
 #define AS60XX_E5_VCC_VAL_Msk                       (0x3FUL << AS60XX_E5_VCC_VAL_Pos)               /*!< 0x0000003F */
 #define AS60XX_E5_NOT_USED_31_6_Pos                 (6U)
 #define AS60XX_E5_NOT_USED_31_6_Msk                 (0x3FFFFFFFUL << AS60XX_E5_NOT_USED_31_6_Pos)   /*!< 0xFFFFFFC0 */
-#define AS60XX_E5_NOT_USED_31_6                     (0)                                             /*!< NOT_USED_31_6[31:6]Not used */
+#define AS60XX_E5_NOT_USED_31_6                     (0L)                                            /*!< NOT_USED_31_6[31:6]Not used */
 
 /******************  Bit definition for AS60XX_E6 register  *******************/
 #define AS60XX_E6_TS_HOUR_Pos                       (0U)
 #define AS60XX_E6_TS_HOUR_Msk                       (0x3FFFFFUL << AS60XX_E6_TS_HOUR_Pos)           /*!< 0x0003FFFF */
 #define AS60XX_E6_NOT_USED_31_18_Pos                (18U)
 #define AS60XX_E6_NOT_USED_31_18_Msk                (0x3FFFUL << AS60XX_E6_NOT_USED_31_18_Pos)      /*!< 0xFFFC0000 */
-#define AS60XX_E6_NOT_USED_31_18                    (0)                                             /*!< NOT_USED_31_18[31:18]Not used */
+#define AS60XX_E6_NOT_USED_31_18                    (0L)                                            /*!< NOT_USED_31_18[31:18]Not used */
 
 /******************  Bit definition for AS60XX_E7 register  *******************/
 #define AS60XX_E7_TS_SEC_Pos                        (0U)
@@ -1510,84 +1510,84 @@
 #define AS60XX_E7_TS_MIN_Msk                        (0xFFUL << AS60XX_E7_TS_MIN_Pos)                /*!< 0x0000FF00 */
 #define AS60XX_E7_NOT_USED_31_16_Pos                (16U)
 #define AS60XX_E7_NOT_USED_31_16_Msk                (0xFFFFUL << AS60XX_E7_NOT_USED_31_16_Pos)      /*!< 0xFFFF0000 */
-#define AS60XX_E7_NOT_USED_31_16                    (0)                                             /*!< NOT_USED_31_16[31:16]Not used */
+#define AS60XX_E7_NOT_USED_31_16                    (0L)                                            /*!< NOT_USED_31_16[31:16]Not used */
 
 /******************  Bit definition for AS60XX_E9 register  *******************/
 #define AS60XX_E9_TS_TIME_Pos                       (0U)
 #define AS60XX_E9_TS_TIME_Msk                       (0xFFFUL << AS60XX_E9_TS_TIME_Pos)              /*!< 0x00000FFF */
 #define AS60XX_E9_NOT_USED_31_12_Pos                (12U)
 #define AS60XX_E9_NOT_USED_31_12_Msk                (0xFFFFFUL << AS60XX_E9_NOT_USED_31_12_Pos)     /*!< 0xFFFFF000 */
-#define AS60XX_E9_NOT_USED_31_12                    (0)                                             /*!< NOT_USED_31_12[31:12]Not used */
+#define AS60XX_E9_NOT_USED_31_12                    (0L)                                            /*!< NOT_USED_31_12[31:12]Not used */
 
 /******************  Bit definition for AS60XX_EA register  *******************/
 #define AS60XX_EA_RC_RLS_1_Pos                      (0U)
 #define AS60XX_EA_RC_RLS_1_Msk                      (0x1UL << AS60XX_EA_RC_RLS_1_Pos)               /*!< 0x00000001 */
-#define AS60XX_EA_RC_RLS_1                          (1)                                             /*!< Release 1 of remote communication self-clearing bits */
+#define AS60XX_EA_RC_RLS_1                          (1L)                                            /*!< Release 1 of remote communication self-clearing bits */
 #define AS60XX_EA_STUP_TO_Pos                       (1U)
 #define AS60XX_EA_STUP_TO_Msk                       (0x1UL << AS60XX_EA_STUP_TO_Pos)                /*!< 0x00000002 */
-#define AS60XX_EA_STUP_TO                           (1)                                             /*!< Start-up timeout */
+#define AS60XX_EA_STUP_TO                           (1L)                                            /*!< Start-up timeout */
 #define AS60XX_EA_FW_UNLOCKED_Pos                   (2U)
 #define AS60XX_EA_FW_UNLOCKED_Msk                   (0x1UL << AS60XX_EA_FW_UNLOCKED_Pos)            /*!< 0x00000004 */
-#define AS60XX_EA_FW_UNLOCKED                       (1)                                             /*!< FW unlocked */
+#define AS60XX_EA_FW_UNLOCKED                       (1L)                                            /*!< FW unlocked */
 #define AS60XX_EA_SI_BUSY_Pos                       (3U)
 #define AS60XX_EA_SI_BUSY_Msk                       (0x1UL << AS60XX_EA_SI_BUSY_Pos)                /*!< 0x00000008 */
-#define AS60XX_EA_SI_BUSY                           (1)                                             /*!< Serial remote interface busy */
+#define AS60XX_EA_SI_BUSY                           (1L)                                            /*!< Serial remote interface busy */
 #define AS60XX_EA_COM_REQ_Pos                       (4U)
 #define AS60XX_EA_COM_REQ_Msk                       (0x1UL << AS60XX_EA_COM_REQ_Pos)                /*!< 0x00000010 */
-#define AS60XX_EA_COM_REQ                           (1)                                             /*!< Communication request by remote interface */
+#define AS60XX_EA_COM_REQ                           (1L)                                            /*!< Communication request by remote interface */
 #define AS60XX_EA_GPR_REQ_Pos                       (5U)
 #define AS60XX_EA_GPR_REQ_Msk                       (0x1UL << AS60XX_EA_GPR_REQ_Pos)                /*!< 0x00000020 */
-#define AS60XX_EA_GPR_REQ                           (1)                                             /*!< General purpose request by remote interface */
+#define AS60XX_EA_GPR_REQ                           (1L)                                            /*!< General purpose request by remote interface */
 #define AS60XX_EA_GPT_REQ_Pos                       (6U)
 #define AS60XX_EA_GPT_REQ_Msk                       (0x1UL << AS60XX_EA_GPT_REQ_Pos)                /*!< 0x00000040 */
-#define AS60XX_EA_GPT_REQ                           (1)                                             /*!< General purpose request by GP timer */
+#define AS60XX_EA_GPT_REQ                           (1L)                                            /*!< General purpose request by GP timer */
 #define AS60XX_EA_GPH_REQ_Pos                       (7U)
 #define AS60XX_EA_GPH_REQ_Msk                       (0x1UL << AS60XX_EA_GPH_REQ_Pos)                /*!< 0x00000080 */
-#define AS60XX_EA_GPH_REQ                           (1)                                             /*!< General purpose request by GPH_TRIG in SHR_EXC */
+#define AS60XX_EA_GPH_REQ                           (1L)                                            /*!< General purpose request by GPH_TRIG in SHR_EXC */
 #define AS60XX_EA_MCT_RLS_Pos                       (8U)
 #define AS60XX_EA_MCT_RLS_Msk                       (0x1UL << AS60XX_EA_MCT_RLS_Pos)                /*!< 0x00000100 */
-#define AS60XX_EA_MCT_RLS                           (1)                                             /*!< Measure cycle timer release */
+#define AS60XX_EA_MCT_RLS                           (1L)                                            /*!< Measure cycle timer release */
 #define AS60XX_EA_NVM_RDY_Pos                       (9U)
 #define AS60XX_EA_NVM_RDY_Msk                       (0x1UL << AS60XX_EA_NVM_RDY_Pos)                /*!< 0x00000200 */
-#define AS60XX_EA_NVM_RDY                           (1)                                             /*!< NVRAM ready */
+#define AS60XX_EA_NVM_RDY                           (1L)                                            /*!< NVRAM ready */
 #define AS60XX_EA_NVR_REQ_Pos                       (10U)
 #define AS60XX_EA_NVR_REQ_Msk                       (0x1UL << AS60XX_EA_NVR_REQ_Pos)                /*!< 0x00000400 */
-#define AS60XX_EA_NVR_REQ                           (1)                                             /*!< Request by NVRAM recall timer */
+#define AS60XX_EA_NVR_REQ                           (1L)                                            /*!< Request by NVRAM recall timer */
 #define AS60XX_EA_NOT_USED_11_Pos                   (11U)
 #define AS60XX_EA_NOT_USED_11_Msk                   (0xFFFFFUL << AS60XX_EA_NOT_USED_11_Pos)        /*!< 0x00000800 */
-#define AS60XX_EA_NOT_USED_11                       (0)                                             /*!< Not used */
+#define AS60XX_EA_NOT_USED_11                       (0L)                                            /*!< Not used */
 #define AS60XX_EA_HSO_ST_TO_Pos                     (12U)
 #define AS60XX_EA_HSO_ST_TO_Msk                     (0x1UL << AS60XX_EA_HSO_ST_TO_Pos)              /*!< 0x00001000 */
-#define AS60XX_EA_HSO_ST_TO                         (1)                                             /*!< High speed oscillator settling timeout */
+#define AS60XX_EA_HSO_ST_TO                         (1L)                                            /*!< High speed oscillator settling timeout */
 #define AS60XX_EA_I2C_ACK_Pos                       (13U)
 #define AS60XX_EA_I2C_ACK_Msk                       (0x1UL << AS60XX_EA_I2C_ACK_Pos)                /*!< 0x00002000 */
-#define AS60XX_EA_I2C_ACK                           (1)                                             /*!< 2-wire interface acknowledge */
+#define AS60XX_EA_I2C_ACK                           (1L)                                            /*!< 2-wire interface acknowledge */
 #define AS60XX_EA_I2C_BSY_Pos                       (14U)
 #define AS60XX_EA_I2C_BSY_Msk                       (0x1UL << AS60XX_EA_I2C_BSY_Pos)                /*!< 0x00004000 */
-#define AS60XX_EA_I2C_BSY                           (1)                                             /*!< 2-wire interface busy */
+#define AS60XX_EA_I2C_BSY                           (1L)                                            /*!< 2-wire interface busy */
 #define AS60XX_EA_WD_DIS_Pos                        (15U)
 #define AS60XX_EA_WD_DIS_Msk                        (0x1UL << AS60XX_EA_WD_DIS_Pos)                 /*!< 0x00008000 */
-#define AS60XX_EA_WD_DIS                            (1)                                             /*!< Watchdog disabled */
+#define AS60XX_EA_WD_DIS                            (1L)                                            /*!< Watchdog disabled */
 #define AS60XX_EA_RC_RLS_2_Pos                      (16U)
 #define AS60XX_EA_RC_RLS_2_Msk                      (0x1UL << AS60XX_EA_RC_RLS_2_Pos)               /*!< 0x00010000 */
-#define AS60XX_EA_RC_RLS_2                          (1)                                             /*!< Release 2 of remote communication self-clearing bits */
+#define AS60XX_EA_RC_RLS_2                          (1L)                                            /*!< Release 2 of remote communication self-clearing bits */
 #define AS60XX_EA_NOT_USED_31_17_Pos                (17U)
 #define AS60XX_EA_NOT_USED_31_17_Msk                (0x7FFFUL << AS60XX_EA_NOT_USED_31_17_Pos)      /*!< 0xFFFE0000 */
-#define AS60XX_EA_NOT_USED_31_17                    (0)                                             /*!< NOT_USED_31_17[31:17]Not used */
+#define AS60XX_EA_NOT_USED_31_17                    (0L)                                            /*!< NOT_USED_31_17[31:17]Not used */
 
 /******************  Bit definition for AS60XX_EB register  *******************/
 #define AS60XX_EB_I2C_DATA_Pos                      (0U)
 #define AS60XX_EB_I2C_DATA_Msk                      (0xFFUL << AS60XX_EB_I2C_DATA_Pos)              /*!< 0x000000FF */
 #define AS60XX_EB_NOT_USED_31_8_Pos                 (8U)
 #define AS60XX_EB_NOT_USED_31_8_Msk                 (0xFFFFFFUL << AS60XX_EB_NOT_USED_31_8_Pos)     /*!< 0xFFFFFF00 */
-#define AS60XX_EB_NOT_USED_31_8                     (0)                                             /*!< NOT_USED_31_8[31:8]Not used */
+#define AS60XX_EB_NOT_USED_31_8                     (0L)                                            /*!< NOT_USED_31_8[31:8]Not used */
 
 /******************  Bit definition for AS60XX_EC register  *******************/
 #define AS60XX_EC_FWU_RNG_Pos                       (0U)
 #define AS60XX_EC_FWU_RNG_Msk                       (0xFFFUL << AS60XX_EC_FWU_RNG_Pos)              /*!< 0x00000FFF */
 #define AS60XX_EC_NOT_USED_31_12_Pos                (12U)
 #define AS60XX_EC_NOT_USED_31_12_Msk                (0xFFFFFUL << AS60XX_EC_NOT_USED_31_12_Pos)     /*!< 0xFFFFF000 */
-#define AS60XX_EC_NOT_USED_31_12                    (0)                                             /*!< NOT_USED_31_12[31:12]Not used */
+#define AS60XX_EC_NOT_USED_31_12                    (0L)                                            /*!< NOT_USED_31_12[31:12]Not used */
 
 /******************  Bit definition for AS60XX_ED register  *******************/
 #define AS60XX_ED_FWU_REV_Pos                       (0U)

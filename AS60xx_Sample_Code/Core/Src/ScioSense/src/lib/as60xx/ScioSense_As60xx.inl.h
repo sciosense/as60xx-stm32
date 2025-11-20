@@ -3,9 +3,9 @@
 
 #include "ScioSense_As60xx_Macros.h"
 
-#define read(dataToWrite, lenToWrite, dataToRead, lenToRead)    as60xx->io.read(as60xx->io.config, (uint8_t*)(dataToWrite), (lenToWrite), (uint8_t*)(dataToRead), (lenToRead))
-#define write(data, len)                                        as60xx->io.write(as60xx->io.config, (uint8_t*)(data), (len))
-#define wait(ms)                                                as60xx->io.wait(ms)
+#define transfer(dataToWrite, lenToWrite, dataToRead, lenToRead)    as60xx->io.transfer(as60xx->io.config, (uint8_t*)(dataToWrite), (lenToWrite), (uint8_t*)(dataToRead), (lenToRead))
+#define write(data, len)                                            as60xx->io.write(as60xx->io.config, (uint8_t*)(data), (len))
+#define wait(ms)                                                    as60xx->io.wait(ms)
 
 // Speed of sound in water (col2) in m/s as a function of temperature (col1) in degC. Data from https://www.engineeringtoolbox.com/sound-speed-water-d_598.html
 static float as60xxSpeedSoundWaterFromTemperature[AS60XX_AMOUNT_POINTS_SPEED_SOUND_TABLE][2] = {
@@ -168,7 +168,7 @@ static inline uint8_t As60xx_Read_1_Byte(ScioSense_As60xx* as60xx, uint8_t opcod
 
     dataToWrite[0] = opcode;
 
-    Result result = (Result)read(dataToWrite, 1, dataRead, 1);
+    Result result = (Result)transfer(dataToWrite, 1, dataRead, 1);
 
     uint8_t readValue = 0;
 
@@ -187,13 +187,16 @@ static inline uint32_t As60xx_Read_1_Dword(ScioSense_As60xx* as60xx, uint8_t opc
 
     dataToWrite[0] = opcode;
 
-    Result result = (Result)read(dataToWrite, 1, dataRead, 4);
+    Result result = (Result)transfer(dataToWrite, 1, dataRead, 4);
 
     uint32_t readValue = 0;
 
     if ( result == RESULT_OK )
     {
-        readValue = (dataRead[0]<<24) + (dataRead[1]<<16) + (dataRead[2]<<8) + (dataRead[3]);
+        readValue =     ( ((uint32_t)dataRead[0]) << 24 );
+        readValue +=    ( ((uint32_t)dataRead[1]) << 16 );
+        readValue +=    ( ((uint32_t)dataRead[2]) << 8  );
+        readValue +=    ( ((uint32_t)dataRead[3])       );
     }
 
     return readValue;
@@ -215,13 +218,16 @@ static inline uint32_t As60xx_Read_Register_1_Dword(ScioSense_As60xx* as60xx, ui
     dataToWrite[0] = opcode;
     dataToWrite[1] = (uint8_t)address;
 
-    Result result = (Result)read(dataToWrite, 2, dataRead, 4);
+    Result result = (Result)transfer(dataToWrite, 2, dataRead, 4);
 
     uint32_t readValue = 0;
 
     if ( result == RESULT_OK )
     {
-        readValue = (dataRead[0]<<24) + (dataRead[1]<<16) + (dataRead[2]<<8) + (dataRead[3]);
+        readValue =     ( ((uint32_t)dataRead[0]) << 24 );
+        readValue +=    ( ((uint32_t)dataRead[1]) << 16 );
+        readValue +=    ( ((uint32_t)dataRead[2]) << 8  );
+        readValue +=    ( ((uint32_t)dataRead[3])       );
     }
 
     return readValue;
@@ -674,7 +680,7 @@ static inline uint32_t As60xx_CalculateTDCTimePs(ScioSense_As60xx* as60xx, uint3
     {
         tPeriodHSO = 125;
     }
-    return (uint32_t)( (((uint64_t)contentTDCRegister) * tPeriodHSO * 1000) / (1<<16) );
+    return (uint32_t)( (((uint64_t)contentTDCRegister) * tPeriodHSO * 1000) / (1L<<16) );
 }
 
 static inline void AS60xx_CalculateTemperatureResistance2Wire(ScioSense_As60xx* as60xx, float* temperatureResistancesRatiosOut)

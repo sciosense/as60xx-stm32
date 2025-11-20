@@ -115,7 +115,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      AS60xx_Example_Loop(&huart1, &hspi1);
+      AS60xx_Example_Loop();
   }
   /* USER CODE END 3 */
 }

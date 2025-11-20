@@ -45,6 +45,13 @@
 # Visual Studio files
 *.vscode
 
+# STM32 Cube IDE files
+*/.settings/
+*/.metadata/
+**/01_Basic_Ultrasound/
+**/02_Ultrasound_and_Temperature/
+**/03_AS6031F1/
+
 # Kernel Module Compile Results
 *.mod*
 *.cmd

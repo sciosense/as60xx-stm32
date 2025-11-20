@@ -1469,7 +1469,7 @@ static inline void As6xx_Initialize_Configuration(ScioSense_As60xx* as60xx)
   As60xx_Update_Configuration(as60xx);
 }
 
-#undef read
+#undef transfer
 #undef write
 #undef wait
 
